@@ -1,5 +1,18 @@
 # Neovim
 
+<!--toc:start-->
+- [Neovim](#neovim)
+  - [About](#about)
+  - [Requirements](#requirements)
+  - [Features](#features)
+    - [Auto completation with AI](#auto-completation-with-ai)
+    - [Wakatime](#wakatime)
+    - [Background Transparence](#background-transparence)
+  - [Installing](#installing)
+  - [Mappings](#mappings)
+  - [Preview](#preview)
+<!--toc:end-->
+
 ## About
 
 This NeoVim config is based on the [AstroNvim](https://github.com/AstroNvim/AstroNvim) config.  

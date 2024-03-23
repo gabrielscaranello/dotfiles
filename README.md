@@ -1,5 +1,12 @@
 # Gabriel Scaranello - dotfiles
 
+<!--toc:start-->
+- [Gabriel Scaranello - dotfiles](#gabriel-scaranello-dotfiles)
+  - [About](#about)
+  - [Configs](#configs)
+  - [Commands](#commands)
+<!--toc:end-->
+
 ## About
 
 This repository aims to store and expose my configuration files and set up for my daily work.
@@ -9,9 +16,9 @@ This repository aims to store and expose my configuration files and set up for m
 
 ## Configs
 
-| Config path                       | Description                      |
-| :--                               | :--                              |
-| [Neovim](./config/nvim/README.md) | Neovim config based on AstroNvim |
+| Config path             | Description                      |
+| :--                     | :--                              |
+| [Neovim](./config/nvim) | Neovim config based on AstroNvim |
 
 ## Commands
 
