@@ -46,6 +46,12 @@ To disable the feature comment out or remove this line in the
 -- Comment out our remove this line
 -- { import = "astrocommunity.media.vim-wakatime" },
 ```
+### Background Transparence
+
+This config uses [transparent.nvim](https://github.com/xiyaowong/transparent.nvim) to make the background transparent.
+
+> [!TIP]  
+> You can use `:TransparentToggle` to toggle the background transparency.
 
 ## Installing
 
