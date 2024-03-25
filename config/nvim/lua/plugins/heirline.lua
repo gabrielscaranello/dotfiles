@@ -11,7 +11,8 @@ return {
       status.component.file_info {
         file_icon = { padding = { left = 0 } },
         filename = { fallback = "Empty" },
-        padding = { right = 1 },
+        padding = { right = 0 },
+        filetype = false,
         surround = { separator = "left", condition = false },
       },
       status.component.git_diff(),
