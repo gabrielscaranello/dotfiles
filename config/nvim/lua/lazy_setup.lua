@@ -1,7 +1,7 @@
 require("lazy").setup({
   {
-    "AstroNvim/AstroNvim",
-    branch = "v4", -- TODO: change `branch="v4"` to `version="^4"` on release
+   "AstroNvim/AstroNvim",
+    version = "^4", -- Remove version tracking to elect for nighly AstroNvim
     import = "astronvim.plugins",
     opts = {
       mapleader = " ",
