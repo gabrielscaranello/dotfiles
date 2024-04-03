@@ -4,7 +4,7 @@ local make_mappings = function()
 
   local mappings = {
     n = {
-      [";"] = { ":", desc = "Call :" },
+      [";"] = { ":", desc = "Call :", silent = false },
       ["<leader><space>"] = { "<cmd>noh<cr>", desc = "No highlight" },
       ["L"] = {
         function() buffer.nav(vim.v.count > 0 and vim.v.count or 1) end,
@@ -21,6 +21,7 @@ local make_mappings = function()
       ["c"] = { '"_c' },
     },
     v = {
+      [";"] = { ":", desc = "Call :", silent = false },
       ["d"] = { '"_d' },
       ["c"] = { '"_c' },
     },
