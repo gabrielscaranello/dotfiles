@@ -3,12 +3,9 @@ return {
   "AstroNvim/astrolsp",
   ---@type AstroLSPOpts
   opts = {
+    ---@type any
     config = {
       eslint = {
-        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
-      },
-      volar = { filetypes = { "vue" } },
-      tsserver = {
         filetypes = {
           "javascript",
           "javascript.jsx",
@@ -16,9 +13,19 @@ return {
           "typescript",
           "typescript.tsx",
           "typescriptreact",
+          "vue",
         },
       },
-      clangd = { filetypes = { "c", "cpp", "objc", "objcpp", "cuda" } },
+      tsserver = {
+        filetypes = { "javascript.jsx", "javascriptreact", "typescript.tsx", "typescriptreact" },
+      },
+      volar = {
+        filetypes = { "javascript", "typescript", "vue" },
+        init_options = { vue = { hybridMode = false } },
+      },
+      clangd = {
+        filetypes = { "c", "cpp", "cuda", "objc", "objcpp" },
+      },
     },
 
     formatting = {
