@@ -6,6 +6,7 @@ return {
       "make",
       "scss",
       "proto",
+      "vue",
     })
   end,
 }
