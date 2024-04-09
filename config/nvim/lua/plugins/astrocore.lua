@@ -17,13 +17,9 @@ local make_mappings = function()
       ["<leader>lk"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
       ["<leader>gD"] = { "<cmd>DiffviewOpen<cr>", desc = "Open Diffview" },
       ["<leader>gx"] = { "<cmd>DiffviewClose<cr>", desc = "Close Diffview" },
-      ["d"] = { '"_d' },
-      ["c"] = { '"_c' },
     },
     v = {
       [";"] = { ":", desc = "Call :", silent = false },
-      ["d"] = { '"_d' },
-      ["c"] = { '"_c' },
     },
     t = {},
     i = {
