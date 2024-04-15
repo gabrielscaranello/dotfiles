@@ -17,11 +17,14 @@ return {
         },
       },
       tsserver = {
-        filetypes = { "javascript.jsx", "javascriptreact", "typescript.tsx", "typescriptreact" },
-      },
-      volar = {
-        filetypes = { "javascript", "typescript", "vue" },
-        init_options = { vue = { hybridMode = false } },
+        filetypes = {
+          "javascript",
+          "javascript.jsx",
+          "javascriptreact",
+          "typescript",
+          "typescript.tsx",
+          "typescriptreact",
+        },
       },
       clangd = {
         filetypes = { "c", "cpp", "cuda", "objc", "objcpp" },
