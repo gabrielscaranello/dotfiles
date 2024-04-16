@@ -1,6 +1,7 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrolsp",
+  tag = "stable",
   ---@type AstroLSPOpts
   opts = {
     ---@type any

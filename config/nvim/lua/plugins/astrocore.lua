@@ -37,6 +37,7 @@ end
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
+  tag = "stable",
   ---@type AstroCoreOpts
   opts = {
     diagnostics = {

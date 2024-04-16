@@ -1,6 +1,7 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
+  tag = "stable",
 
   -- Plugings
   { import = "astrocommunity.color.transparent-nvim" },
