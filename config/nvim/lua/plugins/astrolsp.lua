@@ -27,6 +27,7 @@ return {
           "typescriptreact",
         },
       },
+      volar = { filetypes = { "vue" } },
       clangd = {
         filetypes = { "c", "cpp", "cuda", "objc", "objcpp" },
       },
