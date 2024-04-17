@@ -17,16 +17,6 @@ return {
           "vue",
         },
       },
-      tsserver = {
-        filetypes = {
-          "javascript",
-          "javascript.jsx",
-          "javascriptreact",
-          "typescript",
-          "typescript.tsx",
-          "typescriptreact",
-        },
-      },
       volar = { filetypes = { "vue" } },
       clangd = {
         filetypes = { "c", "cpp", "cuda", "objc", "objcpp" },
