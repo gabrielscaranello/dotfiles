@@ -28,9 +28,11 @@ return {
       format_on_save = { enabled = true },
 
       filter = function(client)
-        if client.name == "jsonls" then return false end
-        if client.name == "tsserver" then return false end
-        if client.name == "volar" then return false end
+        local ignored_clients = { "jsonls", "tsserver", "typescript-tools", "volar" }
+
+        for _, client_name in ipairs(ignored_clients) do
+          if client_name == client.name then return false end
+        end
 
         return true
       end,
