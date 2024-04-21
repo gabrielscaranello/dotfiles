@@ -17,8 +17,6 @@ return {
   { import = "astrocommunity.git.git-blame-nvim" },
   { import = "astrocommunity.indent.mini-indentscope" },
   { import = "astrocommunity.lsp.delimited-nvim" },
-  { import = "astrocommunity.lsp.garbage-day-nvim" },
-  { import = "astrocommunity.lsp.ts-error-translator-nvim" },
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
   { import = "astrocommunity.media.codesnap-nvim" },
   { import = "astrocommunity.media.vim-wakatime" },
