@@ -9,7 +9,6 @@ return {
       "gitcommit",
       "gitignore",
       "make",
-      "proto",
       "scss",
     })
   end,
