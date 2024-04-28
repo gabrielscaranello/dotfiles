@@ -22,7 +22,7 @@ if [ -L "$NVIM_CONFIG_DIR" ]; then
 fi
 
 echo "Removing old nvim packages and cache..."
-rm -rf "$HOME/.local/share/nvim" "$HOME/.local/state/nvim" "$HOME/.cache/nvim" 
+rm -rf "$HOME/.local/share/nvim" "$HOME/.local/state/nvim" "$HOME/.cache/nvim"
 
 echo "Creating new symbolic link from $PWD/config/nvim to $NVIM_CONFIG_DIR"
 ln -s "$PWD/config/nvim" "$NVIM_CONFIG_DIR"
