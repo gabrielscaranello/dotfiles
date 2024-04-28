@@ -1,0 +1,15 @@
+[pull]
+	rebase = true
+
+[push]
+	followTags = true
+
+[user]
+	email = gabrieljscaranello@gmail.com
+	name = Gabriel Scaranello
+
+[init]
+	defaultBranch = main
+
+[core]
+	editor = nvim
