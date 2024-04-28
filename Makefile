@@ -1,4 +1,4 @@
- nvim:
+nvim:
 	@sh ./actions/nvim.sh
 
 all:
