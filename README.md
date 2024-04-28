@@ -1,13 +1,12 @@
-# Gabriel Scaranello - dotfiles
+# Dotfiles by Gabriel Scaranello 
 
-## About
+🌐 This repository aims to store and share the configuration files that I use in my daily workflow.
 
-This repository aims to store and expose my configuration files and set up for my daily work.
+🛠️ All settings and scripts present were made for my daily use, but they can and should work for anyone.
 
-> [!NOTE]  
-> All settings are personal, but any suggestions or help are welcome.
+🚀 Suggestions and improvements are appreciated.
 
-## Configs
+## Configs  
 
 | Config path                     | Description                      |
 | :--                             | :--                              |

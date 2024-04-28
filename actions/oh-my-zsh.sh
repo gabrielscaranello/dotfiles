@@ -1,8 +1,8 @@
 #! /bin/bash
 
 TARGET_DIR="$HOME/.oh-my-zsh"
-THEMES_DIR="$THEMES_DIR/custom/themes"
-PLUGINS_DIR="$THEMES_DIR/custom/plugins"
+THEMES_DIR="$TARGET_DIR/custom/themes"
+PLUGINS_DIR="$TARGET_DIR/custom/plugins"
 INSTALL_URL="https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
 P10K_URL="https://github.com/romkatv/powerlevel10k.git"
 AUTOSUGGEST_URL="https://github.com/zsh-users/zsh-autosuggestions.git"
