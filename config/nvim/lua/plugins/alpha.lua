@@ -1,9 +1,10 @@
 ---@type LazySpec
 return {
   "goolord/alpha-nvim",
-  opts = function(_, opts)
-    -- customize the dashboard header
-    opts.section.header.val = {
+  opts = function()
+    local dashboard = require "alpha.themes.dashboard"
+
+    dashboard.section.header.val = {
       "                                                   Gabriel         ",
       "      ████ ██████           █████      ██       Scaranello   ",
       "     ███████████             █████                            ",
@@ -13,6 +14,5 @@ return {
       " ███████████ ███    ███ █████████ █████ █████ ████ █████ ",
       "██████  █████████████████████ ████ █████ █████ ████ ██████",
     }
-    return opts
   end,
 }
