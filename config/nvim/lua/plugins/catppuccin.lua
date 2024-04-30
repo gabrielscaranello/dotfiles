@@ -1,26 +1,28 @@
 ---@type LazySpec
 return {
   "catppuccin",
-  opts = {
-    flavour = "mocha",
-    transparent_background = false,
-    integrations = {
-      aerial = true,
-      alpha = true,
-      cmp = true,
-      dap = true,
-      dap_ui = true,
-      mason = true,
-      native_lsp = { enabled = true },
-      neotest = true,
-      neotree = true,
-      noice = true,
-      notifier = true,
-      semantic_tokens = true,
-      symbols_outline = true,
-      telescope = { enabled = true },
-      treesitter = true,
-      which_key = true,
-    },
-  },
+  opts = function(_, opts)
+    local integrations = opts.integrations or {}
+    opts.flavour = "mocha"
+    opts.transparent_background = true
+
+    integrations.aerial = true
+    integrations.alpha = true
+    integrations.cmp = true
+    integrations.dap = true
+    integrations.dap_ui = true
+    integrations.mason = true
+    integrations.native_lsp = { enabled = true }
+    integrations.neotest = true
+    integrations.neotree = false
+    integrations.noice = true
+    integrations.notifier = true
+    integrations.semantic_tokens = true
+    integrations.symbols_outline = true
+    integrations.telescope = { enabled = true }
+    integrations.treesitter = true
+    integrations.which_key = true
+
+    opts.integrations = integrations
+  end,
 }

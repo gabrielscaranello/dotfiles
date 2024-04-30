@@ -22,9 +22,7 @@ local make_mappings = function()
       [";"] = { ":", desc = "Call :", silent = false },
     },
     t = {},
-    i = {
-      ["<C-s>"] = { "<Esc><cmd>w<cr>", desc = "Write file" },
-    },
+    i = {},
   }
 
   if vim.fn.executable "lazydocker" == 1 then
@@ -61,7 +59,7 @@ return {
         spell = false,
         signcolumn = "auto",
         wrap = true,
-        guicursor = "n-v-c-i:ver100-iCursor",
+        -- guicursor = "n-v-c-i:ver100-iCursor",
         cursorline = true,
         clipboard = "unnamedplus",
       },
