@@ -3,8 +3,6 @@ return {
   "nvim-neo-tree/neo-tree.nvim",
 
   dependencies = {
-    { "nvim-lua/plenary.nvim", lazy = true },
-    { "MunifTanjim/nui.nvim", lazy = true },
     {
       "AstroNvim/astrocore",
       opts = function(_, opts)
@@ -30,6 +28,9 @@ return {
   opts = function(_, opts)
     local window = opts.window or {}
     local source_selector = opts.source_selector or {}
+    local event_handlers = opts.event_handlers or {}
+    local filesystem = opts.filesystem or {}
+    local filtered_items = filesystem.filtered_items or {}
     local sources = { "filesystem" }
 
     window.width = 40
@@ -45,9 +46,21 @@ return {
 
     source_selector.winbar = false
 
+    filesystem.group_empty_dirs = true
+
+    filtered_items.hide_dotfiles = false
+    filtered_items.hide_gitignored = false
+
+    table.insert(event_handlers, {
+      event = "file_opened",
+      handler = function() require("neo-tree.command").execute { action = "close" } end,
+    })
+
     opts.window = window
     opts.source_selector = source_selector
     opts.sources = sources
+    opts.filesystem = filesystem
+    opts.filesystem.filtered_items = filtered_items
     opts.popup_border_style = "rounded"
   end,
 }
