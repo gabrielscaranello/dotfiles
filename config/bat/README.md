@@ -23,3 +23,10 @@ Copy the cloned config to `~/.config/bat`
 ```bash
 cp -r /tmp/dotfiles/config/bat ~/.config
 ```
+
+Build bat cache
+
+```bash
+bat cache --build
+```
+
