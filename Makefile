@@ -16,6 +16,9 @@ flameshot:
 kitty:
 	@sh ./actions/kitty.sh
 
+lazygit:
+	@sh ./actions/lazygit.sh
+
 nvim:
 	@sh ./actions/nvim.sh
 

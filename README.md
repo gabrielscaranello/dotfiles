@@ -18,6 +18,7 @@
 | [Neovim](./config/nvim)         | Neovim config based on AstroNvim |
 | [Oh-My-Zsh](./config/oh-my-zsh) | Oh-My-Zsh installation           |
 | [Profile](./config/profile)     | Profile config                   |
+| [Lazygit](./config/lazygit)       | Lazygit config                   |
 
 ## Commands
 
