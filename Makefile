@@ -16,6 +16,9 @@ flameshot:
 kitty:
 	@sh ./actions/kitty.sh
 
+lazydocker:
+	@sh ./actions/lazydocker.sh
+
 lazygit:
 	@sh ./actions/lazygit.sh
 
