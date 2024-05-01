@@ -48,10 +48,15 @@ To disable the feature comment out or remove this line in the
 ```
 ### Background Transparence
 
-This config uses [transparent.nvim](https://github.com/xiyaowong/transparent.nvim) to make the background transparent.
+By default, all NeoVim windows have a transparent background.  
+You can disable this feature editing the `lua/plugings/catppuccin.lua` file.
 
-> [!TIP]  
-> You can use `:TransparentToggle` to toggle the background transparency.
+```lua
+-- ...init options
+opts.transparent_background = false
+-- ...rest of options
+
+```
 
 ## Installing
 
