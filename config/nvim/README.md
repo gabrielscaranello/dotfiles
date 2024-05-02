@@ -77,7 +77,7 @@ mv ~/.cache/nvim ~/.cache/nvim.bak
 Clone my config into `~/.config/nvim`
 
 ```bash
-git clone --depth 1 https://github.com/gabrielscaranello/dotfiles.new /tmp/dotfiles
+git clone --depth 1 https://github.com/gabrielscaranello/dotfiles /tmp/dotfiles
 ```
 
 Copy the cloned config to `~/.config/nvim`

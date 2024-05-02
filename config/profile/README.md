@@ -29,7 +29,7 @@ mv ~/.p10k.zsh ~/.p10k.zsh.bak
 Clone my config
 
 ```bash
-git clone --depth 1 https://github.com/gabrielscaranello/dotfiles.new /tmp/dotfiles
+git clone --depth 1 https://github.com/gabrielscaranello/dotfiles /tmp/dotfiles
 ```
 
 Copy the cloned config to Home

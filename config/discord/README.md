@@ -15,7 +15,7 @@ mv ~/.config/discord ~/.config/discord.bak
 Clone my config
 
 ```bash
-git clone --depth 1 https://github.com/gabrielscaranello/dotfiles.new /tmp/dotfiles
+git clone --depth 1 https://github.com/gabrielscaranello/dotfiles /tmp/dotfiles
 ```
 
 Run script to install

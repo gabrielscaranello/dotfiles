@@ -15,7 +15,7 @@ mv ~/.config/lazydocker ~/.config/lazydocker.bak
 Clone my config
 
 ```bash
-git clone --depth 1 https://github.com/gabrielscaranello/dotfiles.new /tmp/dotfiles
+git clone --depth 1 https://github.com/gabrielscaranello/dotfiles /tmp/dotfiles
 ```
 
 Copy the cloned config to `~/.config/lazydocker`
