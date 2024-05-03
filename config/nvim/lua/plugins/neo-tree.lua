@@ -47,9 +47,7 @@ return {
     source_selector.winbar = false
 
     filesystem.group_empty_dirs = true
-
     filtered_items.hide_dotfiles = false
-    filtered_items.hide_gitignored = false
 
     table.insert(event_handlers, {
       event = "file_opened",
