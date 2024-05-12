@@ -63,6 +63,11 @@ return {
         cursorline = true,
         clipboard = "unnamedplus",
       },
+
+      g = {
+        loaded_perl_provider = 0,
+        loaded_ruby_provider = 0,
+      },
     },
   },
 }
