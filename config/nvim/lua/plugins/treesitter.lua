@@ -10,6 +10,7 @@ return {
       "gitignore",
       "make",
       "scss",
+      "styled",
     })
   end,
 }
