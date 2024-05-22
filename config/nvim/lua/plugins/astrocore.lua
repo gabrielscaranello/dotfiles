@@ -43,6 +43,7 @@ return {
     diagnostics = {
       virtual_text = false,
       underline = true,
+      signs = false,
     },
 
     mappings = make_mappings(),
