@@ -2,6 +2,8 @@
 return {
   "AstroNvim/astrolsp",
   tag = "stable",
+  pin = true,
+
   ---@type AstroLSPOpts
   opts = {
     ---@type any

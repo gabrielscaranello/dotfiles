@@ -36,6 +36,8 @@ end
 return {
   "AstroNvim/astrocore",
   tag = "stable",
+  pin = true,
+
   ---@type AstroCoreOpts
   opts = {
     diagnostics = {

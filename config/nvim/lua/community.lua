@@ -2,6 +2,7 @@
 return {
   "AstroNvim/astrocommunity",
   tag = "stable",
+  pin = true,
 
   -- Plugings
   { import = "astrocommunity.colorscheme.catppuccin" },

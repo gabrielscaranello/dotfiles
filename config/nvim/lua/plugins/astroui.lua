@@ -2,6 +2,8 @@
 return {
   "AstroNvim/astroui",
   tag = "stable",
+  pin = true,
+
   ---@type AstroUIOpts
   opts = {
     colorscheme = "catppuccin",
