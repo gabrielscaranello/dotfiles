@@ -62,7 +62,6 @@ return {
         spell = false,
         signcolumn = "auto",
         wrap = true,
-        -- guicursor = "n-v-c-i:ver100-iCursor",
         cursorline = true,
         clipboard = "unnamedplus",
       },
