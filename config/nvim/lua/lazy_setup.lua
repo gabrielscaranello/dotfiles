@@ -1,7 +1,8 @@
 require("lazy").setup({
   {
-   "AstroNvim/AstroNvim",
-    version = "^4", -- Remove version tracking to elect for nighly AstroNvim
+    "AstroNvim/AstroNvim",
+    tag = "stable",
+    pin = true,
     import = "astronvim.plugins",
     opts = {
       mapleader = " ",
