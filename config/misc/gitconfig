@@ -3,6 +3,7 @@
 
 [push]
 	followTags = true
+	autoSetupRemote = true
 
 [user]
 	email = gabrieljscaranello@gmail.com
