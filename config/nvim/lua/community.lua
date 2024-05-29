@@ -1,7 +1,8 @@
 ---@type LazySpec
 return {
-  "AstroNvim/astrocommunity",
-  tag = "stable",
+  "gabrielscaranello/astrocommunity",
+  branch = "feature/update-vue-pack",
+  commit = "47fc70a",
   pin = true,
 
   -- Plugings
