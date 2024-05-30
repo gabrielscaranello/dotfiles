@@ -1,9 +1,7 @@
 ---@type LazySpec
 return {
-  "gabrielscaranello/astrocommunity",
-  branch = "feature/update-vue-pack",
-  commit = "47fc70a",
-  pin = true,
+  "AstroNvim/astrocommunity",
+  tag = "stable",
 
   -- Plugings
   { import = "astrocommunity.colorscheme.catppuccin" },
