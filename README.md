@@ -1,4 +1,4 @@
-# Dotfiles by Gabriel Scaranello 
+# Dotfiles by Gabriel Scaranello
 
 🌐 This repository aims to store and share the configuration files that I use in my daily workflow.
 
@@ -6,10 +6,10 @@
 
 🚀 Suggestions and improvements are appreciated.
 
-## Configs  
+## Configs
 
 | Config path                       | Description                      |
-| :--                               | :--                              |
+| :-------------------------------- | :------------------------------- |
 | [Bat](./config/bat)               | Bat config (cat alternative)     |
 | [Btop](./config/btop)             | Btop config (top alternative)    |
 | [Discord](./config/discord)       | Discord theme config             |
@@ -24,7 +24,7 @@
 ## Commands
 
 | Command           | Description                                      |
-| :--               | :--                                              |
+| :---------------- | :----------------------------------------------- |
 | `make all`        | Setup all configs and installs                   |
 | `make bat`        | Link bat config to `~/.config/bat`               |
 | `make btop`       | Link btop config to `~/.config/btop`             |
