@@ -14,7 +14,7 @@ return {
     integrations.mason = true
     integrations.native_lsp = { enabled = true }
     integrations.neotest = true
-    integrations.neotree = false
+    integrations.neotree = true
     integrations.noice = true
     integrations.notifier = true
     integrations.semantic_tokens = true
