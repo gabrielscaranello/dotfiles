@@ -25,9 +25,6 @@ lazygit:
 nvim:
 	@sh ./actions/nvim.sh
 
-oh-my-zsh:
-	@sh ./actions/oh-my-zsh.sh
-
 profile:
 	@sh ./actions/profile.sh
 
