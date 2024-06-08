@@ -2,6 +2,8 @@
 return {
   "Exafunction/codeium.vim",
   event = "User AstroFile",
+  version = "1.8.37",
+  pin = true,
   config = function()
     local opts = { expr = true, silent = true }
 
