@@ -30,3 +30,4 @@ if [ -d "$HOME/go" ]; then
 	export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
 
+[[ ! -f ~/.alias ]] || source ~/.alias

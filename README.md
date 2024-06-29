@@ -33,4 +33,5 @@
 | `make lazydocker` | Link lazydocker config to `~/.config/lazydocker` |
 | `make lazygit`    | Link lazygit config to `~/.config/lazygit`       |
 | `make nvim`       | Link neovim config to `~/.config/nvim`           |
+| `make oh-my-zsh`  | Install Oh My ZSH and plugins                    |
 | `make profile`    | Link profile config                              |

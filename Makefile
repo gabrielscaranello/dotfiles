@@ -1,30 +1,33 @@
 all:
-	@sh ./actions/all.sh
+	@bash ./actions/all.sh
 
 bat:
-	@sh ./actions/bat.sh
+	@bash ./actions/bat.sh
 
 btop:
-	@sh ./actions/btop.sh
+	@bash ./actions/btop.sh
 
 discord:
-	@sh ./actions/discord.sh
+	@bash ./actions/discord.sh
 
 flameshot:
-	@sh ./actions/flameshot.sh
+	@bash ./actions/flameshot.sh
 
 kitty:
-	@sh ./actions/kitty.sh
+	@bash ./actions/kitty.sh
 
 lazydocker:
-	@sh ./actions/lazydocker.sh
+	@bash ./actions/lazydocker.sh
 
 lazygit:
-	@sh ./actions/lazygit.sh
+	@bash ./actions/lazygit.sh
 
 nvim:
-	@sh ./actions/nvim.sh
+	@bash ./actions/nvim.sh
+
+oh-my-zsh:
+	@bash ./actions/oh-my-zsh.sh
 
 profile:
-	@sh ./actions/profile.sh
+	@bash ./actions/profile.sh
 
