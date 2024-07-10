@@ -4,6 +4,8 @@ return {
   tag = "stable",
   pin = true,
 
+  dependencies = { "catppuccin/nvim" },
+
   ---@type AstroUIOpts
   opts = {
     colorscheme = "catppuccin",

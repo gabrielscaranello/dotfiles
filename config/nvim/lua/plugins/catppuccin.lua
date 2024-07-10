@@ -1,6 +1,6 @@
 ---@type LazySpec
 return {
-  "catppuccin",
+  "catppuccin/nvim",
   opts = function(_, opts)
     local integrations = opts.integrations or {}
     opts.flavour = "mocha"
