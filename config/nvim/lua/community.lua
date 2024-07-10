@@ -38,6 +38,5 @@ return {
   { import = "astrocommunity.pack.prisma" },
   { import = "astrocommunity.pack.proto" },
   { import = "astrocommunity.pack.typescript" },
-  { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.yaml" },
 }
