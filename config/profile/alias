@@ -1,3 +1,5 @@
+EXA_EXECUTABLE=$(command -v eza || command -v exa)
+
 alias ld="lazydocker"
 alias lg="lazygit"
 alias qd="quasar dev"
@@ -5,5 +7,5 @@ alias vsc="code ."
 alias vim="nvim"
 alias v="nvim"
 alias c="nvim ."
-alias ls="exa --icons"
+alias ls="${EXA_EXECUTABLE} --icons"
 alias bat="batcat"
