@@ -30,4 +30,13 @@ if [ -d "$HOME/go" ]; then
 	export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
 
+if [ -d "$HOME/.bun" ]; then
+	# bun completions
+	[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+	# bun
+	export BUN_INSTALL="$HOME/.bun"
+	export PATH="$BUN_INSTALL/bin:$PATH"
+fi
+
 [[ ! -f ~/.alias ]] || source ~/.alias
