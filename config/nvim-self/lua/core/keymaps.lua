@@ -28,4 +28,8 @@ keymap.map {
   { "n", "<C-j>", "<C-w>j", { desc = "Go to below split" } },
   { "n", "<C-k>", "<C-w>k", { desc = "Go to above split" } },
   { "n", "<C-l>", "<C-w>l", { desc = "Go to right split" } },
+
+  -- package
+  { "n", "<leader>pl", "<cmd>Lazy<cr>", { desc = "Lazy Plugin Manager" } },
+  { "n", "<leader>ps", "<cmd>Lazy sync<cr>", { desc = "Lazy Sync" } },
 }

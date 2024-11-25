@@ -28,6 +28,7 @@ return {
       { "<leader>f", group = "+Find" },
       { "<leader>g", group = "+Git" },
       { "<leader>o", desc = "NeoTree Focus" },
+      { "<leader>p", group = "+Package" },
     }
   end,
 }
