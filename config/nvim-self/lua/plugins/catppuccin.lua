@@ -7,6 +7,8 @@ return {
     transparent_background = true,
     integrations = {
       neotree = true,
+      which_key = true,
+      telescope = { enabled = true },
     },
   },
 
