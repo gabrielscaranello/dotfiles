@@ -1,28 +1,37 @@
 ---@type LazySpec
 return {
   "catppuccin/nvim",
-  opts = function(_, opts)
-    local integrations = opts.integrations or {}
-    opts.flavour = "mocha"
-    opts.transparent_background = true
-
-    integrations.aerial = true
-    integrations.alpha = true
-    integrations.cmp = true
-    integrations.dap = true
-    integrations.dap_ui = true
-    integrations.mason = true
-    integrations.native_lsp = { enabled = true }
-    integrations.neotest = true
-    integrations.neotree = true
-    integrations.noice = true
-    integrations.notifier = true
-    integrations.semantic_tokens = true
-    integrations.symbols_outline = true
-    integrations.telescope = { enabled = true }
-    integrations.treesitter = true
-    integrations.which_key = true
-
-    opts.integrations = integrations
-  end,
+  name = "catppuccin",
+  priority = 1000,
+  lazy = false,
+  ---@type CatppuccinOptions
+  opts = {
+    flavour = "mocha",
+    transparent_background = true,
+    integrations = {
+      aerial = true,
+      alpha = true,
+      cmp = true,
+      dap = true,
+      dap_ui = true,
+      gitsigns = true,
+      illuminate = true,
+      indent_blankline = true,
+      markdown = true,
+      mason = true,
+      native_lsp = { enabled = true },
+      neotree = true,
+      notify = true,
+      semantic_tokens = true,
+      symbols_outline = true,
+      telescope = true,
+      treesitter = true,
+      ts_rainbow = false,
+      ufo = true,
+      which_key = true,
+      window_picker = true,
+      colorful_winsep = { enabled = true, color = "lavender" },
+    },
+  },
+  config = function(_, opts) require("catppuccin").setup(opts) end,
 }

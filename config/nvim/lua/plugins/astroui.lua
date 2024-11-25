@@ -4,7 +4,7 @@ return {
   tag = "stable",
   pin = true,
 
-  dependencies = { "catppuccin/nvim" },
+  dependencies = { "catppuccin" },
 
   ---@type AstroUIOpts
   opts = {
