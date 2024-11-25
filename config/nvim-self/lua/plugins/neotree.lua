@@ -9,20 +9,14 @@ return {
     "MunifTanjim/nui.nvim",
     "3rd/image.nvim",
   },
-  keys = {
-    { "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "NeoTree Toggle" } },
-    {
-      "<leader>o",
-      function()
-        if vim.bo.filetype == "neo-tree" then
-          vim.cmd.wincmd "p"
-        else
-          vim.cmd.Neotree "focus"
-        end
-      end,
-      { desc = "Toggle NeoTree Focus" },
-    },
-  },
+  keys = function()
+    local neotree_cfg = require "config.neotree"
+
+    return {
+      { "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "NeoTree Toggle" } },
+      { "<leader>o", neotree_cfg.fucus, { desc = "NeoTree Focus" } },
+    }
+  end,
   opts = {
     close_if_last_window = false,
     enable_git_status = true,
