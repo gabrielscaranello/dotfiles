@@ -25,6 +25,8 @@ return {
     wk.add {
       { "<leader>b", group = "+Buffer" },
       { "<leader>s", group = "+Split" },
+      { "<leader>f", group = "+Find" },
+      { "<leader>g", group = "+Git" },
       { "<leader>o", desc = "NeoTree Focus" },
     }
   end,
