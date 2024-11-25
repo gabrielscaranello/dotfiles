@@ -5,6 +5,9 @@ return {
   name = "catppuccin",
   opts = {
     transparent_background = true,
+    integrations = {
+      neotree = true,
+    },
   },
 
   config = function(_, opts)
