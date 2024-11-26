@@ -19,6 +19,7 @@ local opts = {
   background = "dark",
   signcolumn = "yes",
   cursorline = true,
+  cmdheight = 0,
 
   -- backspace
   backspace = "indent,eol,start",
