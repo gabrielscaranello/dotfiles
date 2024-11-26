@@ -6,8 +6,11 @@ return {
   opts = {
     transparent_background = true,
     integrations = {
+      alpha = true,
       neotree = true,
       which_key = true,
+      treesitter = true,
+      snacks = true,
       mini = true,
       telescope = { enabled = true },
     },
