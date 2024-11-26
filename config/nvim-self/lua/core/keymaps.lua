@@ -10,13 +10,6 @@ keymap.map {
   { "n", "<leader><space>", "<cmd>nohlsearch<cr>", { desc = "No Highlight" } },
   { { "i", "n" }, "<C-s>", "<cmd>w<cr>", { desc = "Save File" } },
 
-  -- tab navigation
-  { "n", "L", "<cmd>tabn<cr>", { desc = "Next Tab" } },
-  { "n", "H", "<cmd>tabp<cr>", { desc = "Previous Tab" } },
-  { "n", "<leader>bn", "<cmd>tabnew %<cr>", { desc = "New Tab" } },
-  { "n", "<leader>bC", "<cmd>tabclose<cr>", { desc = "Close Current Tab" } },
-  { "n", "<leader>bc", "<cmd>tabonly<cr>", { desc = "Close All Tabs Except Current" } },
-
   -- windows split
   { "n", "<leader>sv", "<cmd>vsplit<cr>", { desc = "Vertical Split" } },
   { "n", "<leader>sh", "<cmd>split<cr>", { desc = "Horizontal Split" } },
