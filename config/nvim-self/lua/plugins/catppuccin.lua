@@ -8,6 +8,7 @@ return {
     integrations = {
       neotree = true,
       which_key = true,
+      mini = true,
       telescope = { enabled = true },
     },
   },
