@@ -7,6 +7,7 @@ return {
     transparent_background = true,
     integrations = {
       alpha = true,
+      cmp = true,
       neotree = true,
       which_key = true,
       treesitter = true,
