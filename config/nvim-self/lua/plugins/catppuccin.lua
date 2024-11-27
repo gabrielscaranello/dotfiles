@@ -13,6 +13,7 @@ return {
       treesitter = true,
       snacks = true,
       mini = true,
+      noice = true,
       telescope = { enabled = true },
     },
   },
