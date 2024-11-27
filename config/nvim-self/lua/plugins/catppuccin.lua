@@ -8,13 +8,14 @@ return {
     integrations = {
       alpha = true,
       cmp = true,
-      neotree = true,
-      which_key = true,
-      treesitter = true,
-      snacks = true,
+      markdown = true,
       mini = true,
+      neotree = true,
       noice = true,
+      snacks = true,
       telescope = { enabled = true },
+      treesitter = true,
+      which_key = true,
     },
   },
 
