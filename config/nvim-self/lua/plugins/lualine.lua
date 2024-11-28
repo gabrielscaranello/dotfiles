@@ -23,7 +23,6 @@ return {
       },
       sections = {
         lualine_a = {
-
           {
             "mode",
             fmt = function(mode) return mode:upper() end,
@@ -37,7 +36,7 @@ return {
           {
             "filename",
             file_status = true,
-            path = 1,
+            path = 0,
             symbols = { modified = " ●", readonly = " ", unnamed = "[No Name]" },
           },
           {
