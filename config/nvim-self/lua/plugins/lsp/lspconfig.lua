@@ -8,6 +8,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     "hrsh7th/cmp-nvim-lsp",
     "folke/neodev.nvim",
+    "stevearc/dressing.nvim",
   },
   init = function() lsp_setup.create_autocmd() end,
   config = function()
@@ -24,16 +25,17 @@ return {
 
     mason_lspconfig.setup_handlers {
       function(server_name) lspconfig[server_name].setup { capabilities = capabilities } end,
-      ["lua_ls"] = function()
-        lspconfig.lua_ls.setup {
-          capabilities = capabilities,
-          settings = {
-            Lua = {
-              diagnostics = { globals = { "vim" } },
-              completion = { callSnippet = "Replace" },
-            },
-          },
-        }
+      lua_ls = function()
+        local opts = lsp_setup.mkconfig("lua_ls", { capabilities = capabilities })
+        lspconfig.lua_ls.setup(opts)
+      end,
+      vtsls = function()
+        local opts = lsp_setup.mkconfig("vtsls", { capabilities = capabilities })
+        lspconfig.vtsls.setup(opts)
+      end,
+      volar = function()
+        local opts = lsp_setup.mkconfig("volar", { capabilities = capabilities })
+        lspconfig.volar.setup(opts)
       end,
     }
   end,

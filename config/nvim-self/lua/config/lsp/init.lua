@@ -1,5 +1,5 @@
-local create_autocmd = require "config.lsp.autocmd"
-
 return {
-  create_autocmd = create_autocmd,
+  create_autocmd = require "config.lsp.autocmd",
+  configs = require "config.lsp.configs",
+  mkconfig = require "config.lsp.mkconfig",
 }

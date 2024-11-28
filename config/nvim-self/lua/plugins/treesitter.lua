@@ -2,6 +2,7 @@ local ensure_installed = {
   "css",
   "html",
   "javascript",
+  "jsdoc",
   "json",
   "lua",
   "markdown_inline",

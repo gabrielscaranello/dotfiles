@@ -47,9 +47,22 @@ local attach_callback = function(event)
   local keymaps = {
     { "n", "K", vim.lsp.buf.hover, with_opts { desc = "Hover" } },
     { "n", "gK", vim.lsp.buf.signature_help, with_opts { desc = "Signature Help" } },
-    { "i", "<c-k>", vim.lsp.buf.signature_help, with_opts { desc = "Signature Help" } },
+    { "i", "<c-l>", vim.lsp.buf.hover, with_opts { desc = "Hover" } },
     { { "n", "v" }, "<leader>la", vim.lsp.buf.code_action, with_opts { desc = "Code Action" } },
     { "n", "<leader>lr", vim.lsp.buf.rename, with_opts { desc = "Rename" } },
+    {
+      "n",
+      "<leader>ld",
+      function()
+        vim.diagnostic.open_float(
+          nil,
+          { focusable = true, border = "rounded", source = "always", prefix = "", scope = "line", header = "" }
+        )
+      end,
+      with_opts { desc = "Diagnostics" },
+    },
+    { "n", "<leader>lk", "<cmd>LspRestart<cr>", with_opts { desc = "Restart LSP" } },
+    { "n", "<leader>li", "<cmd>LspInfo<cr>", with_opts { desc = "LSP Info" } },
   }
 
   for capability, mapping in pairs(capabilities_actions_map) do

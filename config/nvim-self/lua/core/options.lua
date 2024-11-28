@@ -41,6 +41,14 @@ local global_vars = {
   mapleader = " ",
 }
 
+vim.diagnostic.config {
+  virtual_text = false,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = false,
+}
+
 for key, value in pairs(opts) do
   vim.opt[key] = value
 end
