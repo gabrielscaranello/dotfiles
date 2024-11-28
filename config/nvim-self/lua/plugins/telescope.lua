@@ -5,6 +5,7 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    "folke/todo-comments.nvim",
   },
   cmd = { "Telescope" },
   keys = {
@@ -21,6 +22,7 @@ return {
     { "<leader>fr", "<cmd>Telescope registers<cr>", desc = "Registers" },
     { "<leader>fC", "<cmd>Telescope commands<cr>", desc = "Commands" },
     { "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
+    { "<leader>ft", "<cmd>TodoTelescope<cr>", desc = "Todos" },
 
     -- Git
     { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Git Branches" },
