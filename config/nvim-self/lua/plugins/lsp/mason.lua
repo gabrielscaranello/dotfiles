@@ -1,12 +1,17 @@
-local ensure_installed_ls = {
+local language_servers = {
   "emmet_ls",
   "html",
   "lua_ls",
 }
 
-local ensure_installed_formaters = {
+local formaters_and_linters = {
+  -- formaters
   "stylua",
   "prettier",
+
+  -- linters
+  "eslint_d",
+  "luacheck",
 }
 
 return {
@@ -34,14 +39,14 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = ensure_installed_ls,
+      ensure_installed = language_servers,
     },
   },
 
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = {
-      ensure_installed = ensure_installed_formaters,
+      ensure_installed = formaters_and_linters,
     },
   },
 }
