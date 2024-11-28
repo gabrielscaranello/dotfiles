@@ -7,6 +7,7 @@ return {
     local lazy_status = require "lazy.status"
     local current_catpuccin_flavor = require("catppuccin").flavour
     local colors = require("catppuccin.palettes").get_palette(current_catpuccin_flavor)
+    local components = require "config.lualine"
 
     return {
       options = {
@@ -56,6 +57,7 @@ return {
             color = { fg = colors.peach },
           },
           { "filetype", icon_only = true },
+          components.lsp(colors),
         },
         lualine_y = {
           { "progress" },
