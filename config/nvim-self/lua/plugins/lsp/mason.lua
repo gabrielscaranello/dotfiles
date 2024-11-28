@@ -1,7 +1,12 @@
-local ensure_installed = {
+local ensure_installed_ls = {
   "emmet_ls",
   "html",
   "lua_ls",
+}
+
+local ensure_installed_formaters = {
+  "stylua",
+  "prettier",
 }
 
 return {
@@ -9,7 +14,10 @@ return {
     "williamboman/mason.nvim",
     cmd = { "Mason" },
     build = ":MasonUpdate",
-    dependencies = { "williamboman/mason-lspconfig.nvim" },
+    dependencies = {
+      "williamboman/mason-lspconfig.nvim",
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
+    },
     lazy = false,
     opts = {
       ui = {
@@ -26,7 +34,14 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = ensure_installed,
+      ensure_installed = ensure_installed_ls,
+    },
+  },
+
+  {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    opts = {
+      ensure_installed = ensure_installed_formaters,
     },
   },
 }
