@@ -24,11 +24,13 @@ return {
 
     wk.add {
       { "<leader>b", group = "+Buffer" },
-      { "<leader>s", group = "+Split" },
       { "<leader>f", group = "+Find" },
       { "<leader>g", group = "+Git" },
+      { "<leader>l", group = "+LSP", mode = { "n", "v" } },
       { "<leader>o", desc = "NeoTree Focus" },
       { "<leader>p", group = "+Package" },
+      { "<leader>s", group = "+Split" },
+      { "<leader>x", group = "+Trouble" },
     }
   end,
 }
