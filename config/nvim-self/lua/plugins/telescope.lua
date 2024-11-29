@@ -25,11 +25,11 @@ return {
     { "<leader>ft", "<cmd>TodoTelescope<cr>", desc = "Todos" },
 
     -- Git
-    { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Git Branches" },
+    { "<leader>fg", "<cmd>Telescope git_branches<cr>", desc = "Git Branches" },
     { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Git Commits" },
     { "<leader>gC", "<cmd>Telescope git_bcommits<cr>", desc = "Git Commits (for current file)" },
     { "<leader>gt", "<cmd>Telescope git_status<cr>", desc = "Git Status" },
-    { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Find Git Files" },
+    { "<leader>fG", "<cmd>Telescope git_files<cr>", desc = "Find Git Files" },
 
     -- Diagnostics and LSP
     { "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
