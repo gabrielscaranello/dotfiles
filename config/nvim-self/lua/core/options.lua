@@ -17,7 +17,7 @@ local opts = {
   -- appearance
   termguicolors = true,
   background = "dark",
-  signcolumn = "auto",
+  signcolumn = "yes",
   cursorline = true,
   cmdheight = 0,
 

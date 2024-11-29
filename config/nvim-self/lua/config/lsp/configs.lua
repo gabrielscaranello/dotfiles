@@ -40,6 +40,19 @@ return {
       },
     },
   },
+
+  eslint = {
+    filetypes = {
+      "javascript",
+      "javascript.jsx",
+      "javascriptreact",
+      "typescript",
+      "typescript.tsx",
+      "typescriptreact",
+      "vue",
+    },
+  },
+
   vtsls = {
     settings = {
       typescript = ts_js_settings,
@@ -53,6 +66,7 @@ return {
     },
     before_init = before_init_vtsls,
   },
+
   volar = {
     init_options = {
       vue = {

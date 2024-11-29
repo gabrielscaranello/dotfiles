@@ -37,6 +37,10 @@ return {
         local opts = lsp_setup.mkconfig("volar", { capabilities = capabilities })
         lspconfig.volar.setup(opts)
       end,
+      eslint = function()
+        local opts = lsp_setup.mkconfig("eslint", { capabilities = capabilities })
+        lspconfig.eslint.setup(opts)
+      end,
     }
   end,
 }

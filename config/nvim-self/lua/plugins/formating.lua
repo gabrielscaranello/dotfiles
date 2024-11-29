@@ -26,6 +26,7 @@ return {
       typescript = { "prettierd" },
       typescriptreact = { "prettierd" },
       yaml = { "prettierd" },
+      vue = { "prettierd" },
     },
 
     format_on_save = {
