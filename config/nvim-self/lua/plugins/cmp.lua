@@ -69,6 +69,7 @@ return {
         },
 
         sources = {
+          { name = "codeium" },
           { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "buffer" },
@@ -85,6 +86,7 @@ return {
               Array = "",
               Boolean = "",
               Class = "",
+              Codeium = "",
               Color = "",
               Constant = "",
               Constructor = "",
