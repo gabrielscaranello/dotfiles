@@ -11,6 +11,7 @@ return {
   opts = {
     notify = false,
     icons = { mappings = false },
+    sort = { "alphanum" },
   },
 
   init = function()
