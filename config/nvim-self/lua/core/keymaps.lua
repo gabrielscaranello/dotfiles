@@ -3,12 +3,14 @@ local keymap = require "utils.keymap"
 keymap.map {
   -- exit
   { "i", "jk", "<Esc>", { desc = "Exit insert mode with jk" } },
+  { "i", "<C-[>", "<Esc>", { desc = "Exit insert mode with ctrl-[" } },
   { "n", "<leader>q", "<cmd>qa<cr>", { desc = "Quit All" } },
   { "n", "<leader>Q", "<cmd>qa!<cr>", { desc = "Force Quit All" } },
 
   -- misc
   { "n", "<leader><space>", "<cmd>nohlsearch<cr>", { desc = "No Highlight" } },
-  { { "i", "n" }, "<C-s>", "<cmd>w<cr>", { desc = "Save File" } },
+  { "n", "<C-s>", "<cmd>w<cr>", { desc = "Save File" } },
+  { "i", "<C-s>", "<Esc><cmd>w<cr>", { desc = "Save File" } },
 
   -- windows split
   { "n", "<leader>sv", "<cmd>vsplit<cr>", { desc = "Vertical Split" } },
