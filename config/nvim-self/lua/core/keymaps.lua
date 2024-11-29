@@ -2,10 +2,9 @@ local keymap = require "utils.keymap"
 
 keymap.map {
   -- exit
-  { "i", "jk", "<Esc>", { desc = "Exit insert mode with jk" } },
-  { "i", "<C-[>", "<Esc>", { desc = "Exit insert mode with ctrl-[" } },
   { "n", "<leader>q", "<cmd>qa<cr>", { desc = "Quit All" } },
   { "n", "<leader>Q", "<cmd>qa!<cr>", { desc = "Force Quit All" } },
+  { "n", "<leader>bC", "<cmd>bdelete<cr>", { desc = "Close Current Cuffer" } },
 
   -- misc
   { "n", "<leader><space>", "<cmd>nohlsearch<cr>", { desc = "No Highlight" } },
