@@ -1,6 +1,6 @@
 return {
   "lewis6991/gitsigns.nvim",
-  event = { "BufReadPre", "BufNewFile" },
+  event = "VeryLazy",
   opts = {
     signs = {
       add = { text = "▎" },
@@ -18,6 +18,9 @@ return {
       changedelete = { text = "▎" },
     },
     current_line_blame = true,
+    current_line_blame_opts = {
+      delay = 800,
+    },
     on_attach = function(buffer)
       local gs = package.loaded.gitsigns
       local keymap = require "utils.keymap"
