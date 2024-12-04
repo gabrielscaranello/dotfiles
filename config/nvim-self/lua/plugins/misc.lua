@@ -4,4 +4,5 @@ return {
   { "MunifTanjim/nui.nvim", event = "VeryLazy" },
   { "echasnovski/mini.icons", event = "VeryLazy", version = "*" },
   { "wakatime/vim-wakatime", event = { "BufReadPre" } },
+  { "stevearc/dressing.nvim", event = "VeryLazy", dependencies = { "MunifTanjim/nui.nvim" }, opts = {} },
 }
