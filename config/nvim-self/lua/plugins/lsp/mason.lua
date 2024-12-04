@@ -1,26 +1,25 @@
-local mason_lsp = {
-  "delve",
+local ensure_installed = {
+  -- HTML/JSX/TSX/TS/JS
   "emmet_ls",
+  "eslint-lsp",
+  "html",
+  "prettierd",
+  "volar",
+  "vtsls",
+
+  -- Lua
+  "lua_ls",
+  "luacheck",
+  "stylua",
+
+  -- Go
+  "delve",
   "goimports",
   "gomodifytags",
   "gopls",
   "gotests",
-  "html",
   "iferr",
   "impl",
-  "lua_ls",
-  "volar",
-  "vtsls",
-}
-
-local mason_tool = {
-  -- formaters
-  "stylua",
-  "prettierd",
-
-  -- linters
-  "eslint-lsp",
-  "luacheck",
 }
 
 return {
@@ -48,14 +47,14 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = mason_lsp,
+      ensure_installed = ensure_installed,
     },
   },
 
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = {
-      ensure_installed = mason_tool,
+      ensure_installed = ensure_installed,
     },
   },
 }
