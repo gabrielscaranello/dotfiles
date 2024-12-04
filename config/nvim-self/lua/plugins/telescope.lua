@@ -23,6 +23,7 @@ return {
     { "<leader>fC", "<cmd>Telescope commands<cr>", desc = "Commands" },
     { "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
     { "<leader>ft", "<cmd>TodoTelescope<cr>", desc = "Todos" },
+    { "<leader>fn", "<cmd>Telescope notify<cr>", desc = "Notifications" },
 
     -- Git
     { "<leader>fg", "<cmd>Telescope git_branches<cr>", desc = "Git Branches" },

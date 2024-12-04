@@ -12,6 +12,7 @@ return {
       mini = true,
       neotree = true,
       noice = true,
+      notify = true,
       snacks = true,
       telescope = { enabled = true },
       treesitter = true,
