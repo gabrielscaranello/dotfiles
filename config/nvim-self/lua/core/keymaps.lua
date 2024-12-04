@@ -12,10 +12,10 @@ keymap.map {
   { "i", "<C-s>", "<Esc><cmd>w<cr>", { desc = "Save File" } },
 
   -- windows split
-  { "n", "<leader>sv", "<cmd>vsplit<cr>", { desc = "Vertical Split" } },
-  { "n", "<leader>sh", "<cmd>split<cr>", { desc = "Horizontal Split" } },
-  { "n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" } },
-  { "n", "<leader>sx", "<cmd>close<cr>", { desc = "Close Current Split" } },
+  { "n", "<leader>\\v", "<cmd>vsplit<cr>", { desc = "Vertical Split" } },
+  { "n", "<leader>\\h", "<cmd>split<cr>", { desc = "Horizontal Split" } },
+  { "n", "<leader>\\e", "<C-w>=", { desc = "Make splits equal size" } },
+  { "n", "<leader>\\x", "<cmd>close<cr>", { desc = "Close Current Split" } },
 
   -- window navigation
   { "n", "<C-h>", "<C-w>h", { desc = "Go to left split" } },

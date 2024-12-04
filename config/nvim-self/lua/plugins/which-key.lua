@@ -24,13 +24,14 @@ return {
     wk.setup(opts)
 
     wk.add {
+      { "<leader>\\", group = "+Split" },
       { "<leader>b", group = "+Buffer" },
       { "<leader>f", group = "+Find" },
       { "<leader>g", group = "+Git" },
       { "<leader>l", group = "+LSP", mode = { "n", "v" } },
       { "<leader>o", desc = "NeoTree Focus" },
       { "<leader>p", group = "+Package" },
-      { "<leader>s", group = "+Split" },
+      { "<leader>s", group = "+Search / Replace" },
       { "<leader>x", group = "+Trouble" },
     }
   end,
