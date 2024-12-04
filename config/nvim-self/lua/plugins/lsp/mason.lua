@@ -1,9 +1,16 @@
 local mason_lsp = {
+  "delve",
   "emmet_ls",
+  "goimports",
+  "gomodifytags",
+  "gopls",
+  "gotests",
   "html",
+  "iferr",
+  "impl",
   "lua_ls",
-  "vtsls",
   "volar",
+  "vtsls",
 }
 
 local mason_tool = {

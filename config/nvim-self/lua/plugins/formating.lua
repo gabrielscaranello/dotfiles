@@ -16,6 +16,7 @@ return {
   opts = {
     formatters_by_ft = {
       css = { "prettierd" },
+      go = { "goimports", lsp_format = "last" },
       html = { "prettierd" },
       javascript = { "prettierd" },
       javascriptreact = { "prettierd" },
@@ -25,8 +26,8 @@ return {
       scss = { "prettierd" },
       typescript = { "prettierd" },
       typescriptreact = { "prettierd" },
-      yaml = { "prettierd" },
       vue = { "prettierd" },
+      yaml = { "prettierd" },
     },
 
     format_on_save = {
