@@ -27,11 +27,11 @@ return {
       { "<leader>\\", group = "+Split" },
       { "<leader>b", group = "+Buffer" },
       { "<leader>f", group = "+Find" },
-      { "<leader>g", group = "+Git" },
+      { "<leader>g", group = "+Git", mode = { "n", "v" } },
       { "<leader>l", group = "+LSP", mode = { "n", "v" } },
       { "<leader>o", desc = "NeoTree Focus" },
       { "<leader>p", group = "+Package" },
-      { "<leader>s", group = "+Search / Replace" },
+      { "<leader>s", group = "+Search / Replace", mode = { "n", "v" } },
       { "<leader>x", group = "+Trouble" },
     }
   end,
