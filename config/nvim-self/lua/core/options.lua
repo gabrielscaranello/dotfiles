@@ -13,6 +13,7 @@ local opts = {
   -- editing
   wrap = true,
   scrolloff = 8,
+  mouse = "a",
 
   -- appearance
   termguicolors = true,
