@@ -13,6 +13,7 @@ local ensure_installed = {
   "markdown_inline",
   "query",
   "regex",
+  "styled",
   "tsx",
   "typescript",
   "vim",
