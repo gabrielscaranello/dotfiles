@@ -25,6 +25,9 @@ local ensure_installed = {
   "json-lsp",
   "jsonls",
 
+  -- Markdown
+  "marksman",
+
   -- HTML/JSX/TSX/TS/JS
   "css-lsp",
   "cssls",
