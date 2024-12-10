@@ -15,20 +15,22 @@ return {
 
   opts = {
     formatters_by_ft = {
+      ["yaml.docker-compose"] = { "prettierd" },
       css = { "prettierd" },
       go = { "goimports", lsp_format = "last" },
       html = { "prettierd" },
       javascript = { "prettierd" },
       javascriptreact = { "prettierd" },
       json = { "prettierd" },
+      less = { "prettierd" },
       lua = { "stylua" },
       markdown = { "prettierd" },
+      postcss = { "prettierd" },
       scss = { "prettierd" },
       sh = { "shfmt" },
       typescript = { "prettierd" },
       typescriptreact = { "prettierd" },
       vue = { "prettierd" },
-      ["yaml.docker-compose"] = { "prettierd", "prettier", stop_after_first = true },
       yaml = { "prettierd" },
     },
 

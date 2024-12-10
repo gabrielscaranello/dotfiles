@@ -22,9 +22,13 @@ local ensure_installed = {
   "impl",
 
   -- HTML/JSX/TSX/TS/JS
+  "css-lsp",
+  "cssls",
+  "emmet-ls",
   "emmet_ls",
   "eslint-lsp",
   "html",
+  "html-lsp",
   "prettierd",
   "volar",
   "vtsls",

@@ -15,6 +15,7 @@ local ensure_installed = {
   "markdown_inline",
   "query",
   "regex",
+  "scss",
   "styled",
   "tsx",
   "typescript",
@@ -55,6 +56,11 @@ return {
       },
     },
 
-    config = function(_, opts) require("nvim-treesitter.configs").setup(opts) end,
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+
+      vim.treesitter.language.register("scss", "less")
+      vim.treesitter.language.register("scss", "postcss")
+    end,
   },
 }

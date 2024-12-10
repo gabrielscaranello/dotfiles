@@ -33,6 +33,14 @@ return {
         local opts = lsp_setup.mkconfig("vtsls", { capabilities = capabilities })
         lspconfig.vtsls.setup(opts)
       end,
+      html = function()
+        local opts = lsp_setup.mkconfig("html", { capabilities = capabilities })
+        lspconfig.html.setup(opts)
+      end,
+      cssls = function()
+        local opts = lsp_setup.mkconfig("cssls", { capabilities = capabilities })
+        lspconfig.cssls.setup(opts)
+      end,
       volar = function()
         local opts = lsp_setup.mkconfig("volar", { capabilities = capabilities })
         lspconfig.volar.setup(opts)

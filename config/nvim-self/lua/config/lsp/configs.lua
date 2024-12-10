@@ -100,6 +100,14 @@ return {
     },
   },
 
+  cssls = {
+    init_options = { provideFormatter = false },
+  },
+
+  html = {
+    init_options = { provideFormatter = false },
+  },
+
   vtsls = {
     settings = {
       typescript = ts_js_settings,
