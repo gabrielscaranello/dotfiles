@@ -49,6 +49,11 @@ local ensure_installed = {
   -- Prisma
   "prismals",
   "prisma-language-server",
+
+  -- Proto
+  "buf",
+  "buf-language-server",
+  "pbls",
 }
 
 return {
