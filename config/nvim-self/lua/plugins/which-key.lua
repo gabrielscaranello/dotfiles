@@ -26,7 +26,7 @@ return {
     wk.add {
       { "<leader>\\", group = "+Split" },
       { "<leader>b", group = "+Buffer" },
-      { "<leader>c", group = "+Codesnap", mode = { "v" } },
+      { "<leader>c", group = "+Codesnap / Multiple Cursors", mode = { "n", "x" } },
       { "<leader>f", group = "+Find" },
       { "<leader>g", group = "+Git", mode = { "n", "v" } },
       { "<leader>l", group = "+LSP", mode = { "n", "v" } },
