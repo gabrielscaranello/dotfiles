@@ -6,6 +6,7 @@ return {
     "nvim-lua/plenary.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "folke/todo-comments.nvim",
+    "gbprod/yanky.nvim",
   },
   cmd = { "Telescope" },
   keys = {
@@ -77,5 +78,6 @@ return {
     telescope.setup(opts)
 
     telescope.load_extension "fzf"
+    telescope.load_extension "yank_history"
   end,
 }
