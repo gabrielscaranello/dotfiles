@@ -45,6 +45,10 @@ local ensure_installed = {
   "lua_ls",
   "luacheck",
   "stylua",
+
+  -- Prisma
+  "prismals",
+  "prisma-language-server",
 }
 
 return {

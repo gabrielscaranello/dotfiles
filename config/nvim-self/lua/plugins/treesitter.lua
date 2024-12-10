@@ -15,6 +15,7 @@ local ensure_installed = {
   "luap",
   "markdown",
   "markdown_inline",
+  "prisma",
   "query",
   "regex",
   "scss",
