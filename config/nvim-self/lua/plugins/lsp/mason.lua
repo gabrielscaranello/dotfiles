@@ -1,4 +1,20 @@
 local ensure_installed = {
+  -- bash
+  "bashls",
+  "bash-debug-adapter",
+  "bash-language-server",
+  "shellcheck",
+  "shfmt",
+
+  -- Go
+  "delve",
+  "goimports",
+  "gomodifytags",
+  "gopls",
+  "gotests",
+  "iferr",
+  "impl",
+
   -- HTML/JSX/TSX/TS/JS
   "emmet_ls",
   "eslint-lsp",
@@ -11,15 +27,6 @@ local ensure_installed = {
   "lua_ls",
   "luacheck",
   "stylua",
-
-  -- Go
-  "delve",
-  "goimports",
-  "gomodifytags",
-  "gopls",
-  "gotests",
-  "iferr",
-  "impl",
 }
 
 return {

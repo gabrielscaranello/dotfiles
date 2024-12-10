@@ -1,4 +1,5 @@
 local ensure_installed = {
+  "bash",
   "css",
   "go",
   "gomod",

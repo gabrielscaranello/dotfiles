@@ -24,6 +24,7 @@ return {
       lua = { "stylua" },
       markdown = { "prettierd" },
       scss = { "prettierd" },
+      sh = { "shfmt" },
       typescript = { "prettierd" },
       typescriptreact = { "prettierd" },
       vue = { "prettierd" },
