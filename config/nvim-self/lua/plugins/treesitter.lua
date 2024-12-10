@@ -10,6 +10,7 @@ local ensure_installed = {
   "javascript",
   "jsdoc",
   "json",
+  "jsonc",
   "lua",
   "markdown",
   "markdown_inline",

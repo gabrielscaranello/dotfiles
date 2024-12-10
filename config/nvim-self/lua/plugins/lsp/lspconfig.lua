@@ -37,6 +37,10 @@ return {
         local opts = lsp_setup.mkconfig("html", { capabilities = capabilities })
         lspconfig.html.setup(opts)
       end,
+      jsonls = function()
+        local opts = lsp_setup.mkconfig("jsonls", { capabilities = capabilities })
+        lspconfig.jsonls.setup(opts)
+      end,
       cssls = function()
         local opts = lsp_setup.mkconfig("cssls", { capabilities = capabilities })
         lspconfig.cssls.setup(opts)

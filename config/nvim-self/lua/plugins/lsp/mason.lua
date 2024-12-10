@@ -21,6 +21,10 @@ local ensure_installed = {
   "iferr",
   "impl",
 
+  -- Json
+  "json-lsp",
+  "jsonls",
+
   -- HTML/JSX/TSX/TS/JS
   "css-lsp",
   "cssls",
