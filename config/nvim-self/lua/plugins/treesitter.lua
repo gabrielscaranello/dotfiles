@@ -12,6 +12,7 @@ local ensure_installed = {
   "json",
   "jsonc",
   "lua",
+  "luap",
   "markdown",
   "markdown_inline",
   "query",

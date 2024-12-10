@@ -38,6 +38,7 @@ local ensure_installed = {
   "vtsls",
 
   -- Lua
+  "lua-language-server",
   "lua_ls",
   "luacheck",
   "stylua",
