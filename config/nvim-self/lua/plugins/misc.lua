@@ -6,4 +6,5 @@ return {
   { "wakatime/vim-wakatime", event = { "BufReadPre" } },
   { "stevearc/dressing.nvim", event = "VeryLazy", dependencies = { "MunifTanjim/nui.nvim" }, opts = {} },
   { "folke/edgy.nvim", event = "VeryLazy", opts = {} },
+  { "stevearc/stickybuf.nvim", event = "VeryLazy", opts = {}, cmd = { "PinBuffer", "PinBuftype", "PinFiletype" } },
 }
