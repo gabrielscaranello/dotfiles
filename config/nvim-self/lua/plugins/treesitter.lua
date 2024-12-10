@@ -1,6 +1,7 @@
 local ensure_installed = {
   "bash",
   "css",
+  "dockerfile",
   "go",
   "gomod",
   "gosum",

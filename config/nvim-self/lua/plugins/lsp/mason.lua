@@ -6,6 +6,12 @@ local ensure_installed = {
   "shellcheck",
   "shfmt",
 
+  -- Docker
+  "docker-compose-language-service",
+  "dockerfile-language-server",
+  "dockerls",
+  "hadolint",
+
   -- Go
   "delve",
   "goimports",

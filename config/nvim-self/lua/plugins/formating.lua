@@ -28,6 +28,7 @@ return {
       typescript = { "prettierd" },
       typescriptreact = { "prettierd" },
       vue = { "prettierd" },
+      ["yaml.docker-compose"] = { "prettierd", "prettier", stop_after_first = true },
       yaml = { "prettierd" },
     },
 
