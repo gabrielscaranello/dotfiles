@@ -1,15 +1,5 @@
 return {
   {
-    "vuki656/package-info.nvim",
-    dependencies = { "MunifTanjim/nui.nvim" },
-    event = "BufRead package.json",
-    opts = {
-      autostart = true,
-    },
-    config = function(_, opts) require("package-info").setup(opts) end,
-  },
-
-  {
     "yioneko/nvim-vtsls",
     init = function()
       vim.api.nvim_create_autocmd("LspAttach", {
