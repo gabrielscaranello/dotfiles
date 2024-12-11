@@ -33,6 +33,7 @@ return {
       { "<leader>o", desc = "NeoTree Focus" },
       { "<leader>p", group = "+Package" },
       { "<leader>s", group = "+Search / Replace", mode = { "n", "v" } },
+      { "<leader>t", group = "+Terminal" },
       { "<leader>x", group = "+Trouble" },
     }
   end,
