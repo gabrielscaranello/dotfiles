@@ -11,12 +11,29 @@ return {
     "stevearc/dressing.nvim",
   },
   init = function() lsp_setup.create_autocmd() end,
-  config = function()
+  opts = {
+    capabilities = {
+      workspace = {
+        fileOperations = {
+          didRename = true,
+          willRename = true,
+        },
+      },
+    },
+  },
+
+  config = function(_, opts)
     local lspconfig = require "lspconfig"
     local mason_lspconfig = require "mason-lspconfig"
     local cmp_nvim_lsp = require "cmp_nvim_lsp"
-    local capabilities = cmp_nvim_lsp.default_capabilities()
     local sings = { Error = "", Warn = "", Hint = "󰌵", Info = "" }
+    local capabilities = vim.tbl_deep_extend(
+      "force",
+      {},
+      vim.lsp.protocol.make_client_capabilities(),
+      cmp_nvim_lsp.default_capabilities() or {},
+      opts.capabilities or {}
+    )
 
     for type, icon in pairs(sings) do
       local hl = "DiagnosticSign" .. type
@@ -24,30 +41,34 @@ return {
     end
 
     mason_lspconfig.setup_handlers {
-      function(server_name) lspconfig[server_name].setup { capabilities = capabilities } end,
+      function(server_name)
+        if server_name == "bufls" then server_name = "buf_ls" end
+
+        lspconfig[server_name].setup { capabilities = capabilities }
+      end,
       lua_ls = function()
-        local opts = lsp_setup.mkconfig("lua_ls", { capabilities = capabilities })
-        lspconfig.lua_ls.setup(opts)
+        local config = lsp_setup.mkconfig("lua_ls", { capabilities = capabilities })
+        lspconfig.lua_ls.setup(config)
       end,
       vtsls = function()
-        local opts = lsp_setup.mkconfig("vtsls", { capabilities = capabilities })
-        lspconfig.vtsls.setup(opts)
+        local config = lsp_setup.mkconfig("vtsls", { capabilities = capabilities })
+        lspconfig.vtsls.setup(config)
       end,
       html = function()
-        local opts = lsp_setup.mkconfig("html", { capabilities = capabilities })
-        lspconfig.html.setup(opts)
+        local config = lsp_setup.mkconfig("html", { capabilities = capabilities })
+        lspconfig.html.setup(config)
       end,
       jsonls = function()
-        local opts = lsp_setup.mkconfig("jsonls", { capabilities = capabilities })
-        lspconfig.jsonls.setup(opts)
+        local config = lsp_setup.mkconfig("jsonls", { capabilities = capabilities })
+        lspconfig.jsonls.setup(config)
       end,
       cssls = function()
-        local opts = lsp_setup.mkconfig("cssls", { capabilities = capabilities })
-        lspconfig.cssls.setup(opts)
+        local config = lsp_setup.mkconfig("cssls", { capabilities = capabilities })
+        lspconfig.cssls.setup(config)
       end,
       volar = function()
-        local opts = lsp_setup.mkconfig("volar", { capabilities = capabilities })
-        lspconfig.volar.setup(opts)
+        local config = lsp_setup.mkconfig("volar", { capabilities = capabilities })
+        lspconfig.volar.setup(config)
       end,
       eslint = function()
         local opts = lsp_setup.mkconfig("eslint", { capabilities = capabilities })

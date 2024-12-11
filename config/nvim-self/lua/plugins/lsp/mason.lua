@@ -52,8 +52,7 @@ local ensure_installed = {
 
   -- Proto
   "buf",
-  "buf-language-server",
-  "pbls",
+  "bufls",
 }
 
 return {

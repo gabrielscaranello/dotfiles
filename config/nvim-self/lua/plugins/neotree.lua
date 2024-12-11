@@ -1,3 +1,8 @@
+local move_event = function(event)
+  local Snacks = require "snacks"
+  Snacks.rename.on_rename_file(event.source, event.destination)
+end
+
 return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
@@ -27,10 +32,9 @@ return {
       winbar = false,
     },
     event_handlers = {
-      {
-        event = "file_opened",
-        handler = function() require("neo-tree.command").execute { action = "close" } end,
-      },
+      { event = "file_renamed", handler = move_event },
+      { event = "file_moved", handler = move_event },
+      { event = "file_opened", handler = function() require("neo-tree.command").execute { action = "close" } end },
     },
     window = {
       position = "right",
