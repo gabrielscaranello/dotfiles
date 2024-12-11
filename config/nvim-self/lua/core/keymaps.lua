@@ -9,6 +9,7 @@ keymap.map {
   -- misc
   { "n", "<leader><space>", "<cmd>nohlsearch<cr>", { desc = "No Highlight" } },
   { "n", "<C-s>", "<cmd>w<cr>", { desc = "Save File" } },
+  { { "v", "n" }, ";", ":", { desc = "Enter Command Mode", silent = false } },
   { "i", "<C-s>", "<Esc><cmd>w<cr>", { desc = "Save File" } },
 
   -- windows split
