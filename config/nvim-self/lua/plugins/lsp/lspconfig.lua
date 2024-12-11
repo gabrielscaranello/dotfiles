@@ -70,9 +70,13 @@ return {
         local config = lsp_setup.mkconfig("volar", { capabilities = capabilities })
         lspconfig.volar.setup(config)
       end,
+      yamlls = function()
+        local config = lsp_setup.mkconfig("yamlls", { capabilities = capabilities })
+        lspconfig.yamlls.setup(config)
+      end,
       eslint = function()
-        local opts = lsp_setup.mkconfig("eslint", { capabilities = capabilities })
-        lspconfig.eslint.setup(opts)
+        local config = lsp_setup.mkconfig("eslint", { capabilities = capabilities })
+        lspconfig.eslint.setup(config)
       end,
     }
   end,

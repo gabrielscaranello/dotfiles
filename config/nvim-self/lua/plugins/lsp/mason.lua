@@ -53,6 +53,10 @@ local ensure_installed = {
   -- Proto
   "buf",
   "bufls",
+
+  -- Yaml
+  "yaml-language-server",
+  "yamlls",
 }
 
 return {
