@@ -52,7 +52,7 @@
   "nvim-vtsls": { "branch": "main", "commit": "45c6dfea9f83a126e9bfc5dd63430562b3f8af16" },
   "nvim-web-devicons": { "branch": "master", "commit": "e73d2774d12d0ecf9e05578d692ba1ea50508cf2" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
-  "snacks.nvim": { "branch": "main", "commit": "8c2410c2de0a86c095177a831993f8eea78a63b6" },
+  "snacks.nvim": { "branch": "main", "commit": "0324125ca1e5a5e6810d28ea81bb2c7c0af1dc16" },
   "sqlite.lua": { "branch": "master", "commit": "d0ffd703b56d090d213b497ed4eb840495f14a11" },
   "stickybuf.nvim": { "branch": "master", "commit": "183b9569bef78f44b17c078214f7d731f19cbefe" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b" },
