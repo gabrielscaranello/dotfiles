@@ -8,6 +8,7 @@ return {
     local current_catpuccin_flavor = require("catppuccin").flavour
     local colors = require("catppuccin.palettes").get_palette(current_catpuccin_flavor)
     local components = require "config.lualine"
+    local icons = require "utils.icons"
 
     return {
       options = {
@@ -30,23 +31,29 @@ return {
           },
         },
         lualine_b = {
-          { "branch", icon = "" },
+          { "branch", icon = icons.misc.branch },
         },
         lualine_c = {
           {
             "filename",
             file_status = true,
             path = 0,
-            symbols = { modified = " ●", readonly = " ", unnamed = "[No Name]" },
+            symbols = {
+              modified = icons.misc.modified,
+              readonly = icons.misc.readonly,
+              unnamed = icons.misc.unnamed,
+            },
           },
-          {
-            "diff",
-            symbols = { added = " ", modified = " ", removed = " " },
-          },
+          { "diff", symbols = icons.git },
           {
             "diagnostics",
             sources = { "nvim_diagnostic" },
-            symbols = { error = " ", warn = " ", info = " ", hint = "󰌵 " },
+            symbols = {
+              error = icons.diagnostics.Error,
+              warn = icons.diagnostics.Warn,
+              info = icons.diagnostics.Info,
+              hint = icons.diagnostics.Hint,
+            },
           },
         },
         lualine_x = {
@@ -62,7 +69,7 @@ return {
           { "progress" },
         },
         lualine_z = {
-          { "location", icon = "" },
+          { "location", icon = icons.misc.location },
         },
       },
       inactive_sections = {

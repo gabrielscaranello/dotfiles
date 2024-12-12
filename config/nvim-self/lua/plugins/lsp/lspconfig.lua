@@ -23,10 +23,10 @@ return {
   },
 
   config = function(_, opts)
+    local icons = require "utils.icons"
     local lspconfig = require "lspconfig"
     local mason_lspconfig = require "mason-lspconfig"
     local cmp_nvim_lsp = require "cmp_nvim_lsp"
-    local sings = { Error = "", Warn = "", Hint = "󰌵", Info = "" }
     local capabilities = vim.tbl_deep_extend(
       "force",
       {},
@@ -35,7 +35,7 @@ return {
       opts.capabilities or {}
     )
 
-    for type, icon in pairs(sings) do
+    for type, icon in pairs(icons.diagnostics) do
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
     end

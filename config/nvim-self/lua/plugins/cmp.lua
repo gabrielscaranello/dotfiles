@@ -23,6 +23,7 @@ return {
       local cmp = require "cmp"
       local luasnip = require "luasnip"
       local lspkind = require "lspkind"
+      local icons = require "utils.icons"
 
       return {
         completion = {
@@ -82,43 +83,7 @@ return {
             maxwidth = 50,
             ellipsis_char = "...",
             preset = "codicons",
-            symbol_map = {
-              Array = "",
-              Boolean = "",
-              Class = "",
-              Codeium = "",
-              Color = "",
-              Constant = "",
-              Constructor = "",
-              Enum = "",
-              EnumMember = "",
-              Event = "",
-              Field = "",
-              File = "",
-              Folder = "",
-              Function = "",
-              Interface = "",
-              Key = "",
-              Keyword = "",
-              Method = "",
-              Module = "",
-              Namespace = "",
-              Null = "",
-              Number = "",
-              Object = "",
-              Operator = "",
-              Package = "",
-              Property = "",
-              Reference = "",
-              Snippet = "",
-              String = "",
-              Struct = "",
-              Text = "",
-              TypeParameter = "",
-              Unit = "",
-              Value = "",
-              Variable = "",
-            },
+            symbol_map = icons.kinds,
           },
         },
       }
