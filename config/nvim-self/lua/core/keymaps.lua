@@ -8,6 +8,7 @@ keymap.map {
 
   -- misc
   { "n", "<leader><space>", "<cmd>nohlsearch<cr>", { desc = "No Highlight" } },
+  { "n", "<leader>r", "<cmd>e!<cr>", { desc = "Reload File" } },
   { "n", "<C-s>", "<cmd>w<cr>", { desc = "Save File" } },
   { { "v", "n" }, ";", ":", { desc = "Enter Command Mode", silent = false } },
   { "i", "<C-s>", "<Esc><cmd>w<cr>", { desc = "Save File" } },
