@@ -23,7 +23,6 @@ return {
   },
 
   config = function(_, opts)
-    local icons = require "utils.icons"
     local lspconfig = require "lspconfig"
     local mason_lspconfig = require "mason-lspconfig"
     local cmp_nvim_lsp = require "cmp_nvim_lsp"
@@ -34,11 +33,6 @@ return {
       cmp_nvim_lsp.default_capabilities() or {},
       opts.capabilities or {}
     )
-
-    for type, icon in pairs(icons.diagnostics) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-    end
 
     mason_lspconfig.setup_handlers {
       function(server_name)

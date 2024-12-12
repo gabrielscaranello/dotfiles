@@ -32,8 +32,8 @@ local git = {
   removed = " ",
   renamed = "󰁕",
   staged = "✓",
-  unstaged = "󰄱",
-  untracked = "󰚌",
+  unstaged = "󰄱 ",
+  untracked = "󰚌 ",
 }
 
 local kinds = {
