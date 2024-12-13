@@ -111,7 +111,7 @@ This configuration has all AstroNvim mappings, you can check them out [here](htt
 
 ## Preview
 
-![Preview](../../assets/nvim-preview.png)
+![Preview](../../assets/astronvim-preview.png)
 
 > Using [kitty terminal](https://sw.kovidgoyal.net/kitty/) and [JetBrains Mono NF](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono/Ligatures).
 

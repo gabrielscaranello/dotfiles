@@ -141,6 +141,10 @@ nvim
 - vim-wakatime
 - which-key.nvim
 
+## Preview
+
+![Preview](../../assets/nvim-preview.png)
+
 ## Credits
 
 - [AstroNvim](https://github.com/AstroNvim/AstroNvim)
