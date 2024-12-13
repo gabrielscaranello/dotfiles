@@ -9,6 +9,7 @@ return {
     },
   },
   opts = {
+    preset = "modern",
     notify = false,
     icons = { mappings = false },
     sort = { "group", "alphanum" },
