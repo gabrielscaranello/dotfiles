@@ -8,6 +8,7 @@ return {
     integrations = {
       alpha = true,
       cmp = true,
+      dropbar = { enabled = true, color_mode = true },
       gitsigns = true,
       indent_blankline = { enabled = true },
       markdown = true,
