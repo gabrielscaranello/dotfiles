@@ -17,6 +17,7 @@ return {
       "rafamadriz/friendly-snippets",
       "onsails/lspkind.nvim",
       "L3MON4D3/LuaSnip",
+      "hrsh7th/cmp-emoji",
     },
 
     opts = function()
@@ -73,6 +74,7 @@ return {
           { name = "codeium" },
           { name = "nvim_lsp" },
           { name = "luasnip" },
+          { name = "emoji" },
           { name = "buffer" },
           { name = "path" },
         },
