@@ -1,7 +1,11 @@
----@type LazySpec
 return {
   "andythigpen/nvim-coverage",
-  opts = { commands = true },
+  event = { "BufReadPre", "BufNewFile" },
+  opts = {
+    auto_reload = true,
+    commands = true,
+  },
+  dependencies = { "nvim-lua/plenary.nvim" },
   keys = {
     {
       "<leader>lc",

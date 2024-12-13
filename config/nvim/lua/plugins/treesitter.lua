@@ -1,18 +1,70 @@
----@type LazySpec
+local ensure_installed = {
+  "bash",
+  "css",
+  "dockerfile",
+  "go",
+  "gomod",
+  "gosum",
+  "gowork",
+  "html",
+  "javascript",
+  "jsdoc",
+  "json",
+  "jsonc",
+  "lua",
+  "luap",
+  "markdown",
+  "markdown_inline",
+  "prisma",
+  "proto",
+  "query",
+  "regex",
+  "scss",
+  "styled",
+  "tsx",
+  "typescript",
+  "vim",
+  "vimdoc",
+  "yaml",
+}
+
 return {
-  "nvim-treesitter/nvim-treesitter",
-  dependencies = { "catppuccin/nvim" },
-  opts = function(_, opts)
-    opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-      "git_config",
-      "git_rebase",
-      "gitattributes",
-      "gitcommit",
-      "gitignore",
-      "make",
-      "scss",
-      "styled",
-      "vue",
-    })
-  end,
+  {
+    "windwp/nvim-ts-autotag",
+    event = "InsertEnter",
+    opts = {},
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    version = false,
+    lazy = vim.fn.argc(-1) == 0,
+    event = { "BufReadPre", "BufNewFile" },
+    cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+    dependencies = {
+      "windwp/nvim-ts-autotag",
+    },
+    opts_extend = { "ensure_installed" },
+    opts = {
+      ensure_installed = ensure_installed,
+      highlight = { enable = true },
+      indent = { enable = true },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<C-space>",
+          node_incremental = "<C-space>",
+          scope_incremental = false,
+          node_decremental = "<bs>",
+        },
+      },
+    },
+
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+
+      vim.treesitter.language.register("scss", "less")
+      vim.treesitter.language.register("scss", "postcss")
+    end,
+  },
 }

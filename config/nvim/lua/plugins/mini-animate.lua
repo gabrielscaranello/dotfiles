@@ -1,13 +1,17 @@
----@type LazySpec
 return {
   "echasnovski/mini.animate",
-  opts = function(_, opts)
-    local open = opts.open or {}
-    local close = opts.close or {}
+  version = "*",
+  event = "VeryLazy",
+  opts = function()
+    local animate = require "mini.animate"
 
-    open.enable = false
-    close.enable = false
-    opts.open = open
-    opts.close = close
+    return {
+      open = { enable = false },
+      close = { enable = false },
+      resize = { enable = false },
+      scroll = { enable = false },
+      cursor = { timing = animate.gen_timing.linear { duration = 80, unit = "total" } },
+    }
   end,
+  config = function(_, opts) require("mini.animate").setup(opts) end,
 }

@@ -8,17 +8,18 @@
 
 ## Configs
 
-| Config path                       | Description                      |
-| :-------------------------------- | :------------------------------- |
-| [Bat](./config/bat)               | Bat config (cat alternative)     |
-| [Btop](./config/btop)             | Btop config (top alternative)    |
-| [Discord](./config/discord)       | Discord theme config             |
-| [Flameshot](./config/flameshot)   | Flameshot config                 |
-| [Kitty](./config/kitty)           | Kitty config                     |
-| [Lazydocker](./config/lazydocker) | Lazydocker config                |
-| [Lazygit](./config/lazygit)       | Lazygit config                   |
-| [Neovim](./config/nvim)           | Neovim config based on AstroNvim |
-| [Profile](./config/profile)       | Profile config                   |
+| Config path                                    | Description                      |
+| :--------------------------------------------- | :------------------------------- |
+| [Bat](./config/bat)                            | Bat config (cat alternative)     |
+| [Btop](./config/btop)                          | Btop config (top alternative)    |
+| [Discord](./config/discord)                    | Discord theme config             |
+| [Flameshot](./config/flameshot)                | Flameshot config                 |
+| [Kitty](./config/kitty)                        | Kitty config                     |
+| [Lazydocker](./config/lazydocker)              | Lazydocker config                |
+| [Lazygit](./config/lazygit)                    | Lazygit config                   |
+| [Neovim](./config/nvim) (current)              | Neovim config                    |
+| [Neovim](./config/nvim-astronvim) (deprecated) | Neovim config based on AstroNvim |
+| [Profile](./config/profile)                    | Profile config                   |
 
 ## Commands
 

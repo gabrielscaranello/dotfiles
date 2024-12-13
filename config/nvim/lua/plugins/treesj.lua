@@ -1,4 +1,3 @@
----@type LazySpec
 return {
   "Wansmer/treesj",
   cmd = { "TSJToggle", "TSJSplit", "TSJJoin" },

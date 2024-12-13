@@ -1,6 +1,6 @@
----@type LazySpec
 return {
   "brenton-leighton/multiple-cursors.nvim",
+  event = { "BufReadPre", "BufNewFile" },
   cmd = {
     "MultipleCursorsAddDown",
     "MultipleCursorsAddUp",
@@ -11,30 +11,28 @@ return {
     "MultipleCursorsJumpNextMatch",
     "MultipleCursorsLock",
   },
-  dependencies = {
-    "AstroNvim/astrocore",
-    opts = function(_, opts)
-      local maps = opts.mappings
-      for lhs, map in pairs {
-        ["<S-Down>"] = { "<Cmd>MultipleCursorsAddDown<CR>", desc = "Add cursor down" },
-        ["<S-Up>"] = { "<Cmd>MultipleCursorsAddUp<CR>", desc = "Add cursor up" },
-        ["<C-LeftMouse>"] = { "<Cmd>MultipleCursorsMouseAddDelete<CR>", desc = "Add cursor with mouse" },
-      } do
-        maps.n[lhs] = map
-        maps.i[lhs] = map
-      end
-      local prefix = "<Leader>c"
-      for lhs, map in pairs {
-        [prefix .. "a"] = { "<Cmd>MultipleCursorsAddMatches<CR>", desc = "Add cursor matches" },
-        [prefix .. "A"] = { "<Cmd>MultipleCursorsAddMatchesV<CR>", desc = "Add cursor matches in previous visual area" },
-        [prefix .. "j"] = { "<Cmd>MultipleCursorsAddJumpNextMatch<CR>", desc = "Add cursor and jump to next match" },
-        [prefix .. "J"] = { "<Cmd>MultipleCursorsJumpNextMatch<CR>", desc = "Move cursor to next match" },
-        [prefix .. "l"] = { "<Cmd>MultipleCursorsLock<CR>", desc = "Lock virtual cursors" },
-      } do
-        maps.n[lhs] = map
-        maps.x[lhs] = map
-      end
-    end,
+
+  keys = {
+    { "<S-Down>", "<Cmd>MultipleCursorsAddDown<CR>", desc = "Add cursor down", mode = { "n", "i" } },
+    { "<S-Up>", "<Cmd>MultipleCursorsAddUp<CR>", desc = "Add cursor up", mode = { "n", "i" } },
+    { "<C-LeftMouse>", "<Cmd>MultipleCursorsMouseAddDelete<CR>", desc = "Add cursor with mouse", mode = { "n", "i" } },
+
+    { "<leader>ca", "<Cmd>MultipleCursorsAddMatches<CR>", desc = "Add matches", mode = { "n", "x" } },
+    {
+      "<leader>cA",
+      "<Cmd>MultipleCursorsAddMatchesV<CR>",
+      desc = "Add cursor matches in previous visual area",
+      mode = { "n", "x" },
+    },
+    {
+      "<leader>cj",
+      "<Cmd>MultipleCursorsAddJumpNextMatch<CR>",
+      desc = "Add cursor and jump to next match",
+      mode = { "n", "x" },
+    },
+    { "<leader>cJ", "<Cmd>MultipleCursorsJumpNextMatch<CR>", desc = "Move cursor to next match", mode = { "n", "x" } },
+    { "<leader>cl", "<Cmd>MultipleCursorsLock<CR>", desc = "Lock virtual cursors", mode = { "n", "x" } },
   },
+
   opts = {},
 }

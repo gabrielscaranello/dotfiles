@@ -2,17 +2,23 @@
 
 ## About
 
-This NeoVim config is based on the [AstroNvim](https://github.com/AstroNvim/AstroNvim) config.  
+After months of using the AstroNvim distro, I decided to create my own configuration based on the knowledge I acquired and the AstroNvim and LazyVim configurations.
 
-> [!NOTE]  
-> The configuration was built based on the template suggested by [AstroNvim](https://github.com/AstroNvim/template).
+I'm just starting out in the Neovim world and any help is welcome. ☺️
+
+## Keymap
+
+The leader key is `<Space>`, use `<Space>fk` to view all keymaps.
 
 ## Requirements
 
-It's the same requirements as [AstroNvim](https://docs.astronvim.com/#-requirements).
-
-- [lazydocker](https://github.com/jesseduffield/lazydocker) docker ui toggle
-  terminal (`leader + td`) (optional)
+- [Node](https://nodejs.org/en/) - Node is needed for a lot of the LSPs, and for the node repl toggle terminal
+- [Python](https://www.python.org/) - python repl toggle terminal (`<Leader>tp`)
+- [bottom](https://github.com/ClementTsang/bottom) - process viewer toggle terminal (`<Leader>tt`)
+- [go DiskUsage()](https://github.com/dundee/gdu) - disk usage toggle terminal (`Leader>tu`)
+- [ripgrep](https://github.com/BurntSushi/ripgrep) - live grep telescope search (`<Leader>fw`)
+- [lazydocker](https://github.com/jesseduffield/lazydocker) - docker ui toggle terminal (`<Leader>td`) (optional)
+- [lazygit](https://github.com/jesseduffield/lazygit) - git ui toggle terminal (`<Leader>tl` or `<Leader>gg`) (optional)
 
 ## Features
 
@@ -22,14 +28,16 @@ This config uses Codeium to autocomplete your code. You will need a Codeium
 account and api key to do this.
 
 For more information about that see the
-[Exafunction/codeium.vim](https://github.com/Exafunction/codeium.vim) plugin documentation.
+[Exafunction/codeium.nvim](https://github.com/Exafunction/codeium.nvim) plugin documentation.
 
-To disable the feature comment out or remove this line in the
-`plugins/community.lua` file:
+To disable the feature add `disabled` prop on this config or delete this file
+`lua/plugins/codeium.lua` file:
 
 ```lua
--- Comment out our remove this line
--- { import = "astrocommunity.completion.codeium-vim" },
+return {
+    -- Other props...
+    disabled = true,
+}
 ```
 
 ### Wakatime
@@ -40,22 +48,27 @@ and to be installed [wakatime-cli](https://github.com/wakatime/wakatime-cli).
 More information on [wakatime/vim-wakatime](https://github.com/wakatime/vim-wakatime).
 
 To disable the feature comment out or remove this line in the
-`plugins/community.lua` file:
+`lua/plugins/misc.lua` file:
 
 ```lua
 -- Comment out our remove this line
--- { import = "astrocommunity.media.vim-wakatime" },
+-- { "wakatime/vim-wakatime", event = { "BufReadPre" } },
+,
 ```
+
 ### Background Transparence
 
 By default, all NeoVim windows have a transparent background.  
-You can disable this feature editing the `lua/plugings/catppuccin.lua` file.
+You can disable this feature editing the `lua/plugins/catppuccin.lua` file.
 
 ```lua
--- ...init options
-opts.transparent_background = false
--- ...rest of options
-
+return {
+    -- Other props...
+    opts = {
+        transparent_background = false,
+        -- Other opts...
+    }
+}
 ```
 
 ## Installing
@@ -92,26 +105,48 @@ Start Neovim
 nvim
 ```
 
-## Mappings
+## Plugins
 
-This configuration has all AstroNvim mappings, you can check them out [here](https://astronvim.com/Basic%20Usage/mappings).
+> These are some of the main plugins configured.
 
-| Action                           | Mappings         |
-| -------------------------------- | ---------------- |
-| Save file                        | `Ctrl + s`       |
-| LSP Restart (if LSP is attached) | `Leader + lk`    |
-| No Highlight                     | `Leader + space` |
-| ToggleTerm lazydocker            | `Leader + td`    |
-| ToggleTerm lazygit               | `Leader + gg`    |
-| Open Diffview                    | `Leader + gD`    |
-| Close Diffview                   | `Leader + gx`    |
-| Next buffer                      | `Shift + l`      |
-| Previous buffer                  | `Shift + h`      |
-| Call : command                   | `;`              |
+- alpha-nvim
+- better-escape.nvim
+- bufferline.nvim
+- catppuccin
+- codeium.nvim
+- codesnap.nvim
+- Comment.nvim
+- conform.nvim
+- dial.nvim
+- dropbar.nvim
+- flash.nvim
+- gitsigns.nvim
+- indent-blankline.nvim
+- lualine.nvim
+- LuaSnip
+- markdown-preview.nvim
+- mason.nvim
+- multiple-cursors.nvim
+- neo-tree.nvim
+- nvim-cmp
+- nvim-coverage
+- nvim-lspconfig
+- nvim-spectre
+- nvim-surround
+- nvim-treesitter
+- nvim-vtsls
+- SchemaStore.nvim
+- telescope.nvim
+- toggleterm.nvim
+- vim-wakatime
+- which-key.nvim
 
 ## Preview
 
-![Preview](../../assets/astronvim-preview.png)
+![Preview](../../assets/nvim-preview.png)
 
-> Using [kitty terminal](https://sw.kovidgoyal.net/kitty/) and [JetBrains Mono NF](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono/Ligatures).
+## Credits
 
+- [AstroNvim](https://github.com/AstroNvim/AstroNvim)
+- [LazyVim](https://github.com/LazyVim/LazyVim)
+- [My Old AstroNvim Config](/config/nvim-astronvim)
