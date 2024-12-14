@@ -13,12 +13,12 @@ The leader key is `<Space>`, use `<Space>fk` to view all keymaps.
 ## Requirements
 
 - [Node](https://nodejs.org/en/) - Node is needed for a lot of the LSPs, and for the node repl toggle terminal
-- [Python](https://www.python.org/) - python repl toggle terminal (`<Leader>tp`)
-- [bottom](https://github.com/ClementTsang/bottom) - process viewer toggle terminal (`<Leader>tt`)
+- [Python](https://www.python.org/) - python repl toggle terminal (`<leader>tp`)
+- [bottom](https://github.com/ClementTsang/bottom) - process viewer toggle terminal (`<leader>tt`)
 - [go DiskUsage()](https://github.com/dundee/gdu) - disk usage toggle terminal (`Leader>tu`)
-- [ripgrep](https://github.com/BurntSushi/ripgrep) - live grep telescope search (`<Leader>fw`)
-- [lazydocker](https://github.com/jesseduffield/lazydocker) - docker ui toggle terminal (`<Leader>td`) (optional)
-- [lazygit](https://github.com/jesseduffield/lazygit) - git ui toggle terminal (`<Leader>tl` or `<Leader>gg`) (optional)
+- [ripgrep](https://github.com/BurntSushi/ripgrep) - live grep telescope search (`<leader>fw`)
+- [lazydocker](https://github.com/jesseduffield/lazydocker) - docker ui toggle terminal (`<leader>td`) (optional)
+- [lazygit](https://github.com/jesseduffield/lazygit) - git ui toggle terminal (`<leader>tl` or `<leader>gg`) (optional)
 
 ## Features
 

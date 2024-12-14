@@ -3,7 +3,7 @@ return {
   dependencies = { "kkharji/sqlite.lua" },
 
   keys = {
-    { "<Leader>fy", "<Cmd>Telescope yank_history<CR>", desc = "Find yanks" },
+    { "<leader>fy", "<Cmd>Telescope yank_history<CR>", desc = "Find yanks" },
     { "y", "<Plug>(YankyYank)", desc = "Yank text", mode = { "n", "x" } },
     { "p", "<Plug>(YankyPutAfter)", desc = "Put yanked text after cursor", mode = { "n", "x" } },
     { "P", "<Plug>(YankyPutBefore)", desc = "Put yanked text before cursor", mode = { "n", "x" } },

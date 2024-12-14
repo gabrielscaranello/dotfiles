@@ -18,9 +18,10 @@ return {
       { "<F7>", "<Cmd>ToggleTerm<CR>", desc = "Toggle Terminal", mode = { "t" } },
       { "<F7>", "<Esc><Cmd>ToggleTerm<CR>", desc = "Toggle Terminal", mode = { "i" } },
       { "<F7>", '<Cmd>execute v:count . "ToggleTerm"<CR>', desc = "Toggle Terminal" },
-      { "<Leader>tf", "<Cmd>ToggleTerm direction=float<CR>", desc = "ToggleTerm Float" },
-      { "<Leader>th", "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", desc = "ToggleTerm Horizontal Split" },
-      { "<Leader>tv", "<Cmd>ToggleTerm size=80 direction=vertical<CR>", desc = "ToggleTerm Vertical Split" },
+      { "<leader>tt", '<Cmd>execute v:count . "ToggleTerm"<CR>', desc = "Toggle Terminal" },
+      { "<leader>tf", "<Cmd>ToggleTerm direction=float<CR>", desc = "ToggleTerm Float" },
+      { "<leader>th", "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", desc = "ToggleTerm Horizontal Split" },
+      { "<leader>tv", "<Cmd>ToggleTerm size=80 direction=vertical<CR>", desc = "ToggleTerm Vertical Split" },
     }
 
     if has_btm then
