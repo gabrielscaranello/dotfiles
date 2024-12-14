@@ -12,6 +12,8 @@ The leader key is `<Space>`, use `<Space>fk` to view all keymaps.
 
 ## Requirements
 
+- [Neovim v0.10.1+](https://github.com/neovim/neovim/releases/tag/stable)
+- [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
 - [Node](https://nodejs.org/en/) - Node is needed for a lot of the LSPs, and for the node repl toggle terminal
 - [btop](https://github.com/aristocratos/btop) - process viewer toggle terminal (`<leader>tb`)
 - [go DiskUsage()](https://github.com/dundee/gdu) - disk usage toggle terminal (`Leader>tu`)
@@ -143,7 +145,9 @@ nvim
 
 ## Preview
 
-![Preview](../../assets/nvim-preview.png)
+![Preview](/assets/nvim-preview.png)
+
+> Using [kitty terminal](https://sw.kovidgoyal.net/kitty/) and [JetBrains Mono NF](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono/Ligatures).
 
 ## Credits
 
