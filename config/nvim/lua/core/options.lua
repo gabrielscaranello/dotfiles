@@ -14,6 +14,7 @@ local opts = {
   wrap = true,
   scrolloff = 8,
   mouse = "a",
+  undofile = true,
 
   -- appearance
   termguicolors = true,
