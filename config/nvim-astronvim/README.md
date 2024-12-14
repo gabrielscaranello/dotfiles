@@ -53,7 +53,7 @@ To disable the feature comment out or remove this line in the
 ### Background Transparence
 
 By default, all NeoVim windows have a transparent background.  
-You can disable this feature editing the `lua/plugings/catppuccin.lua` file.
+You can disable this feature editing the `lua/plugins/catppuccin.lua` file.
 
 ```lua
 -- ...init options
@@ -87,7 +87,7 @@ git clone --depth 1 https://github.com/gabrielscaranello/dotfiles /tmp/dotfiles
 Copy the cloned config to `~/.config/nvim`
 
 ```bash
-cp -r /tmp/dotfiles/config/nvim ~/.config
+cp -r /tmp/dotfiles/config/nvim-astronvim ~/.config
 ```
 
 Start Neovim
