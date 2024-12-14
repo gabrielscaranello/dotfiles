@@ -13,7 +13,7 @@ The leader key is `<Space>`, use `<Space>fk` to view all keymaps.
 ## Requirements
 
 - [Node](https://nodejs.org/en/) - Node is needed for a lot of the LSPs, and for the node repl toggle terminal
-- [btop](https://github.com/aristocratos/btop) - process viewer toggle terminal (`<leader>tt`)
+- [btop](https://github.com/aristocratos/btop) - process viewer toggle terminal (`<leader>tb`)
 - [go DiskUsage()](https://github.com/dundee/gdu) - disk usage toggle terminal (`Leader>tu`)
 - [lazydocker](https://github.com/jesseduffield/lazydocker) - docker ui toggle terminal (`<leader>td`) (optional)
 - [lazygit](https://github.com/jesseduffield/lazygit) - git ui toggle terminal (`<leader>tl` or `<leader>gg`) (optional)
