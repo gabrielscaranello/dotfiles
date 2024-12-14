@@ -4,7 +4,7 @@ return {
 
   keys = function()
     local cfg = require "config.toggleterm"
-    local has_btm = vim.fn.executable "btm" == 1
+    local has_btop = vim.fn.executable "btop" == 1
     local has_gdu = vim.fn.executable "gdu" == 1
     local has_lazydocker = vim.fn.executable "docker" == 1 and vim.fn.executable "lazydocker" == 1
     local has_lazygit = vim.fn.executable "git" == 1 and vim.fn.executable "lazygit" == 1
@@ -24,9 +24,9 @@ return {
       { "<leader>tv", "<Cmd>ToggleTerm size=80 direction=vertical<CR>", desc = "ToggleTerm Vertical Split" },
     }
 
-    if has_btm then
+    if has_btop then
       keys[#keys + 1] =
-        { "<leader>tb", function() cfg.toggle_cmd { cmd = "btm", direction = "float" } end, desc = "ToggleTerm BTM" }
+        { "<leader>tb", function() cfg.toggle_cmd { cmd = "btop", direction = "float" } end, desc = "ToggleTerm btop" }
     end
 
     if has_gdu then
