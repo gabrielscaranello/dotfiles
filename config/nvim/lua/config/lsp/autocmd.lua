@@ -84,4 +84,15 @@ return function()
     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
     callback = function(...) attach_callback(...) end,
   })
+
+  vim.api.nvim_create_autocmd("BufWritePost", {
+    group = vim.api.nvim_create_augroup("ESLintFixOnSave", { clear = true }),
+    pattern = "*.js,*.jsx,*.mjs,*.mts,*.ts,*.tsx,*.vue",
+    callback = function()
+      if vim.fn.exists ":EslintFixAll" > 0 then
+        vim.cmd.EslintFixAll()
+        vim.cmd.w()
+      end
+    end,
+  })
 end
