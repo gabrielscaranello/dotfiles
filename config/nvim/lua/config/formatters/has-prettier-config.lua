@@ -17,6 +17,6 @@ return function()
   )
 
   if config_exists then return true end
-  if utils.has_json_key_in_file("package.json", "prettier") then return true end
+  if utils.has_package_json_key "prettier" then return true end
   return false
 end
