@@ -1,3 +1,8 @@
+local prettier_condition = function()
+  local formatters_config = require "config.formatters"
+  return formatters_config.has_prettier_config()
+end
+
 return {
   "stevearc/conform.nvim",
   event = { "BufReadPre", "BufNewFile" },
@@ -38,6 +43,11 @@ return {
       lsp_fallback = true,
       async = false,
       timeout_ms = 1000,
+    },
+
+    formatters = {
+      prettierd = { condition = prettier_condition },
+      prettier = { condition = prettier_condition },
     },
 
     filter = function(client)
