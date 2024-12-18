@@ -40,6 +40,10 @@ return {
 
         lspconfig[server_name].setup { capabilities = capabilities }
       end,
+      bashls = function()
+        local config = lsp_setup.mkconfig("bashls", { capabilities = capabilities })
+        lspconfig.bashls.setup(config)
+      end,
       lua_ls = function()
         local config = lsp_setup.mkconfig("lua_ls", { capabilities = capabilities })
         lspconfig.lua_ls.setup(config)
