@@ -88,8 +88,6 @@ return {
         lspconfig.yamlls.setup(config)
       end,
       eslint = function()
-        if not lsp_setup.has_eslint_config() then return end
-
         local config = lsp_setup.mkconfig("eslint", { capabilities = capabilities })
         lspconfig.eslint.setup(config)
       end,

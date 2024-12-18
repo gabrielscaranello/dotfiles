@@ -1,7 +1,7 @@
 ---@return boolean
 return function()
   local utils = require "utils.file"
-  local eslint_config_files = {
+  local config_exists = utils.files_exists(
     ".eslintrc",
     ".eslintrc.cjs",
     ".eslintrc.js",
@@ -13,10 +13,10 @@ return function()
     "eslint.config.js",
     "eslint.config.mjs",
     "eslint.config.mts",
-    "eslint.config.ts",
-  }
+    "eslint.config.ts"
+  )
 
-  if utils.files_exists(table.unpack(eslint_config_files)) then return true end
+  if config_exists then return true end
   if utils.has_json_key_in_file("package.json", "eslintConfig") then return true end
   return false
 end
