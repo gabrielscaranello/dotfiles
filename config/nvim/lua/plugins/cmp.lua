@@ -28,7 +28,11 @@ return {
 
       return {
         completion = {
-          completeopt = "menu,menuone,preview,noselect",
+          completeopt = "menu,menuone,noselect",
+        },
+
+        performance = {
+          max_view_entries = 30,
         },
 
         snippet = {
@@ -37,9 +41,16 @@ return {
 
         window = {
           completion = cmp.config.window.bordered {
-            scrollbar = false,
+            col_offset = -2,
+            max_width = 15,
+            scrollbar = true,
+            scrolloff = 5,
+            side_padding = 1,
           },
-          documentation = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered {
+            max_height = 20,
+            max_width = 20,
+          },
         },
 
         mapping = cmp.mapping.preset.insert {
@@ -71,18 +82,19 @@ return {
         },
 
         sources = {
-          { name = "codeium", priority = 1250 },
+          { name = "codeium", priority = 1250, max_item_count = 3 },
           { name = "nvim_lsp", priority = 1000 },
-          { name = "luasnip", priority = 750 },
-          { name = "buffer", priority = 500 },
-          { name = "path", priority = 250 },
-          { name = "emoji", priority = 100 },
+          { name = "luasnip", priority = 750, max_item_count = 3 },
+          { name = "buffer", priority = 500, max_item_count = 3 },
+          { name = "path", priority = 250, max_item_count = 5 },
+          { name = "emoji", priority = 100, max_item_count = 5 },
         },
 
         formatting = {
+          fields = { "kind", "abbr", "menu" },
           format = lspkind.cmp_format {
             mode = "symbol",
-            maxwidth = 50,
+            maxwidth = 25,
             ellipsis_char = "...",
             preset = "codicons",
             symbol_map = icons.kinds,
