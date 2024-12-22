@@ -30,3 +30,7 @@ vim.api.nvim_create_autocmd("TermClose", {
     require("lazy.core.loader").reload "gitsigns.nvim"
   end,
 })
+
+vim.api.nvim_create_autocmd("CursorMoved", {
+  callback = function() vim.cmd "normal! zz" end,
+})
