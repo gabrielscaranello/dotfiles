@@ -82,12 +82,12 @@ return {
         },
 
         sources = {
-          { name = "codeium", priority = 1250, max_item_count = 3 },
-          { name = "nvim_lsp", priority = 1000 },
-          { name = "luasnip", priority = 750, max_item_count = 3 },
-          { name = "buffer", priority = 500, max_item_count = 3 },
-          { name = "path", priority = 250, max_item_count = 5 },
-          { name = "emoji", priority = 100, max_item_count = 5 },
+          { name = "codeium", priority = 1250, max_item_count = 3, group_index = 1 },
+          { name = "nvim_lsp", priority = 1000, group_index = 1 },
+          { name = "luasnip", priority = 750, max_item_count = 3, group_index = 1 },
+          { name = "buffer", priority = 500, max_item_count = 3, group_index = 2 },
+          { name = "path", priority = 250, max_item_count = 5, group_index = 2 },
+          { name = "emoji", priority = 100, max_item_count = 5, group_index = 3 },
         },
 
         formatting = {
