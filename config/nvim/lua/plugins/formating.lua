@@ -12,7 +12,10 @@ return {
   keys = {
     {
       "<leader>lf",
-      function() require("conform").format() end,
+      function()
+        require("conform").format()
+        if vim.fn.exists ":EslintFixAll" > 0 then vim.cmd.EslintFixAll() end
+      end,
       mode = { "n", "v" },
       desc = "Format File or Range (in visual mode)",
     },
