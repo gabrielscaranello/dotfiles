@@ -42,7 +42,7 @@ return {
 
   opts = {
     defaults = {
-      path_display = { "smart" },
+      path_display = { "truncate" },
       file_ignore_patterns = {
         ".git",
         "dist",

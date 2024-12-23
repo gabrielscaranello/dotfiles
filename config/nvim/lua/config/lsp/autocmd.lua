@@ -6,26 +6,26 @@ local capabilities_actions_map = {
   definitionProvider = {
     mode = "n",
     key = "gd",
-    action = function() require("telescope.builtin").lsp_definitions { reuse_win = true } end,
+    action = function() require("telescope.builtin").lsp_definitions { reuse_win = true, show_line = false } end,
     desc = "Goto Definition",
   },
   referencesProvider = {
     mode = "n",
     key = "gr",
-    action = "<cmd>Telescope lsp_references<cr>",
+    action = function() require("telescope.builtin").lsp_references { reuse_win = true, show_line = false } end,
     desc = "References",
     opts = { nowait = true },
   },
   implementationProvider = {
     mode = "n",
     key = "gI",
-    action = function() require("telescope.builtin").lsp_implementations { reuse_win = true } end,
+    action = function() require("telescope.builtin").lsp_implementations { reuse_win = true, show_line = false } end,
     desc = "Goto Implementation",
   },
   typeDefinitionProvider = {
     mode = "n",
     key = "gy",
-    action = function() require("telescope.builtin").lsp_type_definitions { reuse_win = true } end,
+    action = function() require("telescope.builtin").lsp_type_definitions { reuse_win = true, show_line = false } end,
     desc = "Goto Type Definition",
   },
   declarationProvider = {
