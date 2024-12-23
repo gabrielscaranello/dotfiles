@@ -1,4 +1,10 @@
-local prettier_condition = function()
+local prettier_condition = function(_, ctx)
+  local patterns = { "%.mdx?$", "%.ya?ml$", "%.json$" }
+
+  for _, pattern in pairs(patterns) do
+    if ctx.filename:match(pattern) then return true end
+  end
+
   local formatters_config = require "config.formatters"
   return formatters_config.has_prettier_config()
 end
