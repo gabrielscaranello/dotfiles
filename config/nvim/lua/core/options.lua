@@ -42,6 +42,10 @@ local global_vars = {
   editorconfig = true,
   netrw_liststyle = 3,
   mapleader = " ",
+
+  loaded_perl_provider = 0,
+  loaded_python3_provider = 0,
+  loaded_ruby_provider = 0,
 }
 
 vim.diagnostic.config {
