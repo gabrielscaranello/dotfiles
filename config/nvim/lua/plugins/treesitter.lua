@@ -7,6 +7,7 @@ local ensure_installed = {
   "gosum",
   "gowork",
   "html",
+  "http",
   "javascript",
   "jsdoc",
   "json",

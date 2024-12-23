@@ -29,6 +29,7 @@ return {
       { "<leader>b", group = "+Buffer" },
       { "<leader>c", group = "+Codesnap / Multiple Cursors", mode = { "n", "x" } },
       { "<leader>f", group = "+Find" },
+      { "<leader>h", group = "+Rest" },
       { "<leader>g", group = "+Git", mode = { "n", "v" } },
       { "<leader>l", group = "+LSP", mode = { "n", "v" } },
       { "<leader>o", desc = "NeoTree Focus" },
