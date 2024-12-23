@@ -13,7 +13,7 @@ local opts = {
   -- editing
   wrap = true,
   scrolloff = 8,
-  mouse = "a",
+  mouse = "",
   undofile = true,
 
   -- appearance
@@ -39,6 +39,7 @@ local opts = {
 }
 
 local global_vars = {
+  editorconfig = true,
   netrw_liststyle = 3,
   mapleader = " ",
 }
