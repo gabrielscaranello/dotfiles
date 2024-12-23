@@ -30,7 +30,7 @@ local capabilities_actions_map = {
   },
   declarationProvider = {
     mode = "n",
-    key = "gy",
+    key = "gD",
     action = vim.lsp.buf.declaration,
     desc = "Goto Declaration",
   },
