@@ -2,11 +2,7 @@ return {
   "rest-nvim/rest.nvim",
   ft = "http",
   cmd = "Rest",
-  lazy = true,
-  dependencies = {
-    "nvim-neorocks/rocks.nvim",
-    "nvim-telescope/telescope.nvim",
-  },
+  dependencies = { "nvim-telescope/telescope.nvim" },
   config = function()
     local keymap = require "utils.keymap"
 
