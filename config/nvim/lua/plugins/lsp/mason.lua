@@ -52,7 +52,7 @@ local ensure_installed = {
 
   -- Proto
   "buf",
-  "bufls",
+  "pbls",
 
   -- Yaml
   "yaml-language-server",

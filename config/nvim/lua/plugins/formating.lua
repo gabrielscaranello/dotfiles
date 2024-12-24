@@ -40,6 +40,7 @@ return {
       lua = { "stylua" },
       markdown = { "prettierd" },
       postcss = { "prettierd" },
+      proto = { "buf" },
       scss = { "prettierd" },
       sh = { "shfmt" },
       typescript = { "prettierd" },

@@ -32,6 +32,10 @@ local before_init_vtsls = function(_, config)
 end
 
 return {
+  clangd = {
+    filetypes = { "c", "cpp", "objc", "objcpp" },
+  },
+
   bashls = {
     on_attach = function(client)
       local filename = vim.fn.expand "%:t"
@@ -39,6 +43,14 @@ return {
 
       if client.server_capabilities.documentSymbolProvider then vim.lsp.buf.document_symbol() end
     end,
+  },
+
+  buf_ls = {
+    on_init = function(client) client.offset_encoding = "utf-8" end,
+  },
+
+  pbls = {
+    cmd = { "pbls", "--offset-encoding=utf-8" },
   },
 
   lua_ls = {

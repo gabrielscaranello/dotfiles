@@ -50,14 +50,22 @@ return {
     )
 
     mason_lspconfig.setup_handlers {
-      function(server_name)
-        if server_name == "bufls" then server_name = "buf_ls" end
-
-        lspconfig[server_name].setup { capabilities = capabilities }
+      function(server_name) lspconfig[server_name].setup { capabilities = capabilities } end,
+      pbls = function()
+        local config = lsp_setup.mkconfig("pbls", { capabilities = capabilities })
+        lspconfig.pbls.setup(config)
+      end,
+      buf_ls = function()
+        local config = lsp_setup.mkconfig("buf_ls", { capabilities = capabilities })
+        lspconfig.buf_ls.setup(config)
       end,
       bashls = function()
         local config = lsp_setup.mkconfig("bashls", { capabilities = capabilities })
         lspconfig.bashls.setup(config)
+      end,
+      clangd = function()
+        local config = lsp_setup.mkconfig("clangd", { capabilities = capabilities })
+        lspconfig.clangd.setup(config)
       end,
       lua_ls = function()
         local config = lsp_setup.mkconfig("lua_ls", { capabilities = capabilities })
