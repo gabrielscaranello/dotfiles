@@ -49,55 +49,33 @@ return {
       opts.capabilities or {}
     )
 
+    local function setup_lsp(server_name)
+      local config = lsp_setup.mkconfig(server_name, { capabilities = capabilities })
+      lspconfig[server_name].setup(config)
+    end
+
+    local custom_handlers = {
+      bashls = true,
+      buf_ls = true,
+      clangd = true,
+      cssls = true,
+      eslint = true,
+      html = true,
+      jsonls = true,
+      lua_ls = true,
+      pbls = true,
+      volar = true,
+      vtsls = true,
+      yamlls = true,
+    }
+
     mason_lspconfig.setup_handlers {
-      function(server_name) lspconfig[server_name].setup { capabilities = capabilities } end,
-      pbls = function()
-        local config = lsp_setup.mkconfig("pbls", { capabilities = capabilities })
-        lspconfig.pbls.setup(config)
-      end,
-      buf_ls = function()
-        local config = lsp_setup.mkconfig("buf_ls", { capabilities = capabilities })
-        lspconfig.buf_ls.setup(config)
-      end,
-      bashls = function()
-        local config = lsp_setup.mkconfig("bashls", { capabilities = capabilities })
-        lspconfig.bashls.setup(config)
-      end,
-      clangd = function()
-        local config = lsp_setup.mkconfig("clangd", { capabilities = capabilities })
-        lspconfig.clangd.setup(config)
-      end,
-      lua_ls = function()
-        local config = lsp_setup.mkconfig("lua_ls", { capabilities = capabilities })
-        lspconfig.lua_ls.setup(config)
-      end,
-      vtsls = function()
-        local config = lsp_setup.mkconfig("vtsls", { capabilities = capabilities })
-        lspconfig.vtsls.setup(config)
-      end,
-      html = function()
-        local config = lsp_setup.mkconfig("html", { capabilities = capabilities })
-        lspconfig.html.setup(config)
-      end,
-      jsonls = function()
-        local config = lsp_setup.mkconfig("jsonls", { capabilities = capabilities })
-        lspconfig.jsonls.setup(config)
-      end,
-      cssls = function()
-        local config = lsp_setup.mkconfig("cssls", { capabilities = capabilities })
-        lspconfig.cssls.setup(config)
-      end,
-      volar = function()
-        local config = lsp_setup.mkconfig("volar", { capabilities = capabilities })
-        lspconfig.volar.setup(config)
-      end,
-      yamlls = function()
-        local config = lsp_setup.mkconfig("yamlls", { capabilities = capabilities })
-        lspconfig.yamlls.setup(config)
-      end,
-      eslint = function()
-        local config = lsp_setup.mkconfig("eslint", { capabilities = capabilities })
-        lspconfig.eslint.setup(config)
+      function(server_name)
+        if custom_handlers[server_name] then
+          setup_lsp(server_name)
+        else
+          lspconfig[server_name].setup { capabilities = capabilities }
+        end
       end,
     }
   end,
