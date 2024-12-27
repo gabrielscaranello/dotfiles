@@ -44,4 +44,3 @@ cp /tmp/dotfiles/config/profile/zshrc ~/.zshrc
 > [!TIP]  
 > You can run my personal script to install oh-my-zsh and powerlevel10k.  
 > Run `make oh-my-zsh`.
-

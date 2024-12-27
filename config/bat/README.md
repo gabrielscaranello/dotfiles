@@ -29,4 +29,3 @@ Build bat cache
 ```bash
 bat cache --build
 ```
-
