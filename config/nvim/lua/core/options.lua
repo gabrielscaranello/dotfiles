@@ -13,7 +13,7 @@ local opts = {
   -- editing
   wrap = true,
   scrolloff = 8,
-  mouse = "",
+  mouse = "a",
   undofile = true,
 
   -- appearance
