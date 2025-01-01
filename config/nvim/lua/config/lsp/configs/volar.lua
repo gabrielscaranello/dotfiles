@@ -7,7 +7,7 @@ return {
     },
   },
   settings = {
-    typescript = shared.ts_js_settings,
-    javascript = shared.ts_js_settings,
+    typescript = shared.volar_ts_js_settings,
+    javascript = shared.volar_ts_js_settings,
   },
 }
