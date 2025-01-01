@@ -145,7 +145,7 @@ nvim
 
 ## Preview
 
-![Preview](/assets/nvim-preview.png)
+![Preview](/assets/nvim-preview.webp)
 
 > Using [kitty terminal](https://sw.kovidgoyal.net/kitty/) and [JetBrains Mono NF](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono/Ligatures).
 
