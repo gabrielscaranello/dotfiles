@@ -5,8 +5,11 @@ return {
     delay = 200,
     under_cursor = true,
     filetypes_denylist = {
-      "NeoTree",
       "alpha",
+      "neo-tree",
+      "neo-tree-popup",
+      "noice",
+      "TelescopePrompt",
     },
   },
   config = function(_, opts) require("illuminate").configure(opts) end,
