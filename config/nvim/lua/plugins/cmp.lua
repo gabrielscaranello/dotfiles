@@ -18,6 +18,7 @@ return {
       "onsails/lspkind.nvim",
       "L3MON4D3/LuaSnip",
       "hrsh7th/cmp-emoji",
+      "brenoprata10/nvim-highlight-colors",
     },
 
     opts = function()
@@ -25,6 +26,7 @@ return {
       local luasnip = require "luasnip"
       local lspkind = require "lspkind"
       local icons = require "utils.icons"
+      local highlight_colors = require "nvim-highlight-colors"
 
       return {
         completion = {
@@ -92,13 +94,24 @@ return {
 
         formatting = {
           fields = { "kind", "abbr", "menu" },
-          format = lspkind.cmp_format {
-            mode = "symbol",
-            maxwidth = 25,
-            ellipsis_char = "...",
-            preset = "codicons",
-            symbol_map = icons.kinds,
-          },
+          format = function(entry, item)
+            local color_item = highlight_colors.format(entry, { kind = item.kind })
+
+            item = lspkind.cmp_format {
+              mode = "symbol",
+              maxwidth = 25,
+              ellipsis_char = "...",
+              preset = "codicons",
+              symbol_map = icons.kinds,
+            }(entry, item)
+
+            if color_item and color_item.abbr_hl_group then
+              item.kind_hl_group = color_item.abbr_hl_group
+              item.kind = color_item.abbr
+            end
+
+            return item
+          end,
         },
       }
     end,
