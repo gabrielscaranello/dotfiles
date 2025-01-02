@@ -12,7 +12,6 @@
 | :--------------------------------------------- | :------------------------------- |
 | [Bat](./config/bat)                            | Bat config (cat alternative)     |
 | [Btop](./config/btop)                          | Btop config (top alternative)    |
-| [Discord](./config/discord)                    | Discord theme config             |
 | [Flameshot](./config/flameshot)                | Flameshot config                 |
 | [Kitty](./config/kitty)                        | Kitty config                     |
 | [Lazydocker](./config/lazydocker)              | Lazydocker config                |
@@ -28,7 +27,6 @@
 | `make all`        | Setup all configs and installs                   |
 | `make bat`        | Link bat config to `~/.config/bat`               |
 | `make btop`       | Link btop config to `~/.config/btop`             |
-| `make discord`    | Setup discord theme                              |
 | `make flameshot`  | Link flameshot config to `~/.config/flameshot`   |
 | `make kitty`      | Link kitty config to `~/.config/kitty`           |
 | `make lazydocker` | Link lazydocker config to `~/.config/lazydocker` |

@@ -7,9 +7,6 @@ bat:
 btop:
 	@bash ./actions/btop.sh
 
-discord:
-	@bash ./actions/discord.sh
-
 flameshot:
 	@bash ./actions/flameshot.sh
 

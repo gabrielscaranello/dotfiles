@@ -6,7 +6,6 @@ echo "Setting up all configs..."
 
 bash "$PWD/actions/bat.sh"
 bash "$PWD/actions/btop.sh"
-bash "$PWD/actions/discord.sh"
 bash "$PWD/actions/flameshot.sh"
 bash "$PWD/actions/kitty.sh"
 bash "$PWD/actions/lazydocker.sh"
