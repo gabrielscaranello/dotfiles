@@ -14,6 +14,7 @@ local ensure_installed = {
   "jsonc",
   "lua",
   "luap",
+  "make",
   "markdown",
   "markdown_inline",
   "prisma",
