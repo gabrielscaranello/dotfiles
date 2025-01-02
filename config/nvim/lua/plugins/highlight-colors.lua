@@ -5,5 +5,8 @@ return {
     render = "virtual",
     enabled_named_colors = true,
     virtual_symbol = "󱓻",
+    exclude_filetypes = {
+      "lazy",
+    },
   },
 }
