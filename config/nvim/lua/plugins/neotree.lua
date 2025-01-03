@@ -12,7 +12,6 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
-    "3rd/image.nvim",
   },
   keys = function()
     local neotree_cfg = require "config.neotree"
