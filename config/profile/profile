@@ -53,6 +53,15 @@ fi
 
 
 # -----------------------------
+# Include Cargo
+if [ -d "$HOME/.cargo" ] && [ -f "$HOME/.cargo/env" ]; then
+    source "$HOME/.cargo/env"
+fi
+# End Cargo
+# -----------------------------
+
+
+# -----------------------------
 # Include alias source
 [[ ! -f ~/.alias ]] || source ~/.alias
 # End alias source
