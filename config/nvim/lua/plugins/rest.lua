@@ -3,6 +3,12 @@ return {
   ft = "http",
   cmd = "Rest",
   dependencies = { "nvim-telescope/telescope.nvim" },
+  init = function()
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = { "json" },
+      callback = function() vim.api.nvim_set_option_value("formatprg", "jq", { scope = "local" }) end,
+    })
+  end,
   config = function()
     local keymap = require "utils.keymap"
 
