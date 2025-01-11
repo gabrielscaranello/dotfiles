@@ -10,15 +10,11 @@ return {
   },
   opts = {
     preset = "modern",
+    delay = function(ctx) return ctx.plugin and 0 or 500 end,
     notify = false,
     icons = { mappings = false },
     sort = { "group", "alphanum" },
   },
-
-  init = function()
-    vim.o.timeout = true
-    vim.o.timeoutlen = 300
-  end,
 
   config = function(_, opts)
     local wk = require "which-key"
