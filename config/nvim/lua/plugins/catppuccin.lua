@@ -21,6 +21,7 @@ return {
       noice = true,
       notify = true,
       nvim_surround = true,
+      render_markdown = true,
       snacks = true,
       telescope = { enabled = true },
       treesitter = true,
