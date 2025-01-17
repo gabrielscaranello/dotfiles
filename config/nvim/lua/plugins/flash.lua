@@ -7,5 +7,15 @@ return {
     { "S", function() require("flash").treesitter() end, mode = { "n", "x", "o" }, desc = "Flash Treesitter" },
     { "r", function() require("flash").remote() end, mode = { "o" }, desc = "Remote Flash" },
   },
-  opts = {},
+  ---@type Flash.Config
+  opts = {
+    modes = {
+      char = {
+        enabled = true,
+        autohide = true,
+        jump_labels = true,
+        multi_line = true,
+      },
+    },
+  },
 }
