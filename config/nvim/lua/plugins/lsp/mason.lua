@@ -21,6 +21,9 @@ local ensure_installed = {
   "iferr",
   "impl",
 
+  -- GraphQL
+  "graphql-language-service-cli",
+
   -- Json
   "json-lsp",
   "jsonls",

@@ -6,6 +6,7 @@ local ensure_installed = {
   "gomod",
   "gosum",
   "gowork",
+  "graphql",
   "html",
   "http",
   "javascript",
