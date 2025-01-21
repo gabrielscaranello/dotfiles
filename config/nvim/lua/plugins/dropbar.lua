@@ -14,6 +14,7 @@ return {
   opts = function()
     local icons = require "utils.icons"
 
+    ---@type dropbar_configs_t
     return {
       icons = {
         kinds = icons.kinds,
