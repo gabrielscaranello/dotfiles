@@ -20,6 +20,7 @@ return {
       "hrsh7th/cmp-emoji",
       "brenoprata10/nvim-highlight-colors",
       "SergioRibera/cmp-dotenv",
+      "zbirenbaum/copilot-cmp",
     },
 
     opts = function()
@@ -28,6 +29,11 @@ return {
       local lspkind = require "lspkind"
       local icons = require "utils.icons"
       local highlight_colors = require "nvim-highlight-colors"
+
+      local function has_words_before()
+        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
+      end
 
       ---@type cmp.ConfigSchema
       return {
@@ -66,6 +72,8 @@ return {
               cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
               luasnip.expand_or_jump()
+            elseif has_words_before() then
+              cmp.complete()
             else
               fallback()
             end
@@ -82,7 +90,7 @@ return {
         },
 
         sources = {
-          { name = "codeium", group_index = 1 },
+          { name = "copilot", group_index = 1 },
           { name = "nvim_lsp", group_index = 1 },
           { name = "luasnip", group_index = 1 },
           { name = "dotenv", group_index = 2 },
@@ -99,7 +107,7 @@ return {
 
             item = lspkind.cmp_format {
               mode = "symbol",
-              maxwidth = 25,
+              maxwidth = 50,
               ellipsis_char = "...",
               preset = "codicons",
               symbol_map = icons.kinds,

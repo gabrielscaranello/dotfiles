@@ -40,7 +40,6 @@ local kinds = {
   Array = " ",
   Boolean = "󰨙 ",
   Class = " ",
-  Codeium = " ",
   Collapsed = " ",
   Color = " ",
   Constant = "󰏿 ",
