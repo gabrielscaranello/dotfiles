@@ -56,6 +56,9 @@ vim.diagnostic.config {
   severity_sort = false,
 }
 
+vim.o.timeout = true
+vim.o.timeoutlen = 400
+
 for key, value in pairs(opts) do
   vim.opt[key] = value
 end
