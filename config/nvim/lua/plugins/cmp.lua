@@ -27,6 +27,7 @@ return {
       local luasnip = require "luasnip"
       local lspkind = require "lspkind"
       local icons = require "utils.icons"
+      local cmp_cfg = require "config.cmp"
       local highlight_colors = require "nvim-highlight-colors"
 
       ---@type cmp.ConfigSchema
@@ -35,8 +36,18 @@ return {
           completeopt = "menu,menuone,noselect",
         },
 
+        preselect = cmp.PreselectMode.Item,
+
         snippet = {
           expand = function(args) luasnip.lsp_expand(args.body) end,
+        },
+
+        ---@diagnostic disable-next-line: missing-fields
+        performance = {
+          max_view_entries = 50,
+          debounce = 50,
+          throttle = 80,
+          fetching_timeout = 200,
         },
 
         window = {
@@ -82,13 +93,24 @@ return {
         },
 
         sources = {
-          { name = "codeium", group_index = 1 },
+          { name = vim.g.completion_ai, group_index = 1, max_item_count = 4 },
           { name = "nvim_lsp", group_index = 1 },
           { name = "luasnip", group_index = 1 },
           { name = "dotenv", group_index = 2 },
           { name = "buffer", group_index = 2 },
           { name = "path", group_index = 2 },
           { name = "emoji", group_index = 3 },
+        },
+
+        sorting = {
+          priority_weight = 2,
+          comparators = {
+            cmp_cfg.ai_priority,
+            cmp.config.compare.locality,
+            cmp.config.compare.score,
+            cmp.config.compare.recently_used,
+            cmp.config.compare.order,
+          },
         },
 
         formatting = {
