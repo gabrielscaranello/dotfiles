@@ -4,6 +4,7 @@ return {
   { "echasnovski/mini.icons", event = "VeryLazy", version = "*" },
   { "folke/edgy.nvim", event = "VeryLazy", opts = {} },
   { "junegunn/vim-easy-align", event = "VeryLazy" },
+  { "m4xshen/hardtime.nvim", dependencies = { "MunifTanjim/nui.nvim" }, event = "VeryLazy", opts = {} },
   { "nvim-lua/plenary.nvim", event = "VeryLazy" },
   { "nvim-tree/nvim-web-devicons", event = "VeryLazy" },
   { "rlychrisg/keepcursor.nvim", event = "VeryLazy", opts = { enabled_on_start_v = "middle" } },
