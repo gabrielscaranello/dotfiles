@@ -54,7 +54,7 @@ return {
           completion = cmp.config.window.bordered {
             col_offset = -2,
             max_width = 15,
-            scrollbar = true,
+            scrollbar = false,
             scrolloff = 5,
             side_padding = 1,
           },
