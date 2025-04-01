@@ -24,13 +24,34 @@ return {
   },
 
   opts = function()
+    local utils = require "yanky.utils"
+    local mapping = require "yanky.telescope.mapping"
+
     return {
       highlight = { timer = 200 },
-      ring = { storage = "sqlite" },
+      ring = {
+        history_length = 100,
+        storage = "sqlite",
+      },
       picker = {
         telescope = {
-          use_default_mappings = true,
-          mappings = nil,
+          use_default_mappings = false,
+          mappings = {
+            i = {
+              ["<c-h>"] = mapping.special_put "YankyPutIndentAfterLinewise",
+              ["<c-l>"] = mapping.special_put "YankyPutIndentBeforeLinewise",
+              ["<c-r>"] = mapping.set_register(utils.get_default_register()),
+              ["<c-x>"] = mapping.delete(),
+              ["<CR>"] = mapping.put "p",
+            },
+            n = {
+              d = mapping.delete(),
+              p = mapping.special_put "YankyPutIndentAfterLinewise",
+              P = mapping.special_put "YankyPutIndentBeforeLinewise",
+              r = mapping.set_register(utils.get_default_register()),
+              ["<CR>"] = mapping.put "p",
+            },
+          },
         },
       },
     }
