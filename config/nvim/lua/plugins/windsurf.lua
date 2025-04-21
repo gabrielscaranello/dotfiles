@@ -1,5 +1,5 @@
 return {
-  "Exafunction/codeium.nvim",
+  "Exafunction/windsurf.nvim",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "nvim-lua/plenary.nvim",

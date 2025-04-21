@@ -26,14 +26,14 @@ The leader key is `<Space>`, use `<Space>fk` to view all keymaps.
 
 ### Auto completation with AI
 
-This config uses Codeium to autocomplete your code. You will need a Codeium
+This config uses Windsurf to autocomplete your code. You will need a Windsurf
 account and api key to do this.
 
 For more information about that see the
-[Exafunction/codeium.nvim](https://github.com/Exafunction/codeium.nvim) plugin documentation.
+[Exafunction/windsurf.nvim](https://github.com/Exafunction/windsurf.nvim) plugin documentation.
 
 To disable the feature add `disabled` prop on this config or delete this file
-`lua/plugins/codeium.lua` file:
+`lua/plugins/windsurf.lua` file:
 
 ```lua
 return {
@@ -115,7 +115,6 @@ nvim
 - better-escape.nvim
 - bufferline.nvim
 - catppuccin
-- codeium.nvim
 - codesnap.nvim
 - Comment.nvim
 - conform.nvim
@@ -142,6 +141,7 @@ nvim
 - toggleterm.nvim
 - vim-wakatime
 - which-key.nvim
+- windsurf.nvim
 
 ## Preview
 
