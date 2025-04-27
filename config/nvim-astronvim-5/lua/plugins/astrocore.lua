@@ -15,9 +15,11 @@ local make_mappings = function()
         desc = "Previous buffer",
       },
       ["<leader>lk"] = { "<cmd>LspRestart<cr>", desc = "Restart LSP" },
+      ["/"] = { "gcc", remap = true, desc = "Toggle comment line" },
     },
-    v = {
+    x = {
       [";"] = { ":", desc = "Call :", silent = false },
+      ["/"] = { "gc", remap = true, desc = "Toggle comment line" },
     },
     t = {},
     i = {
