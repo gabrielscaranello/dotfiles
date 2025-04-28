@@ -17,6 +17,10 @@ return {
   { import = "astrocommunity.syntax.vim-easy-align" },
   { import = "astrocommunity.test.nvim-coverage" },
 
+  -- AI
+  { import = "astrocommunity.completion.avante-nvim" },
+  { import = "astrocommunity.completion.copilot-cmp" },
+
   -- Packs
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.docker" },
