@@ -57,6 +57,10 @@ fi
 if [ -d "$HOME/.cargo" ] && [ -f "$HOME/.cargo/env" ]; then
     source "$HOME/.cargo/env"
 fi
+
+if [ -d "$HOME/.cargo" ] && [ -d "$HOME/.local/bin" ]; then
+	PATH="$HOME/.cargo/bin:$PATH"
+fi
 # End Cargo
 # -----------------------------
 
