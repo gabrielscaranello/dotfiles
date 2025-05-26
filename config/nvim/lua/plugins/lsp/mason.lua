@@ -40,7 +40,7 @@ local ensure_installed = {
   "html",
   "html-lsp",
   "prettierd",
-  "volar",
+  "vue_ls",
   "vtsls",
 
   -- Lua
@@ -81,13 +81,6 @@ return {
           package_uninstalled = "✗",
         },
       },
-    },
-  },
-
-  {
-    "williamboman/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = ensure_installed,
     },
   },
 

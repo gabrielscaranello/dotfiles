@@ -54,29 +54,13 @@ return {
       lspconfig[server_name].setup(config)
     end
 
-    local custom_handlers = {
-      bashls = true,
-      buf_ls = true,
-      clangd = true,
-      cssls = true,
-      eslint = true,
-      html = true,
-      jsonls = true,
-      lua_ls = true,
-      pbls = true,
-      volar = true,
-      vtsls = true,
-      yamlls = true,
-    }
+    for server_name in pairs(lsp_setup.configs) do
+      setup_lsp(server_name)
+    end
 
-    mason_lspconfig.setup_handlers {
-      function(server_name)
-        if custom_handlers[server_name] then
-          setup_lsp(server_name)
-        else
-          lspconfig[server_name].setup { capabilities = capabilities }
-        end
-      end,
+    ---@diagnostic disable-next-line: missing-fields
+    mason_lspconfig.setup {
+      automatic_enable = { exclude = { "vue_ls" } },
     }
   end,
 }
