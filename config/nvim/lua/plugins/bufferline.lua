@@ -21,22 +21,16 @@ return {
     return {
       highlights = catppuccin_highlights.get(),
       options = {
+        close_command = function(n) Snacks.bufdelete(n) end,
+        right_mouse_command = function(n) Snacks.bufdelete(n) end,
         diagnostics = "nvim_lsp",
         show_close_icon = false,
+        always_show_bufferline = true,
+        enforce_regular_tabs = true,
+        offsets = {},
         groups = {
           items = {
             require("bufferline.groups").builtin.pinned:with { icon = "" },
-          },
-        },
-        mode = "buffers",
-        close_command = function(n) Snacks.bufdelete(n) end,
-        right_mouse_command = function(n) Snacks.bufdelete(n) end,
-        offsets = {
-          {
-            filetype = "neo-tree",
-            text = "",
-            highlight = "Directory",
-            text_align = "left",
           },
         },
       },

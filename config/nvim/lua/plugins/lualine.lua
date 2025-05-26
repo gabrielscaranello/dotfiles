@@ -19,7 +19,7 @@ return {
         section_separators = { left = "", right = "" },
         disabled_filetypes = {
           statusline = { "alpha" },
-          winbar = { "neo-tree" },
+          winbar = { "snacks_picker_list" },
         },
       },
       sections = {
@@ -80,7 +80,7 @@ return {
         lualine_y = {},
         lualine_z = {},
       },
-      extensions = { "neo-tree", "lazy", "fzf" },
+      extensions = { "lazy", "fzf" },
     }
   end,
 }
