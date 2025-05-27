@@ -22,7 +22,10 @@ return {
       notify = true,
       nvim_surround = true,
       render_markdown = true,
-      snacks = true,
+      snacks = {
+        enabled = true,
+        indent_scope_color = "blue",
+      },
       telescope = { enabled = true },
       treesitter = true,
       which_key = true,

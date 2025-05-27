@@ -13,6 +13,12 @@ return {
   ---@type snacks.Config
   opts = {
     dashboard = { enabled = false },
+    input = {
+      enabled = true,
+      relative = "cursor",
+      row = -3,
+      col = 0,
+    },
     picker = {
       sources = {
         explorer = {
