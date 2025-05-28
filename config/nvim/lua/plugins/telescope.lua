@@ -33,11 +33,6 @@ return {
     { "<leader>gC", "<cmd>Telescope git_bcommits<cr>", desc = "Git Commits (for current file)" },
     { "<leader>gt", "<cmd>Telescope git_status<cr>", desc = "Git Status" },
     { "<leader>fG", "<cmd>Telescope git_files<cr>", desc = "Find Git Files" },
-
-    -- Diagnostics and LSP
-    { "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
-    { "<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>", desc = "LSP Document Symbols" },
-    { "<leader>fS", "<cmd>Telescope lsp_workspace_symbols<cr>", desc = "LSP Workspace Symbols" },
   },
 
   opts = {

@@ -6,26 +6,26 @@ local capabilities_actions_map = {
   definitionProvider = {
     mode = "n",
     key = "gd",
-    action = function() require("telescope.builtin").lsp_definitions { reuse_win = true, show_line = false } end,
+    action = function() Snacks.picker.lsp_definitions() end,
     desc = "Goto Definition",
   },
   referencesProvider = {
     mode = "n",
     key = "gr",
-    action = function() require("telescope.builtin").lsp_references { reuse_win = true, show_line = false } end,
+    action = function() Snacks.picker.lsp_references() end,
     desc = "References",
     opts = { nowait = true },
   },
   implementationProvider = {
     mode = "n",
     key = "gI",
-    action = function() require("telescope.builtin").lsp_implementations { reuse_win = true, show_line = false } end,
+    action = function() Snacks.picker.lsp_implementations() end,
     desc = "Goto Implementation",
   },
   typeDefinitionProvider = {
     mode = "n",
     key = "gy",
-    action = function() require("telescope.builtin").lsp_type_definitions { reuse_win = true, show_line = false } end,
+    action = function() Snacks.picker.lsp_type_definitions() end,
     desc = "Goto Type Definition",
   },
   declarationProvider = {

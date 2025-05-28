@@ -6,8 +6,14 @@ return {
   lazy = false,
 
   keys = {
+    -- Explorer
     { "<leader>e", config.explorer.toggle, { desc = "Explorer (keep open)" } },
     { "<leader>o", config.explorer.focus, { desc = "Explorer (auto close)" } },
+
+    -- Diagnostics and LSP
+    { "<leader>fd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+    { "<leader>fs", function() Snacks.picker.lsp_symbols() end, desc = "LSP Document Symbols" },
+    { "<leader>fS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
   },
 
   ---@type snacks.Config
