@@ -19,6 +19,14 @@ return {
   ---@type snacks.Config
   opts = {
     dashboard = { enabled = false },
+    indent = {
+      enabled = true,
+      animate = {
+        style = "out",
+        easing = "linear",
+        duration = { step = 30, total = 400 },
+      },
+    },
     input = {
       enabled = true,
       relative = "cursor",
