@@ -6,6 +6,8 @@ local misc = {
   module = " ",
   readonly = " ",
   unnamed = "[No Name]",
+  debug = " ",
+  trace = " ",
 }
 
 local dap = {

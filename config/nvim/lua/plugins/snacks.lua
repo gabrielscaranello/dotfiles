@@ -1,4 +1,5 @@
 local config = require "config.snacks"
+local icons = require "utils.icons"
 
 return {
   "folke/snacks.nvim",
@@ -48,6 +49,20 @@ return {
             },
           },
         },
+      },
+    },
+    notifier = {
+      enabled = true,
+      style = "compact",
+      top_down = false,
+      timeout = 2500,
+      level = vim.log.levels.TRACE,
+      icons = {
+        error = icons.diagnostics.Error,
+        warn = icons.diagnostics.Warn,
+        info = icons.diagnostics.Info,
+        debug = icons.misc.debug,
+        trace = icons.misc.trace,
       },
     },
   },
