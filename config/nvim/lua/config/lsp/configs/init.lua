@@ -4,6 +4,7 @@ return {
   clangd = require "config.lsp.configs.clangd",
   cssls = require "config.lsp.configs.cssls",
   eslint = require "config.lsp.configs.eslint",
+  graphql = require "config.lsp.configs.graphqlls",
   html = require "config.lsp.configs.htmlls",
   jsonls = require "config.lsp.configs.jsonls",
   lua_ls = require "config.lsp.configs.lua_ls",
