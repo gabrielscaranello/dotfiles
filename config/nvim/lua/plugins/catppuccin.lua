@@ -10,7 +10,6 @@ return {
     integrations = {
       alpha = true,
       cmp = true,
-      dropbar = { enabled = true, color_mode = true },
       flash = true,
       gitsigns = true,
       illuminate = { enabled = true, lsp = false },
