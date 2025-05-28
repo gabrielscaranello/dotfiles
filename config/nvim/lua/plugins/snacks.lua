@@ -33,13 +33,20 @@ return {
       row = -3,
       col = 0,
     },
+    explorer = { replace_netrw = true },
     picker = {
       sources = {
         explorer = {
-          auto_close = true,
-          layout = { layout = { position = "right" } },
           on_show = config.explorer.on_show,
           on_close = config.explorer.on_close,
+          auto_close = true,
+          layout = {
+            preview = "main",
+            hidden = { "preview", "input" },
+            layout = {
+              position = "right",
+            },
+          },
         },
       },
     },
