@@ -44,9 +44,7 @@ return {
           layout = {
             preview = "main",
             hidden = { "preview", "input" },
-            layout = {
-              position = "right",
-            },
+            layout = { position = "right" },
           },
         },
       },
