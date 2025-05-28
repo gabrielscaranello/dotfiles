@@ -1,3 +1,5 @@
+local icons = require "utils.icons"
+
 local opts = {
   -- line numbers
   relativenumber = true,
@@ -52,10 +54,17 @@ local global_vars = {
 
 vim.diagnostic.config {
   virtual_text = false,
-  signs = true,
   underline = true,
   update_in_insert = false,
-  severity_sort = false,
+  severity_sort = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = icons.diagnostics.Error,
+      [vim.diagnostic.severity.WARN] = icons.diagnostics.Warn,
+      [vim.diagnostic.severity.HINT] = icons.diagnostics.Hint,
+      [vim.diagnostic.severity.INFO] = icons.diagnostics.Info,
+    },
+  },
 }
 
 vim.o.timeout = true
