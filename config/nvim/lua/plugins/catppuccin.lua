@@ -24,7 +24,6 @@ return {
         enabled = true,
         indent_scope_color = "blue",
       },
-      telescope = { enabled = true },
       treesitter = true,
       which_key = true,
     },

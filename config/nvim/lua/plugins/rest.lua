@@ -2,7 +2,6 @@ return {
   "rest-nvim/rest.nvim",
   ft = "http",
   cmd = "Rest",
-  dependencies = { "nvim-telescope/telescope.nvim" },
   init = function()
     vim.api.nvim_create_autocmd("FileType", {
       pattern = { "json" },
@@ -16,7 +15,7 @@ return {
       keymap.map {
         { "n", "<leader>hr", "<cmd>Rest run<cr>", { desc = "Run request under the cursor" } },
         { "n", "<leader>hl", "<cmd>Rest last<cr>", { desc = "Run last request" } },
-        { "n", "<leader>he", "<cmd>Telescope rest select_env<cr>", { desc = "Select environment variables file" } },
+        { "n", "<leader>he", "<cmd>Rest env select<cr>", { desc = "Select environment variables file" } },
       }
     end
 

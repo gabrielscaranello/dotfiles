@@ -9,7 +9,6 @@ return {
       "neo-tree",
       "neo-tree-popup",
       "noice",
-      "TelescopePrompt",
     },
   },
   config = function(_, opts) require("illuminate").configure(opts) end,
