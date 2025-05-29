@@ -11,11 +11,6 @@ return {
   cmd = { "Telescope" },
   keys = {
     -- Buffers and helps
-    { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
-    { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help Tags" },
-    { "<leader>fr", "<cmd>Telescope registers<cr>", desc = "Registers" },
-    { "<leader>fC", "<cmd>Telescope commands<cr>", desc = "Commands" },
-    { "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
     { "<leader>ft", "<cmd>TodoTelescope<cr>", desc = "Todos" },
   },
 

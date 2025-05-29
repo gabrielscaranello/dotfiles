@@ -12,6 +12,11 @@ return {
     { "<leader>o", config.explorer.focus, { desc = "Explorer (auto close)" } },
 
     -- Buffers and helps
+    { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
+    { "<leader>fh", function() Snacks.picker.help() end, desc = "Help Tags" },
+    { "<leader>fr", function() Snacks.picker.registers() end, desc = "Registers" },
+    { "<leader>fC", function() Snacks.picker.commands() end, desc = "Commands" },
+    { "<leader>fk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
     { "<leader>fn", function() Snacks.picker.notifications() end, desc = "Notifications" },
 
     -- Diagnostics and LSP
@@ -20,7 +25,7 @@ return {
     { "<leader>fS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
 
     -- Files
-    { "<leader>f/", function() Snacks.picker.lines { layout = { preview = nil } } end, desc = "Find in Current Buffer" },
+    { "<leader>f/", function() Snacks.picker.lines { layout = { preview = nil } } end, desc = "Grep (Current Buffer)" },
     { "<leader>fF", function() Snacks.picker.files { hidden = true } end, desc = "Find Files (hidden)" },
     { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
     { "<leader>fo", function() Snacks.picker.recent { filter = { cwd = true } } end, desc = "Find Recent Files" },
