@@ -18,6 +18,15 @@ return {
     { "<leader>fd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
     { "<leader>fs", function() Snacks.picker.lsp_symbols() end, desc = "LSP Document Symbols" },
     { "<leader>fS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
+
+    -- Git
+    { "<leader>fg", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
+    { "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git Commits" },
+    { "<leader>gL", function() Snacks.picker.git_log_file() end, desc = "Git Commits (for current file)" },
+    { "<leader>gt", function() Snacks.picker.git_status() end, desc = "Git Status" },
+    { "<leader>fG", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
+    { "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Diff This" },
+    { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Blame line" },
   },
 
   ---@type snacks.Config
@@ -40,6 +49,7 @@ return {
     explorer = { replace_netrw = true },
     picker = {
       sources = {
+        git_branches = { all = true },
         explorer = {
           on_show = config.explorer.on_show,
           on_close = config.explorer.on_close,
