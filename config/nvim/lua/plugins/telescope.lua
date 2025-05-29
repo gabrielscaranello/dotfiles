@@ -9,10 +9,6 @@ return {
     "gbprod/yanky.nvim",
   },
   cmd = { "Telescope" },
-  keys = {
-    -- Buffers and helps
-    { "<leader>ft", "<cmd>TodoTelescope<cr>", desc = "Todos" },
-  },
 
   opts = {
     defaults = {
