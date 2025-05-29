@@ -44,7 +44,6 @@ return {
 
   ---@type snacks.Config
   opts = {
-    dashboard = { enabled = false },
     indent = {
       enabled = true,
       animate = {
