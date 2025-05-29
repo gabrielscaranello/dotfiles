@@ -11,6 +11,9 @@ return {
     { "<leader>e", config.explorer.toggle, { desc = "Explorer (keep open)" } },
     { "<leader>o", config.explorer.focus, { desc = "Explorer (auto close)" } },
 
+    -- Buffers and helps
+    { "<leader>fn", function() Snacks.picker.notifications() end, desc = "Notifications" },
+
     -- Diagnostics and LSP
     { "<leader>fd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
     { "<leader>fs", function() Snacks.picker.lsp_symbols() end, desc = "LSP Document Symbols" },
