@@ -44,6 +44,7 @@ return {
 
   ---@type snacks.Config
   opts = {
+    bigfile = { enabled = true },
     indent = {
       enabled = true,
       animate = {
@@ -55,12 +56,14 @@ return {
     input = {
       enabled = true,
       relative = "cursor",
+      expand = true,
       row = -3,
       col = 0,
     },
     explorer = { replace_netrw = true },
     picker = {
       sources = {
+        select = { ui_select = true },
         git_branches = { all = true },
         explorer = {
           on_show = config.explorer.on_show,
