@@ -1,9 +1,9 @@
 return {
   "gbprod/yanky.nvim",
-  dependencies = { "kkharji/sqlite.lua" },
+  dependencies = { "kkharji/sqlite.lua", "folke/snacks.nvim" },
 
   keys = {
-    { "<leader>fy", "<Cmd>Telescope yank_history<CR>", desc = "Find yanks" },
+    { "<leader>fy", function() Snacks.picker.pick "yanky" end, desc = "Find yanks" },
     { "y", "<Plug>(YankyYank)", desc = "Yank text", mode = { "n", "x" } },
     { "p", "<Plug>(YankyPutAfter)", desc = "Put yanked text after cursor", mode = { "n", "x" } },
     { "P", "<Plug>(YankyPutBefore)", desc = "Put yanked text before cursor", mode = { "n", "x" } },
@@ -23,37 +23,11 @@ return {
     { "=P", "<Plug>(YankyPutBeforeFilter)", desc = "Put before applying a filter" },
   },
 
-  opts = function()
-    local utils = require "yanky.utils"
-    local mapping = require "yanky.telescope.mapping"
-
-    return {
-      highlight = { timer = 200 },
-      ring = {
-        history_length = 100,
-        storage = "sqlite",
-      },
-      picker = {
-        telescope = {
-          use_default_mappings = false,
-          mappings = {
-            i = {
-              ["<c-h>"] = mapping.special_put "YankyPutIndentAfterLinewise",
-              ["<c-l>"] = mapping.special_put "YankyPutIndentBeforeLinewise",
-              ["<c-r>"] = mapping.set_register(utils.get_default_register()),
-              ["<c-x>"] = mapping.delete(),
-              ["<CR>"] = mapping.put "p",
-            },
-            n = {
-              d = mapping.delete(),
-              p = mapping.special_put "YankyPutIndentAfterLinewise",
-              P = mapping.special_put "YankyPutIndentBeforeLinewise",
-              r = mapping.set_register(utils.get_default_register()),
-              ["<CR>"] = mapping.put "p",
-            },
-          },
-        },
-      },
-    }
-  end,
+  opts = {
+    highlight = { timer = 200 },
+    ring = {
+      history_length = 100,
+      storage = "sqlite",
+    },
+  },
 }
