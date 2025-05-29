@@ -19,6 +19,14 @@ return {
     { "<leader>fs", function() Snacks.picker.lsp_symbols() end, desc = "LSP Document Symbols" },
     { "<leader>fS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
 
+    -- Files
+    { "<leader>f/", function() Snacks.picker.lines { layout = { preview = nil } } end, desc = "Find in Current Buffer" },
+    { "<leader>fF", function() Snacks.picker.files { hidden = true } end, desc = "Find Files (hidden)" },
+    { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
+    { "<leader>fo", function() Snacks.picker.recent { filter = { cwd = true } } end, desc = "Find Recent Files" },
+    { "<leader>fW", function() Snacks.picker.grep { hidden = true, noignore = true } end, desc = "Live Grep (hidden)" },
+    { "<leader>fw", function() Snacks.picker.grep() end, desc = "Live Grep" },
+
     -- Git
     { "<leader>fg", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
     { "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git Commits" },

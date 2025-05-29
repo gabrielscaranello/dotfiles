@@ -10,14 +10,6 @@ return {
   },
   cmd = { "Telescope" },
   keys = {
-    -- Files
-    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-    { "<leader>fF", "<cmd>Telescope find_files hidden=true<cr>", desc = "Find Files (hidden)" },
-    { "<leader>fw", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
-    { "<leader>fW", "<cmd>Telescope live_grep hidden=true noignore=true <cr>", desc = "Live Grep (hidden)" },
-    { "<leader>f/", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Find in Current Buffer" },
-    { "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Old Files" },
-
     -- Buffers and helps
     { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
     { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help Tags" },
