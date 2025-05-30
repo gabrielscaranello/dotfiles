@@ -55,6 +55,7 @@ return {
     },
     input = {
       enabled = true,
+      ui_select = true,
       relative = "cursor",
       expand = true,
       row = -3,
@@ -62,8 +63,8 @@ return {
     },
     explorer = { replace_netrw = true },
     picker = {
+      ui_select = true,
       sources = {
-        select = { ui_select = true },
         git_branches = { all = true },
         explorer = {
           on_show = config.explorer.on_show,
