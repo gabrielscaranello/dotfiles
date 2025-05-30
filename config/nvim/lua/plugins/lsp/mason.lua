@@ -1,6 +1,5 @@
 local ensure_installed = {
   -- bash
-  "bashls",
   "bash-debug-adapter",
   "bash-language-server",
   "shellcheck",
@@ -9,7 +8,6 @@ local ensure_installed = {
   -- Docker
   "docker-compose-language-service",
   "dockerfile-language-server",
-  "dockerls",
   "hadolint",
 
   -- Go
@@ -26,31 +24,25 @@ local ensure_installed = {
 
   -- Json
   "json-lsp",
-  "jsonls",
 
   -- Markdown
   "marksman",
 
   -- HTML/JSX/TSX/TS/JS
   "css-lsp",
-  "cssls",
   "emmet-ls",
-  "emmet_ls",
   "eslint-lsp",
-  "html",
   "html-lsp",
   "prettierd",
-  "vue_ls",
+  "vue-language-server",
   "vtsls",
 
   -- Lua
   "lua-language-server",
-  "lua_ls",
   "luacheck",
   "stylua",
 
   -- Prisma
-  "prismals",
   "prisma-language-server",
 
   -- Proto
@@ -59,35 +51,47 @@ local ensure_installed = {
 
   -- Yaml
   "yaml-language-server",
-  "yamlls",
 }
 
 return {
-  {
-    "mason-org/mason.nvim",
-    cmd = { "Mason" },
-    build = ":MasonUpdate",
-    dependencies = {
-      "mason-org/mason-lspconfig.nvim",
-      "WhoIsSethDaniel/mason-tool-installer.nvim",
-    },
-    lazy = false,
-    opts = {
-      ui = {
-        border = "rounded",
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
+  "mason-org/mason.nvim",
+  cmd = { "Mason" },
+  build = ":MasonUpdate",
+  opts_extend = { "ensure_installed" },
+  opts = {
+    ensure_installed = ensure_installed,
+    ui = {
+      border = "rounded",
+      icons = {
+        package_installed = "✓",
+        package_pending = "➜",
+        package_uninstalled = "✗",
       },
     },
   },
 
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    opts = {
-      ensure_installed = ensure_installed,
-    },
-  },
+  ---@param opts MasonSettings | {ensure_installed: string[]}
+  config = function(_, opts)
+    require("mason").setup(opts)
+    local mason_registry = require "mason-registry"
+
+    mason_registry:on("package:install:success", function()
+      vim.defer_fn(
+        function()
+          require("lazy.core.handler.event").trigger {
+            event = "FileType",
+            buf = vim.api.nvim_get_current_buf(),
+          }
+        end,
+        100
+      )
+    end)
+
+    mason_registry.refresh(function()
+      for _, tool in ipairs(opts.ensure_installed) do
+        local p = mason_registry.get_package(tool)
+        if not p:is_installed() then p:install() end
+      end
+    end)
+  end,
 }
