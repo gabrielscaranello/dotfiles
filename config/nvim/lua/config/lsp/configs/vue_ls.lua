@@ -1,5 +1,6 @@
 local shared = require "config.lsp.configs._shared"
 
+---@type vim.lsp.Config
 return {
   init_options = {
     vue = {

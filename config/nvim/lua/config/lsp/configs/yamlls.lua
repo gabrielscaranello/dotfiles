@@ -1,3 +1,4 @@
+---@type vim.lsp.Config
 return {
   on_new_config = function(config)
     config.settings.yaml.schemas =

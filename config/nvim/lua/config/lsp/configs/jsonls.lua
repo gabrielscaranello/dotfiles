@@ -1,3 +1,4 @@
+---@type vim.lsp.Config
 return {
   on_new_config = function(config)
     if not config.settings.json.schemas then config.settings.json.schemas = {} end

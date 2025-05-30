@@ -1,3 +1,4 @@
+---@type table<string,vim.lsp.Config>
 return {
   bashls = require "config.lsp.configs.bashls",
   buf_ls = require "config.lsp.configs.buf_ls",
@@ -9,7 +10,7 @@ return {
   jsonls = require "config.lsp.configs.jsonls",
   lua_ls = require "config.lsp.configs.lua_ls",
   pbls = require "config.lsp.configs.pbls",
-  volar = require "config.lsp.configs.volar",
   vtsls = require "config.lsp.configs.vtsls",
+  vue_ls = require "config.lsp.configs.vue_ls",
   yamlls = require "config.lsp.configs.yamlls",
 }
