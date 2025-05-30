@@ -7,8 +7,6 @@ return {
     "mason.nvim",
     { "mason-org/mason-lspconfig.nvim", config = function() end },
     "hrsh7th/cmp-nvim-lsp",
-    "folke/neodev.nvim",
-    "stevearc/dressing.nvim",
   },
   init = function() lsp_setup.create_autocmd() end,
   opts = {
