@@ -37,6 +37,9 @@ return {
 
   config = function(_, opts)
     local cmp_nvim_lsp = require "cmp_nvim_lsp"
+    local mason_lspconfig = require "mason-lspconfig"
+
+    local installed_servers = mason_lspconfig.get_installed_servers()
     local capabilities = vim.tbl_deep_extend(
       "force",
       {},
@@ -45,17 +48,11 @@ return {
       opts.capabilities or {}
     )
 
-    local enable_servers = {} ---@type table<string>
-    local function configure_server(server_name)
+    for _, server_name in ipairs(installed_servers) do
       local config = lsp_setup.mkconfig(server_name, { capabilities = capabilities })
       vim.lsp.config[server_name] = config
-      table.insert(enable_servers, server_name)
     end
 
-    for server_name in pairs(lsp_setup.configs) do
-      configure_server(server_name)
-    end
-
-    vim.lsp.enable(enable_servers)
+    vim.lsp.enable(installed_servers)
   end,
 }
