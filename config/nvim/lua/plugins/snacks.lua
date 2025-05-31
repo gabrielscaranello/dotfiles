@@ -72,7 +72,7 @@ return {
           auto_close = true,
           layout = {
             preview = "main",
-            hidden = { "preview", "input" },
+            hidden = { "preview" },
             layout = { position = "right" },
           },
         },
