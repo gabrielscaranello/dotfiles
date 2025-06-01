@@ -5,6 +5,5 @@ return {
   { "folke/edgy.nvim", event = "VeryLazy", opts = {} },
   { "junegunn/vim-easy-align", event = "VeryLazy" },
   { "nvim-lua/plenary.nvim", event = "VeryLazy" },
-  { "stevearc/stickybuf.nvim", event = "VeryLazy", opts = {}, cmd = { "PinBuffer", "PinBuftype", "PinFiletype" } },
   { "wakatime/vim-wakatime", event = { "BufReadPre" } },
 }
