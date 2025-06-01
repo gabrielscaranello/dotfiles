@@ -40,6 +40,10 @@ return {
     { "<leader>fG", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
     { "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Diff This" },
     { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Blame line" },
+
+    -- Words
+    { "<c-n>", function() Snacks.words.jump(1, true) end, desc = "Jump to next word reference" },
+    { "<c-p>", function() Snacks.words.jump(-1, true) end, desc = "Jump to previous word reference" },
   },
 
   ---@type snacks.Config
@@ -93,5 +97,6 @@ return {
       },
     },
     scroll = { enabled = true },
+    words = { enabled = true, debounce = 200, notify_jump = true },
   },
 }
