@@ -92,5 +92,6 @@ return {
         trace = icons.misc.trace,
       },
     },
+    scroll = { enabled = true },
   },
 }
