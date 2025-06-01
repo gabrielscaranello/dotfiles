@@ -1,6 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = { "echasnovski/mini.icons" },
   lazy = false,
   after = "catppuccin",
   opts = function()
@@ -18,7 +18,7 @@ return {
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
         disabled_filetypes = {
-          statusline = { "alpha" },
+          statusline = { "snacks_dashboard" },
           winbar = { "snacks_picker_list" },
         },
       },

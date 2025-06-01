@@ -1,7 +1,7 @@
 return {
   "folke/trouble.nvim",
   cmd = { "Trouble", "TroubleClose", "TroubleToggle", "TroubleRefresh" },
-  dependencies = { "nvim-tree/nvim-web-devicons", "folke/todo-comments.nvim" },
+  dependencies = { "echasnovski/mini.icons", "folke/todo-comments.nvim" },
   event = { "BufReadPre", "BufNewFile" },
   keys = {
     { "<leader>xx", "<cmd>Trouble<cr>", desc = "Open/Close Trouble List" },
