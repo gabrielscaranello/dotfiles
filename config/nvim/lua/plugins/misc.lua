@@ -2,6 +2,7 @@ return {
   { "MunifTanjim/nui.nvim", event = "VeryLazy" },
   { "b0o/SchemaStore.nvim", event = "VeryLazy" },
   { "echasnovski/mini.icons", event = "VeryLazy", version = "*" },
+  { "echasnovski/mini.pairs", event = "VeryLazy", opts = {} },
   { "folke/edgy.nvim", event = "VeryLazy", opts = {} },
   { "junegunn/vim-easy-align", event = "VeryLazy" },
   { "nvim-lua/plenary.nvim", event = "VeryLazy" },
