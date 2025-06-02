@@ -8,7 +8,6 @@ return {
     { "mason-org/mason-lspconfig.nvim", config = function() end },
     "hrsh7th/cmp-nvim-lsp",
   },
-  init = function() lsp_setup.create_autocmd() end,
   opts = {
     capabilities = {
       workspace = {

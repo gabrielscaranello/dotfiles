@@ -1,3 +1,10 @@
+-- Setup LSP on_attach function
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+  callback = function(...) require("config.lsp").attach_callback(...) end,
+})
+
+-- LSP progress on notify
 ---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>
 local progress = vim.defaulttable()
 vim.api.nvim_create_autocmd("LspProgress", {

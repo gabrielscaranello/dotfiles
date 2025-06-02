@@ -36,7 +36,7 @@ local capabilities_actions_map = {
   },
 }
 
-local attach_callback = function(event)
+return function(event)
   local client = vim.lsp.get_client_by_id(event.data.client_id)
   local function with_opts(opts)
     opts.buffer = event.buf
@@ -77,11 +77,4 @@ local attach_callback = function(event)
   end
 
   keymap.map(keymaps)
-end
-
-return function()
-  vim.api.nvim_create_autocmd("LspAttach", {
-    group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-    callback = function(...) attach_callback(...) end,
-  })
 end
