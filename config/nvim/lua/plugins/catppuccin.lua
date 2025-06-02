@@ -9,7 +9,7 @@ return {
     transparent_background = true,
     integrations = {
       alpha = true,
-      cmp = true,
+      blink_cmp = true,
       flash = true,
       gitsigns = true,
       illuminate = { enabled = true, lsp = false },

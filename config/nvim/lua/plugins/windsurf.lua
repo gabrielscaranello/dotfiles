@@ -1,9 +1,9 @@
 return {
   "Exafunction/windsurf.nvim",
   event = { "BufReadPre", "BufNewFile" },
+  cond = vim.g.ai_provider == "codeium",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "hrsh7th/nvim-cmp",
   },
 
   opts = {
@@ -21,6 +21,5 @@ return {
       },
     },
   },
-
   config = function(_, opts) require("codeium").setup(opts) end,
 }

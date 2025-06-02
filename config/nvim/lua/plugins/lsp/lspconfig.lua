@@ -5,7 +5,7 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "mason-org/mason-lspconfig.nvim",
-    "hrsh7th/cmp-nvim-lsp",
+    "Saghen/blink.cmp",
   },
   opts = {
     ---@type lsp.ClientCapabilities
@@ -35,7 +35,7 @@ return {
   },
 
   config = function(_, opts)
-    local cmp_nvim_lsp = require "cmp_nvim_lsp"
+    local cmp_nvim_lsp = require "blink-cmp"
     local mason_lspconfig = require "mason-lspconfig"
 
     local installed_servers = mason_lspconfig.get_installed_servers()
@@ -43,7 +43,7 @@ return {
       "force",
       {},
       vim.lsp.protocol.make_client_capabilities(),
-      cmp_nvim_lsp.default_capabilities() or {},
+      cmp_nvim_lsp.get_lsp_capabilities() or {},
       opts.capabilities or {}
     )
 

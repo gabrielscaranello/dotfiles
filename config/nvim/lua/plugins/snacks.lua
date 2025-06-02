@@ -96,7 +96,15 @@ return {
         trace = icons.misc.trace,
       },
     },
-    scroll = { enabled = true },
+    scroll = {
+      enabled = true,
+      filter = function(buf)
+        return vim.g.snacks_scroll ~= false
+          and vim.b[buf].snacks_scroll ~= false
+          and vim.bo[buf].buftype ~= "terminal"
+          and vim.bo[buf].filetype ~= "blink-cmp-menu"
+      end,
+    },
     words = { enabled = true, debounce = 200, notify_jump = true },
   },
 }

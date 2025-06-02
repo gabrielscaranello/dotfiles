@@ -1,141 +1,98 @@
+local icons = require "utils.icons"
+
 return {
   {
-    "L3MON4D3/LuaSnip",
-    version = "v2.*",
-    build = "make install_jsregexp",
-    dependencies = { "rafamadriz/friendly-snippets" },
-    config = function() require("luasnip.loaders.from_vscode").lazy_load() end,
-  },
-  {
-    "hrsh7th/nvim-cmp",
+    "saghen/blink.cmp",
+    version = "1.*",
     event = "InsertEnter",
+    build = "cargo build --release",
     dependencies = {
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-nvim-lsp",
-      "saadparwaiz1/cmp_luasnip",
-      "rafamadriz/friendly-snippets",
-      "onsails/lspkind.nvim",
-      "L3MON4D3/LuaSnip",
-      "hrsh7th/cmp-emoji",
-      "brenoprata10/nvim-highlight-colors",
-      "SergioRibera/cmp-dotenv",
+      "Exafunction/codeium.nvim",
+      "bydlw98/blink-cmp-env",
+      "moyiz/blink-emoji.nvim",
+      { "saghen/blink.compat", opts = {}, version = "2.*" },
+      { "L3MON4D3/LuaSnip", version = "v2.*" },
     },
 
-    opts = function()
-      local cmp = require "cmp"
-      local luasnip = require "luasnip"
-      local lspkind = require "lspkind"
-      local icons = require "utils.icons"
-      local cmp_cfg = require "config.cmp"
-      local highlight_colors = require "nvim-highlight-colors"
+    opts_extend = {
+      "sources.completion.enabled_providers",
+      "sources.compat",
+      "sources.default",
+    },
 
-      ---@type cmp.ConfigSchema
-      return {
-        completion = {
-          completeopt = "menu,menuone,noselect",
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
+    opts = {
+      cmdline = { enabled = false },
+      snippets = { preset = "luasnip" },
+
+      appearance = {
+        use_nvim_cmp_as_default = false,
+        nerd_font_variant = "normal",
+        kind_icons = icons.kinds,
+      },
+
+      completion = {
+        list = { selection = { preselect = false, auto_insert = true } },
+        ghost_text = { enabled = false },
+        accept = { auto_brackets = { enabled = true } },
+
+        menu = {
+          auto_show = function(ctx) return ctx.mode ~= "cmdline" end,
+          border = "rounded",
+          winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+          draw = { treesitter = { "lsp" } },
         },
 
-        preselect = cmp.PreselectMode.Item,
-
-        snippet = {
-          expand = function(args) luasnip.lsp_expand(args.body) end,
+        documentation = {
+          auto_show = false,
+          auto_show_delay_ms = 0,
+          window = {
+            border = "rounded",
+            winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+          },
         },
+      },
 
-        ---@diagnostic disable-next-line: missing-fields
-        performance = {
-          max_view_entries = 50,
-          debounce = 50,
-          throttle = 80,
-          fetching_timeout = 200,
-        },
-
+      signature = {
         window = {
-          completion = cmp.config.window.bordered {
-            col_offset = -2,
-            max_width = 15,
-            scrollbar = false,
-            scrolloff = 5,
-            side_padding = 1,
+          border = "rounded",
+          winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
+        },
+      },
+
+      sources = {
+        default = { vim.g.ai_provider, "lsp", "snippets", "path", "buffer", "emoji", "env" },
+        providers = {
+          emoji = { name = "emoji", module = "blink-emoji" },
+          codeium = {
+            enabled = vim.g.ai_provider == "codeium",
+            name = "Codeium",
+            module = "codeium.blink",
+            max_items = 3,
+            async = true,
           },
-          documentation = cmp.config.window.bordered {
-            max_height = 20,
-            max_width = 20,
-          },
-        },
-
-        mapping = cmp.mapping.preset.insert {
-          ["<C-k>"] = cmp.mapping.select_prev_item(),
-          ["<C-j>"] = cmp.mapping.select_next_item(),
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
-          ["<C-Space>"] = cmp.mapping.complete(),
-          ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm { select = false },
-          ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-              luasnip.expand_or_jump()
-            else
-              fallback()
-            end
-          end, { "i", "s" }),
-          ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-              luasnip.jump(-1)
-            else
-              fallback()
-            end
-          end, { "i", "s" }),
-        },
-
-        sources = {
-          { name = vim.g.completion_ai, group_index = 1, max_item_count = 4 },
-          { name = "nvim_lsp", group_index = 1 },
-          { name = "luasnip", group_index = 1 },
-          { name = "dotenv", group_index = 2 },
-          { name = "buffer", group_index = 2 },
-          { name = "path", group_index = 2 },
-          { name = "emoji", group_index = 3 },
-        },
-
-        sorting = {
-          priority_weight = 2,
-          comparators = {
-            cmp_cfg.ai_priority,
-            cmp.config.compare.locality,
-            cmp.config.compare.score,
-            cmp.config.compare.recently_used,
-            cmp.config.compare.order,
+          env = {
+            name = "Env",
+            module = "blink-cmp-env",
+            opts = { show_braces = false, show_documentation_window = true },
           },
         },
+      },
 
-        formatting = {
-          expandable_indicator = true,
-          fields = { "kind", "abbr", "menu" },
-          format = function(entry, item)
-            local color_item = highlight_colors.format(entry, { kind = item.kind })
-
-            item = lspkind.cmp_format {
-              mode = "symbol",
-              maxwidth = 25,
-              ellipsis_char = "...",
-              preset = "codicons",
-              symbol_map = icons.kinds,
-            }(entry, item)
-
-            if color_item and color_item.abbr_hl_group then
-              item.kind_hl_group = color_item.abbr_hl_group
-              item.kind = color_item.abbr
-            end
-
-            return item
-          end,
-        },
-      }
-    end,
+      keymap = {
+        preset = "enter",
+        ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+        ["<C-e>"] = { "cancel" },
+        ["<C-f>"] = { "scroll_documentation_down", "fallback" },
+        ["<C-j>"] = { "select_next" },
+        ["<C-k>"] = { "select_prev" },
+        ["<C-l>"] = { "show_documentation" },
+        ["<C-h>"] = { "hide_documentation" },
+        ["<C-Space>"] = { "show", "show_documentation", "hide_documentation" },
+        ["<Tab>"] = { "snippet_forward", "fallback" },
+        ["<S-Tab>"] = { "snippet_backward", "fallback" },
+      },
+    },
   },
 }
