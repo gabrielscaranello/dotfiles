@@ -24,6 +24,10 @@ keymap.map {
   { "n", "<C-j>", "<C-w>j", { desc = "Go to below split" } },
   { "n", "<C-k>", "<C-w>k", { desc = "Go to above split" } },
   { "n", "<C-l>", "<C-w>l", { desc = "Go to right split" } },
+  { "n", "<C-Up>", "<cmd>resize -2<cr>", { desc = "Resize split up" } },
+  { "n", "<C-Down>", "<cmd>resize +2<cr>", { desc = "Resize split down" } },
+  { "n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Resize split left" } },
+  { "n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Resize split right" } },
 
   -- package
   { "n", "<leader>pl", "<cmd>Lazy<cr>", { desc = "Lazy Plugin Manager" } },

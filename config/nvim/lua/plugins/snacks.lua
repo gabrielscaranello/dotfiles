@@ -77,7 +77,7 @@ return {
           layout = {
             preview = "main",
             hidden = { "preview" },
-            layout = { position = "right" },
+            layout = { position = "right", resize = true },
           },
         },
       },
