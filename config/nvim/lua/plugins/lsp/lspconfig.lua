@@ -4,11 +4,11 @@ return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    "mason.nvim",
-    { "mason-org/mason-lspconfig.nvim", config = function() end },
+    "mason-org/mason-lspconfig.nvim",
     "hrsh7th/cmp-nvim-lsp",
   },
   opts = {
+    ---@type lsp.ClientCapabilities
     capabilities = {
       workspace = {
         fileOperations = {
@@ -16,19 +16,19 @@ return {
           willRename = true,
         },
       },
-    },
-    textDocument = {
-      completion = {
-        completionItem = {
-          documentationFormat = { "markdown", "plaintext" },
-          snippetSupport = true,
-          preselectSupport = true,
-          insertReplaceSupport = true,
-          labelDetailsSupport = true,
-          deprecatedSupport = true,
-          commitCharactersSupport = true,
-          tagSupport = { valueSet = { 1 } },
-          resolveSupport = { properties = { "documentation", "detail", "additionalTextEdits" } },
+      textDocument = {
+        completion = {
+          completionItem = {
+            documentationFormat = { "markdown", "plaintext" },
+            snippetSupport = true,
+            preselectSupport = true,
+            insertReplaceSupport = true,
+            labelDetailsSupport = true,
+            deprecatedSupport = true,
+            commitCharactersSupport = true,
+            tagSupport = { valueSet = { 1 } },
+            resolveSupport = { properties = { "documentation", "detail", "additionalTextEdits" } },
+          },
         },
       },
     },
