@@ -1,35 +1,30 @@
-local shared = require "config.lsp.configs._shared"
+local ts_js_settings = {
+  updateImportsOnFileMove = { enabled = "always" },
+  suggest = {
+    completeFunctionCalls = true,
+  },
+  inlayHints = {
+    enumMemberValues = { enabled = true },
+    functionLikeReturnTypes = { enabled = true },
+    parameterNames = { enabled = "literals" },
+    parameterTypes = { enabled = true },
+    propertyDeclarationTypes = { enabled = true },
+    variableTypes = { enabled = false },
+  },
+}
 
 ---@type vim.lsp.Config
 return {
   settings = {
-    typescript = shared.ts_js_settings,
-    javascript = shared.ts_js_settings,
+    typescript = ts_js_settings,
+    javascript = ts_js_settings,
     vtsls = {
       enableMoveToFileCodeAction = true,
-      tsserver = {
-        globalPlugins = {},
+      autoUseWorkspaceTsdk = true,
+      experimental = {
+        maxInlayHintLength = 30,
+        completion = { enableServerSideFuzzyMatch = true },
       },
     },
   },
-  before_init = function(_, config)
-    local registry_ok, registry = pcall(require, "mason-registry")
-    if not registry_ok then return end
-
-    local vuels = registry.get_package "vue-language-server"
-
-    if vuels:is_installed() then
-      local volar_install_path = vim.fn.expand "$MASON/packages/vue-language-server/node_modules/@vue/language-server"
-
-      local vue_plugin_config = {
-        name = "@vue/typescript-plugin",
-        location = volar_install_path,
-        languages = { "vue" },
-        configNamespace = "typescript",
-        enableForWorkspaceTypeScriptVersions = true,
-      }
-
-      table.insert(config.settings.vtsls.tsserver.globalPlugins, { vue_plugin_config })
-    end
-  end,
 }
