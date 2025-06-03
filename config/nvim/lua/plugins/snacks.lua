@@ -60,10 +60,12 @@ return {
     input = {
       enabled = true,
       ui_select = true,
-      relative = "cursor",
       expand = true,
-      row = -3,
-      col = 0,
+      win = {
+        relative = "cursor",
+        row = 1,
+        col = 0,
+      },
     },
     explorer = { replace_netrw = true },
     picker = {
