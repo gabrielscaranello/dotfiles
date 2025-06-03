@@ -18,23 +18,21 @@ return {
   keys = {
     {
       "<leader>lf",
-      function()
-        require("conform").format()
-        if vim.fn.exists ":EslintFixAll" > 0 then vim.cmd.EslintFixAll() end
-      end,
+      function() require("conform").format() end,
       mode = { "n", "v" },
       desc = "Format File or Range (in visual mode)",
     },
   },
 
+  ---@type conform.setupOpts
   opts = {
     formatters_by_ft = {
       ["yaml.docker-compose"] = { "prettierd" },
       css = { "prettierd" },
       go = { "goimports", "gofmt", lsp_format = "last" },
       html = { "prettierd" },
-      javascript = { "prettierd" },
-      javascriptreact = { "prettierd" },
+      javascript = { "prettierd", lsp_format = "first" },
+      javascriptreact = { "prettierd", lsp_format = "first" },
       json = { "prettierd" },
       less = { "prettierd" },
       lua = { "stylua" },
@@ -43,9 +41,9 @@ return {
       proto = { "buf" },
       scss = { "prettierd" },
       sh = { "shfmt" },
-      typescript = { "prettierd" },
-      typescriptreact = { "prettierd" },
-      vue = { "prettierd" },
+      typescript = { "prettierd", lsp_format = "first" },
+      typescriptreact = { "prettierd", lsp_format = "first" },
+      vue = { "prettierd", lsp_format = "first" },
       yaml = { "prettierd" },
     },
 
