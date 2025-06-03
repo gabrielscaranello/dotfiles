@@ -34,7 +34,7 @@ return {
       completion = {
         list = {
           max_items = 50,
-          selection = { preselect = false, auto_insert = true },
+          selection = { preselect = true, auto_insert = true },
         },
         ghost_text = { enabled = false },
         accept = { auto_brackets = { enabled = true }, create_undo_point = true },
@@ -72,6 +72,14 @@ return {
       sources = {
         default = { vim.g.ai.provider, "lsp", "snippets", "path", "buffer", "emoji", "env" },
         providers = {
+          lsp = {
+            transform_items = function(_, items)
+              return vim.tbl_filter(
+                function(item) return item.kind ~= require("blink.cmp.types").CompletionItemKind.Snippet end,
+                items
+              )
+            end,
+          },
           codeium = {
             enabled = vim.g.ai.provider == "codeium",
             name = "Codeium",
