@@ -11,7 +11,7 @@ return {
   },
 
   on_attach = function()
-    local lsp_config = require "config.lsp"
-    if not lsp_config.has_eslint_config() then return end
+    local util = require "utils.lsp"
+    if not util.eslint.exists() then return end
   end,
 }

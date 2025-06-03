@@ -1,5 +1,7 @@
+local M = {}
+
 ---@return boolean
-return function()
+function M.exists()
   local utils = require "utils.file"
   local config_exists = utils.files_exists(
     ".eslintrc",
@@ -20,3 +22,5 @@ return function()
   if utils.has_package_json_key "eslintConfig" then return true end
   return false
 end
+
+return M
