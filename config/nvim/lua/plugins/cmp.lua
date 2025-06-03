@@ -70,10 +70,10 @@ return {
       },
 
       sources = {
-        default = { vim.g.ai_provider, "lsp", "snippets", "path", "buffer", "emoji", "env" },
+        default = { vim.g.ai.provider, "lsp", "snippets", "path", "buffer", "emoji", "env" },
         providers = {
           codeium = {
-            enabled = vim.g.ai_provider == "codeium",
+            enabled = vim.g.ai.provider == "codeium",
             name = "Codeium",
             module = "codeium.blink",
             kind = "Codeium",

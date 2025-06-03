@@ -1,7 +1,7 @@
 return {
   "Exafunction/windsurf.nvim",
   event = { "BufReadPre", "BufNewFile" },
-  cond = vim.g.ai_provider == "codeium",
+  cond = vim.g.ai.provider == "codeium",
   dependencies = {
     "nvim-lua/plenary.nvim",
   },

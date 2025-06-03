@@ -70,3 +70,9 @@ fi
 [[ ! -f ~/.alias ]] || source ~/.alias
 # End alias source
 # -----------------------------
+
+# -----------------------------
+# Defining AI Provider Variables
+export AI_PROVIDER="codeium"
+# End AI Provider Variables
+# -----------------------------

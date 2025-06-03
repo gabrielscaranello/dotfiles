@@ -49,7 +49,9 @@ local global_vars = {
   loaded_python3_provider = 0,
   loaded_ruby_provider = 0,
 
-  ai_provider = "codeium",
+  ai = {
+    provider = vim.env.AI_PROVIDER or "codeium",
+  },
 }
 
 vim.diagnostic.config {
