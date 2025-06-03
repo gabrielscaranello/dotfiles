@@ -10,8 +10,8 @@ return {
       "Exafunction/codeium.nvim",
       "bydlw98/blink-cmp-env",
       "moyiz/blink-emoji.nvim",
+      "rafamadriz/friendly-snippets",
       { "saghen/blink.compat", opts = {}, version = "2.*" },
-      { "L3MON4D3/LuaSnip", version = "v2.*" },
     },
 
     opts_extend = {
@@ -23,7 +23,7 @@ return {
     ---@type blink.cmp.Config
     opts = {
       cmdline = { enabled = false },
-      snippets = { preset = "luasnip" },
+      snippets = { preset = "default" },
 
       appearance = {
         use_nvim_cmp_as_default = false,
@@ -34,7 +34,7 @@ return {
       completion = {
         list = {
           max_items = 50,
-          selection = { preselect = true, auto_insert = true },
+          selection = { preselect = false, auto_insert = true },
         },
         ghost_text = { enabled = false },
         accept = { auto_brackets = { enabled = true }, create_undo_point = true },
@@ -47,7 +47,7 @@ return {
         },
 
         documentation = {
-          auto_show = false,
+          auto_show = true,
           window = {
             border = "rounded",
             winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
@@ -81,15 +81,14 @@ return {
             max_items = 3,
             async = true,
           },
-          lsp = { score_offset = 90 },
-          snippets = { score_offset = 20 },
+          snippets = { enabled = true, max_items = 5 },
           env = {
             name = "Env",
             module = "blink-cmp-env",
-            score_offset = 1,
+            score_offset = -1,
+            max_items = 5,
             opts = { show_braces = false, show_documentation_window = true },
           },
-          buffer = { score_offset = -1 },
           path = { score_offset = -1 },
           emoji = { name = "emoji", score_offset = -1, module = "blink-emoji" },
         },
