@@ -51,6 +51,7 @@ local global_vars = {
 
   ai = {
     provider = vim.env.AI_PROVIDER or "codeium",
+    use_copilot_chat = vim.env.USE_COPILOT_CHAT or false,
   },
 }
 

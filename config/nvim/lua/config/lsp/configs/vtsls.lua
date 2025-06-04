@@ -1,30 +1,26 @@
-local ts_js_settings = {
+local typescript = {
   updateImportsOnFileMove = { enabled = "always" },
-  suggest = {
-    completeFunctionCalls = true,
-  },
   inlayHints = {
-    enumMemberValues = { enabled = true },
-    functionLikeReturnTypes = { enabled = true },
-    parameterNames = { enabled = "literals" },
+    parameterNames = { enabled = "all" },
     parameterTypes = { enabled = true },
+    variableTypes = { enabled = true },
     propertyDeclarationTypes = { enabled = true },
-    variableTypes = { enabled = false },
+    functionLikeReturnTypes = { enabled = true },
+    enumMemberValues = { enabled = true },
   },
 }
 
 ---@type vim.lsp.Config
 return {
   settings = {
-    typescript = ts_js_settings,
-    javascript = ts_js_settings,
+    typescript = typescript,
+    javascript = vim.tbl_deep_extend("force", typescript, {
+      inlayHints = {
+        parameterNames = { enabled = "literals" },
+      },
+    }),
     vtsls = {
       enableMoveToFileCodeAction = true,
-      autoUseWorkspaceTsdk = true,
-      experimental = {
-        maxInlayHintLength = 30,
-        completion = { enableServerSideFuzzyMatch = true },
-      },
     },
   },
 }

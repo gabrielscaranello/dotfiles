@@ -3,3 +3,4 @@
 # -----------------------------
 
 export AI_PROVIDER="codeium"
+export USE_COPILOT_CHAT=false

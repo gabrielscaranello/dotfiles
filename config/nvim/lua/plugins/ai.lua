@@ -13,6 +13,76 @@ return {
   },
 
   {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "main",
+    event = "VeryLazy",
+    cond = vim.g.ai.provider == "copilot" or vim.g.ai.use_copilot_chat,
+    cmd = "CopilotChat",
+    dependencies = {
+      "github/copilot.lua",
+      "nvim-lua/plenary.nvim",
+      {
+        "folke/edgy.nvim",
+        optional = true,
+        opts = function(_, opts)
+          opts.right = opts.right or {}
+          table.insert(opts.right, {
+            ft = "copilot-chat",
+            title = "Copilot Chat",
+            size = { width = 50 },
+          })
+        end,
+      },
+    },
+    opts = function()
+      local user = vim.env.USER or "User"
+      return {
+        auto_insert_mode = true,
+        question_header = " " .. user .. " ",
+        answer_header = "  Copilot ",
+        window = {
+          width = 0.4,
+        },
+      }
+    end,
+
+    keys = {
+      { "<c-s>", "<CR>", ft = "copilot-chat", desc = "Submit Prompt", remap = true },
+      { "<leader>a", "", desc = "+AI", mode = { "n", "v" } },
+      {
+        "<leader>aa",
+        function() require("CopilotChat").toggle() end,
+        desc = "Toggle (CopilotChat)",
+        mode = { "n", "v" },
+      },
+      {
+        "<leader>ax",
+        function() require("CopilotChat").reset() end,
+        desc = "Clear (CopilotChat)",
+        mode = { "n", "v" },
+      },
+      {
+        "<leader>aq",
+        function()
+          local opts = { prompt = "Quick Chat: " }
+          local cb = function(input)
+            if input ~= "" then require("CopilotChat").ask(input) end
+          end
+          vim.ui.input(opts, cb)
+        end,
+        desc = "Quick Chat (CopilotChat)",
+        mode = { "n", "v" },
+      },
+      {
+        "<leader>ap",
+        function() require("CopilotChat").select_prompt() end,
+        desc = "Prompt Actions (CopilotChat)",
+        mode = { "n", "v" },
+      },
+    },
+  },
+
+  {
     "fang2hou/blink-copilot",
     cond = vim.g.ai.provider == "copilot",
     dependencies = { "zbirenbaum/copilot.lua" },
