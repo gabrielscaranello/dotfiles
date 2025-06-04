@@ -71,6 +71,14 @@ return {
     explorer = { replace_netrw = true },
     picker = {
       ui_select = true,
+      win = {
+        input = {
+          keys = {
+            ["<C-p>"] = { "history_back", mode = { "i", "n" } },
+            ["<C-n>"] = { "history_forward", mode = { "i", "n" } },
+          },
+        },
+      },
       sources = {
         git_branches = { all = true },
         explorer = {
