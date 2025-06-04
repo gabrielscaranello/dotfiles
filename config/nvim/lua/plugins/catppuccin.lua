@@ -7,6 +7,9 @@ return {
   ---@type CatppuccinOptions
   opts = {
     transparent_background = true,
+    kitty = true,
+    show_end_of_buffer = false,
+    flavour = "mocha",
     integrations = {
       alpha = true,
       blink_cmp = true,
