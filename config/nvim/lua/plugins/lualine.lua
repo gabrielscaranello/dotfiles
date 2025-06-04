@@ -63,6 +63,7 @@ return {
             color = { fg = colors.peach },
           },
           { "filetype", icon_only = true },
+          components.ai(colors),
           components.lsp(colors),
         },
         lualine_y = {

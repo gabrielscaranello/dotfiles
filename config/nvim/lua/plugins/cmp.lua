@@ -9,6 +9,7 @@ return {
     dependencies = {
       "Exafunction/codeium.nvim",
       "bydlw98/blink-cmp-env",
+      "fang2hou/blink-copilot",
       "moyiz/blink-emoji.nvim",
       "rafamadriz/friendly-snippets",
       { "saghen/blink.compat", opts = {}, version = "2.*" },
@@ -79,6 +80,15 @@ return {
                 items
               )
             end,
+          },
+          copilot = {
+            enabled = vim.g.ai.provider == "copilot",
+            name = "copilot",
+            module = "blink-copilot",
+            kind = "Copilot",
+            score_offset = 100,
+            async = true,
+            opts = { max_completions = 3, debounce = 200 },
           },
           codeium = {
             enabled = vim.g.ai.provider == "codeium",

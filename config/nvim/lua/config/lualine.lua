@@ -1,7 +1,22 @@
+local icons = require "utils.icons"
 return {
+  ai = function(colors)
+    local provider = vim.g.ai.provider
+
+    local function ai_status() return icons.kinds[provider:sub(1, 1):upper() .. provider:sub(2)] end
+
+    return {
+      ai_status,
+      color = { fg = colors.sapphire },
+      padding = { left = 0, right = 1 },
+      cond = function() return provider ~= nil end,
+    }
+  end,
   lsp = function(colors)
     local function lsp_status()
-      local clients = vim.lsp.get_clients()
+      local all_clients = vim.lsp.get_clients()
+      local clients = vim.tbl_filter(function(client) return client.name ~= "copilot" end, all_clients)
+
       if #clients == 0 then return nil end
 
       local lsp_names = {}
