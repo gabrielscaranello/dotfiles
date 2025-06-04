@@ -2,12 +2,21 @@ local icons = require "utils.icons"
 return {
   ai = function(colors)
     local provider = vim.g.ai.provider
-
     local function ai_status() return icons.kinds[provider:sub(1, 1):upper() .. provider:sub(2)] end
+
+    local get_color = function()
+      if vim.fn.exists ":Codeium" > 0 then
+        return { fg = colors.teal }
+      elseif #(vim.lsp.get_clients { name = "copilot" }) > 0 then
+        return { fg = colors.sapphire }
+      else
+        return { fg = colors.text }
+      end
+    end
 
     return {
       ai_status,
-      color = { fg = colors.sapphire },
+      color = get_color,
       padding = { left = 0, right = 1 },
       cond = function() return provider ~= nil end,
     }
