@@ -52,7 +52,6 @@ return {
         desc = "ToggleTerm Lazygit",
       }
 
-      keys[#keys + 1] = { "<leader>gg", lazygit.callback, desc = lazygit.desc }
       keys[#keys + 1] = { "<leader>tl", lazygit.callback, desc = lazygit.desc }
     end
 
