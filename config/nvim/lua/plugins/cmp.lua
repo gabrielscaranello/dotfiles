@@ -7,9 +7,7 @@ return {
     version = "1.*",
     event = "InsertEnter",
     dependencies = {
-      "Exafunction/codeium.nvim",
       "bydlw98/blink-cmp-env",
-      "fang2hou/blink-copilot",
       "moyiz/blink-emoji.nvim",
       "rafamadriz/friendly-snippets",
       { "saghen/blink.compat", opts = {}, version = "2.*" },
@@ -71,7 +69,7 @@ return {
       },
 
       sources = {
-        default = { vim.g.ai.provider, "lsp", "snippets", "path", "buffer", "emoji", "env" },
+        default = { "lsp", "snippets", "path", "buffer", "emoji", "env" },
         providers = {
           lsp = {
             transform_items = function(_, items)
@@ -81,25 +79,6 @@ return {
               )
             end,
           },
-          copilot = {
-            enabled = vim.g.ai.provider == "copilot",
-            name = "copilot",
-            module = "blink-copilot",
-            kind = "Copilot",
-            score_offset = 100,
-            async = true,
-            opts = { max_completions = 3, debounce = 200 },
-          },
-          codeium = {
-            enabled = vim.g.ai.provider == "codeium",
-            name = "Codeium",
-            module = "codeium.blink",
-            kind = "Codeium",
-            score_offset = 100,
-            max_items = 3,
-            async = true,
-          },
-          snippets = { enabled = true, max_items = 5 },
           env = {
             name = "Env",
             module = "blink-cmp-env",
