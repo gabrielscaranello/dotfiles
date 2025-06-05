@@ -105,6 +105,12 @@ M.vitest_config_files = {
   "vitest.config.mjs",
   "vitest.config.mts",
   "vitest.config.ts",
+  "vitest.workspace.cjs",
+  "vitest.workspace.cts",
+  "vitest.workspace.js",
+  "vitest.workspace.mjs",
+  "vitest.workspace.mts",
+  "vitest.workspace.ts",
 }
 
 M.jest_config_files = {
