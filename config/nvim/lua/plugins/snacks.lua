@@ -107,6 +107,7 @@ return {
         trace = icons.misc.trace,
       },
     },
+    quickfile = { enabled = true },
     scroll = {
       enabled = true,
       filter = function(buf)

@@ -14,7 +14,7 @@ return {
       dashboard = {
         enabled = true,
         width = 50,
-        row = 8,
+        row = 5,
         preset = {
           keys = {
             { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
@@ -26,6 +26,7 @@ return {
               action = ":lua Snacks.dashboard.pick('oldfiles', { filter = { cwd = true } })",
             },
             { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+            { icon = " ", key = "s", desc = "Restore Session", section = "session" },
             {
               icon = " ",
               key = "c",
