@@ -89,4 +89,41 @@ M.babel_config_files = {
   "babel.config.ts",
 }
 
+M.vite_config_files = {
+  "vite.config.cjs",
+  "vite.config.cts",
+  "vite.config.js",
+  "vite.config.mjs",
+  "vite.config.mts",
+  "vite.config.ts",
+}
+
+M.vitest_config_files = {
+  "vitest.config.cjs",
+  "vitest.config.cts",
+  "vitest.config.js",
+  "vitest.config.mjs",
+  "vitest.config.mts",
+  "vitest.config.ts",
+}
+
+M.jest_config_files = {
+  "jest.config.cjs",
+  "jest.config.cts",
+  "jest.config.js",
+  "jest.config.json",
+  "jest.config.mjs",
+  "jest.config.mts",
+  "jest.config.ts",
+}
+
+M.docker_config_files = {
+  ".dockerignore",
+  "docker-compose.yaml",
+  "docker-compose.yml",
+  "Dockerfile",
+  "Dockerfile.dev",
+  "Dockerfile.prod",
+}
+
 return M

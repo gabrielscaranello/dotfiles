@@ -5,16 +5,19 @@ return {
     local file_utils = require "utils.file"
     local function icon(glyph, hl) return { glyph = glyph, hl = hl } end
 
-    local eslint_icon = icon("󰱺", "MiniIconsYellow")
-    local prettier_icon = icon("", "MiniIconsPurple")
-    local babel_icon = icon("", "MiniIconsOrange")
-    local go_icon = icon("", "MiniIconsCyan")
-    local yarn_icon = icon("", "MiniIconsBlue")
-    local test_js_icon = icon("󰂖", "MiniIconsOrange")
-    local test_ts_icon = icon("󰂖", "MiniIconsAzure")
-    local spec_js_icon = icon("󰙨", "MiniIconsYellow")
-    local spec_ts_icon = icon("󰙨", "MiniIconsBlue")
-    local docker_icon = icon("", "MiniIconsBlue")
+    local babel = icon("", "MiniIconsOrange")
+    local docker = icon("", "MiniIconsBlue")
+    local eslint = icon("󰱺", "MiniIconsYellow")
+    local go = icon("", "MiniIconsCyan")
+    local jest = icon("", "MiniIconsRed")
+    local prettier = icon("", "MiniIconsPurple")
+    local spec_js = icon("󰙨", "MiniIconsYellow")
+    local spec_ts = icon("󰙨", "MiniIconsBlue")
+    local test_js = icon("󰂖", "MiniIconsOrange")
+    local test_ts = icon("󰂖", "MiniIconsAzure")
+    local vite = icon("", "MiniIconsGreen")
+    local vitest = icon("", "MiniIconsGreen")
+    local yarn = icon("", "MiniIconsBlue")
 
     local opts = {
       directory = {
@@ -28,59 +31,59 @@ return {
         utils = icon("󱧼", "MiniIconsAzure"),
       },
       file = {
-        [".dockerignore"] = docker_icon,
         [".go-version"] = icon("", "MiniIconsBlue"),
         [".keep"] = icon("󰊢", "MiniIconsGrey"),
         [".node-version"] = icon("", "MiniIconsGreen"),
-        [".yarnrc.yml"] = yarn_icon,
+        [".yarnrc.yml"] = yarn,
         ["devcontainer.json"] = icon("", "MiniIconsAzure"),
-        ["docker-compose.yaml"] = docker_icon,
-        ["docker-compose.yml"] = docker_icon,
         ["catalog-info.yaml"] = icon("󱉟", "MiniIconsBlue"),
-        ["go.mod"] = go_icon,
-        ["jest.config.js"] = icon("", "MiniIconsRed"),
-        ["jest.config.ts"] = icon("", "MiniIconsRed"),
+        ["go.mod"] = go,
         ["package.json"] = icon("", "MiniIconsGreen"),
         ["tsconfig.build.json"] = icon("", "MiniIconsAzure"),
         ["tsconfig.json"] = icon("", "MiniIconsAzure"),
         ["webpack.config.js"] = icon("", "MiniIconsCyan"),
         ["webpack.config.ts"] = icon("", "MiniIconsCyan"),
-        ["yarn.lock"] = yarn_icon,
+        ["yarn.lock"] = yarn,
       },
       filetype = {
         dotenv = icon("", "MiniIconsYellow"),
-        go = go_icon,
+        go = go,
         goaccess = icon("󰫴", "MiniIconsPurple"),
         godoc = icon("", "MiniIconsOrange"),
-        gomod = go_icon,
-        gosum = go_icon,
+        gomod = go,
+        gosum = go,
         gowork = icon("", "MiniIconsPurple"),
         javascriptreact = icon("", "MiniIconsYellow"),
       },
       extension = {
         [".env"] = icon("", "MiniIconsYellow"),
-        ["spec.js"] = spec_js_icon,
-        ["spec.jsx"] = spec_js_icon,
-        ["spec.ts"] = spec_ts_icon,
-        ["spec.tsx"] = spec_ts_icon,
-        ["test.js"] = test_js_icon,
-        ["test.jsx"] = test_js_icon,
-        ["test.ts"] = test_ts_icon,
-        ["test.tsx"] = test_ts_icon,
+        ["spec.js"] = spec_js,
+        ["spec.jsx"] = spec_js,
+        ["spec.ts"] = spec_ts,
+        ["spec.tsx"] = spec_ts,
+        ["test.js"] = test_js,
+        ["test.jsx"] = test_js,
+        ["test.ts"] = test_ts,
+        ["test.tsx"] = test_ts,
       },
     }
 
-    -- configure prettier, eslint, and babel icons
-    for _, file in pairs(file_utils.prettier_config_files) do
-      opts.file[file] = prettier_icon
-    end
+    --- configure icons with multiple config files
+    local bulk_files = {
+      babel = babel,
+      docker = docker,
+      eslint = eslint,
+      jest = jest,
+      prettier = prettier,
+      vite = vite,
+      vitest = vitest,
+    }
 
-    for _, file in pairs(file_utils.eslint_config_files) do
-      opts.file[file] = eslint_icon
-    end
-
-    for _, file in pairs(file_utils.babel_config_files) do
-      opts.file[file] = babel_icon
+    for item, icon_opts in pairs(bulk_files) do
+      local files = file_utils[item .. "_config_files"]
+      for _, file in pairs(files) do
+        opts.file[file] = icon_opts
+      end
     end
 
     return opts
