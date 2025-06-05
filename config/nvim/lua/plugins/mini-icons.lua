@@ -1,63 +1,90 @@
 return {
   "echasnovski/mini.icons",
   lazy = true,
-  opts = {
-    directory = {
-      assets = { glyph = "󰉏", hl = "MiniIconsAzure" },
-      config = { glyph = "󱁿", hl = "MiniIconsAzure" },
-      configs = { glyph = "󱁿", hl = "MiniIconsAzure" },
-      services = { glyph = "󱁿", hl = "MiniIconsYellow" },
-      test = { glyph = "󱞊", hl = "MiniIconsBlue" },
-      tests = { glyph = "󱞊", hl = "MiniIconsBlue" },
-      util = { glyph = "󱧼", hl = "MiniIconsAzure" },
-      utils = { glyph = "󱧼", hl = "MiniIconsAzure" },
-    },
-    file = {
-      [".eslintrc"] = { glyph = "󰱺", hl = "MiniIconsYellow" },
-      [".eslintrc.js"] = { glyph = "󰱺", hl = "MiniIconsYellow" },
-      [".eslintrc.json"] = { glyph = "󰱺", hl = "MiniIconsYellow" },
-      [".eslintrc.ts"] = { glyph = "󰱺", hl = "MiniIconsYellow" },
-      [".go-version"] = { glyph = "", hl = "MiniIconsBlue" },
-      [".keep"] = { glyph = "󰊢", hl = "MiniIconsGrey" },
-      [".node-version"] = { glyph = "", hl = "MiniIconsGreen" },
-      [".prettierrc"] = { glyph = "", hl = "MiniIconsPurple" },
-      [".yarnrc.yml"] = { glyph = "", hl = "MiniIconsBlue" },
-      ["devcontainer.json"] = { glyph = "", hl = "MiniIconsAzure" },
-      ["eslint.config.js"] = { glyph = "󰱺", hl = "MiniIconsYellow" },
-      ["eslint.config.ts"] = { glyph = "󰱺", hl = "MiniIconsYellow" },
-      ["go.mod"] = { glyph = "", hl = "MiniIconsCyan" },
-      ["jest.config.js"] = { glyph = "", hl = "MiniIconsRed" },
-      ["jest.config.ts"] = { glyph = "", hl = "MiniIconsRed" },
-      ["package.json"] = { glyph = "", hl = "MiniIconsGreen" },
-      ["tsconfig.build.json"] = { glyph = "", hl = "MiniIconsAzure" },
-      ["tsconfig.json"] = { glyph = "", hl = "MiniIconsAzure" },
-      ["webpack.config.js"] = { glyph = "", hl = "MiniIconsCyan" },
-      ["webpack.config.ts"] = { glyph = "", hl = "MiniIconsCyan" },
-      ["yarn.lock"] = { glyph = "", hl = "MiniIconsBlue" },
-    },
-    filetype = {
-      dotenv = { glyph = "", hl = "MiniIconsYellow" },
-      go = { glyph = "", hl = "MiniIconsCyan" },
-      goaccess = { glyph = "󰫴", hl = "MiniIconsPurple" },
-      godoc = { glyph = "", hl = "MiniIconsOrange" },
-      gomod = { glyph = "", hl = "MiniIconsCyan" },
-      gosum = { glyph = "", hl = "MiniIconsCyan" },
-      gowork = { glyph = "", hl = "MiniIconsPurple" },
-      javascriptreact = { glyph = "", hl = "MiniIconsYellow" },
-    },
+  opts = function()
+    local file_utils = require "utils.file"
+    local function icon(glyph, hl) return { glyph = glyph, hl = hl } end
 
-    extension = {
-      [".env"] = { glyph = "", hl = "MiniIconsYellow" },
-      ["spec.js"] = { glyph = "󰙨", hl = "MiniIconsYellow" },
-      ["spec.jsx"] = { glyph = "󰙨", hl = "MiniIconsYellow" },
-      ["spec.ts"] = { glyph = "󰙨", hl = "MiniIconsBlue" },
-      ["spec.tsx"] = { glyph = "󰙨", hl = "MiniIconsBlue" },
-      ["test.js"] = { glyph = "󰂖", hl = "MiniIconsOrange" },
-      ["test.jsx"] = { glyph = "󰂖", hl = "MiniIconsOrange" },
-      ["test.ts"] = { glyph = "󰂖", hl = "MiniIconsAzure" },
-      ["test.tsx"] = { glyph = "󰂖", hl = "MiniIconsAzure" },
-    },
-  },
+    local eslint_icon = icon("󰱺", "MiniIconsYellow")
+    local prettier_icon = icon("", "MiniIconsPurple")
+    local babel_icon = icon("", "MiniIconsOrange")
+    local go_icon = icon("", "MiniIconsCyan")
+    local yarn_icon = icon("", "MiniIconsBlue")
+    local test_js_icon = icon("󰂖", "MiniIconsOrange")
+    local test_ts_icon = icon("󰂖", "MiniIconsAzure")
+    local spec_js_icon = icon("󰙨", "MiniIconsYellow")
+    local spec_ts_icon = icon("󰙨", "MiniIconsBlue")
+    local docker_icon = icon("", "MiniIconsBlue")
+
+    local opts = {
+      directory = {
+        assets = icon("󰉏", "MiniIconsAzure"),
+        config = icon("󱁿", "MiniIconsAzure"),
+        configs = icon("󱁿", "MiniIconsAzure"),
+        services = icon("󱁿", "MiniIconsYellow"),
+        test = icon("󱞊", "MiniIconsBlue"),
+        tests = icon("󱞊", "MiniIconsBlue"),
+        util = icon("󱧼", "MiniIconsAzure"),
+        utils = icon("󱧼", "MiniIconsAzure"),
+      },
+      file = {
+        [".dockerignore"] = docker_icon,
+        [".go-version"] = icon("", "MiniIconsBlue"),
+        [".keep"] = icon("󰊢", "MiniIconsGrey"),
+        [".node-version"] = icon("", "MiniIconsGreen"),
+        [".yarnrc.yml"] = yarn_icon,
+        ["devcontainer.json"] = icon("", "MiniIconsAzure"),
+        ["docker-compose.yaml"] = docker_icon,
+        ["docker-compose.yml"] = docker_icon,
+        ["catalog-info.yaml"] = icon("󱉟", "MiniIconsBlue"),
+        ["go.mod"] = go_icon,
+        ["jest.config.js"] = icon("", "MiniIconsRed"),
+        ["jest.config.ts"] = icon("", "MiniIconsRed"),
+        ["package.json"] = icon("", "MiniIconsGreen"),
+        ["tsconfig.build.json"] = icon("", "MiniIconsAzure"),
+        ["tsconfig.json"] = icon("", "MiniIconsAzure"),
+        ["webpack.config.js"] = icon("", "MiniIconsCyan"),
+        ["webpack.config.ts"] = icon("", "MiniIconsCyan"),
+        ["yarn.lock"] = yarn_icon,
+      },
+      filetype = {
+        dotenv = icon("", "MiniIconsYellow"),
+        go = go_icon,
+        goaccess = icon("󰫴", "MiniIconsPurple"),
+        godoc = icon("", "MiniIconsOrange"),
+        gomod = go_icon,
+        gosum = go_icon,
+        gowork = icon("", "MiniIconsPurple"),
+        javascriptreact = icon("", "MiniIconsYellow"),
+      },
+      extension = {
+        [".env"] = icon("", "MiniIconsYellow"),
+        ["spec.js"] = spec_js_icon,
+        ["spec.jsx"] = spec_js_icon,
+        ["spec.ts"] = spec_ts_icon,
+        ["spec.tsx"] = spec_ts_icon,
+        ["test.js"] = test_js_icon,
+        ["test.jsx"] = test_js_icon,
+        ["test.ts"] = test_ts_icon,
+        ["test.tsx"] = test_ts_icon,
+      },
+    }
+
+    -- configure prettier, eslint, and babel icons
+    for _, file in pairs(file_utils.prettier_config_files) do
+      opts.file[file] = prettier_icon
+    end
+
+    for _, file in pairs(file_utils.eslint_config_files) do
+      opts.file[file] = eslint_icon
+    end
+
+    for _, file in pairs(file_utils.babel_config_files) do
+      opts.file[file] = babel_icon
+    end
+
+    return opts
+  end,
   init = function()
     package.preload["nvim-web-devicons"] = function()
       require("mini.icons").mock_nvim_web_devicons()

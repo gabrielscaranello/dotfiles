@@ -44,4 +44,49 @@ function M.has_package_json_key(key)
   return M.file_exists(file) and M.has_json_key_in_file(file, key)
 end
 
+M.prettier_config_files = {
+  ".prettierrc",
+  ".prettierrc.cjs",
+  ".prettierrc.cts",
+  ".prettierrc.js",
+  ".prettierrc.json",
+  ".prettierrc.json5",
+  ".prettierrc.mjs",
+  ".prettierrc.mts",
+  ".prettierrc.toml",
+  ".prettierrc.ts",
+  ".prettierrc.yaml",
+  ".prettierrc.yml",
+}
+
+M.eslint_config_files = {
+  ".eslintrc",
+  ".eslintrc.cjs",
+  ".eslintrc.js",
+  ".eslintrc.json",
+  ".eslintrc.yaml",
+  ".eslintrc.yml",
+  "eslint.config.cjs",
+  "eslint.config.cts",
+  "eslint.config.js",
+  "eslint.config.mjs",
+  "eslint.config.mts",
+  "eslint.config.ts",
+}
+
+M.babel_config_files = {
+  ".babelrc",
+  ".babelrc.cjs",
+  ".babelrc.js",
+  ".babelrc.json",
+  ".babelrc.mjs",
+  ".babelrc.mts",
+  "babel.config.cjs",
+  "babel.config.cts",
+  "babel.config.js",
+  "babel.config.mjs",
+  "babel.config.mts",
+  "babel.config.ts",
+}
+
 return M
