@@ -5,6 +5,9 @@ local _ignoreds = {
   "copilot",
 }
 
+---@return boolean
+function M.copilot_lsp_active() return #(vim.lsp.get_clients { name = "copilot" }) > 0 end
+
 ---@return table<string>
 M.get_ignoreds = function() return _ignoreds end
 

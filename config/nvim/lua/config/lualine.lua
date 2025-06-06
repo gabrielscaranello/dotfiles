@@ -1,4 +1,6 @@
 local icons = require "utils.icons"
+local lsp_utils = require "utils.lsp"
+
 return {
   ai = function(colors)
     local provider = vim.g.ai.provider
@@ -7,7 +9,7 @@ return {
     local get_color = function()
       if vim.fn.exists ":Codeium" > 0 then
         return { fg = colors.teal }
-      elseif #(vim.lsp.get_clients { name = "copilot" }) > 0 then
+      elseif lsp_utils.clients.copilot_lsp_active() then
         return { fg = colors.sapphire }
       else
         return { fg = colors.text }
@@ -23,9 +25,7 @@ return {
   end,
   lsp = function(colors)
     local function lsp_status()
-      local all_clients = vim.lsp.get_clients()
-      local clients = vim.tbl_filter(function(client) return client.name ~= "copilot" end, all_clients)
-
+      local clients = lsp_utils.clients.get_all()
       if #clients == 0 then return nil end
 
       local lsp_names = {}
@@ -41,7 +41,7 @@ return {
       lsp_status,
       color = { bg = colors.surface1, fg = colors.text },
       separator = { left = "" },
-      cond = function() return #vim.lsp.get_clients() > 0 end,
+      cond = function() return #lsp_utils.clients.get_all() > 0 end,
     }
   end,
 }
