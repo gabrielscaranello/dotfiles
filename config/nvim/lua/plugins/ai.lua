@@ -10,6 +10,10 @@ return {
       panel = { enabled = false },
       filetypes = { markdown = true, help = true },
     },
+
+    keys = {
+      { "<leader>ar", function() require("utils.lsp").restart.copilot() end, desc = "Restart Copilot Client" },
+    },
   },
 
   {
