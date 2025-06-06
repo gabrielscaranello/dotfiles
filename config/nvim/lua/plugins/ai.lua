@@ -12,7 +12,7 @@ return {
     },
 
     keys = {
-      { "<leader>ar", function() require("utils.lsp").restart.copilot() end, desc = "Restart Copilot Client" },
+      { "<leader>ar", function() require("utils.lsp").clients.restart_copilot() end, desc = "Restart Copilot Client" },
     },
   },
 

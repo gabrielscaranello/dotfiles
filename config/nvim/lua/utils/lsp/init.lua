@@ -1,4 +1,4 @@
 return {
   eslint = require "utils.lsp.eslint",
-  restart = require "utils.lsp.restart",
+  clients = require "utils.lsp.clients",
 }

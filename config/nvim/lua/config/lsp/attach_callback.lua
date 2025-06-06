@@ -62,7 +62,7 @@ return function(event)
       end,
       with_opts { desc = "Diagnostics" },
     },
-    { "n", "<leader>lk", lsp_utils.restart.lsp_clients, with_opts { desc = "Restart LSP" } },
+    { "n", "<leader>lk", lsp_utils.clients.restart, with_opts { desc = "Restart LSP" } },
     { "n", "<leader>li", "<cmd>LspInfo<cr>", with_opts { desc = "LSP Info" } },
   }
 
