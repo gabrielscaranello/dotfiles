@@ -30,7 +30,7 @@ return {
 
       local lsp_names = {}
       for _, client in ipairs(clients) do
-        table.insert(lsp_names, client.name)
+        if not vim.tbl_contains(lsp_names, client.name) then table.insert(lsp_names, client.name) end
       end
 
       table.sort(lsp_names, function(a, b) return a < b end)
