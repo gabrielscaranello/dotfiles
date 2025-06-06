@@ -1,4 +1,5 @@
 local keymap = require "utils.keymap"
+local lsp_utils = require "utils.lsp"
 
 local function has_capability(client, capability) return client.server_capabilities[capability] == true end
 
@@ -61,7 +62,7 @@ return function(event)
       end,
       with_opts { desc = "Diagnostics" },
     },
-    { "n", "<leader>lk", "<cmd>LspRestart<cr>", with_opts { desc = "Restart LSP" } },
+    { "n", "<leader>lk", lsp_utils.restart.lsp_clients, with_opts { desc = "Restart LSP" } },
     { "n", "<leader>li", "<cmd>LspInfo<cr>", with_opts { desc = "LSP Info" } },
   }
 
