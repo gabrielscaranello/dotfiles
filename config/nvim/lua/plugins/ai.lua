@@ -23,7 +23,7 @@ return {
     cond = vim.g.ai.provider == "copilot" or vim.g.ai.use_copilot_chat,
     cmd = "CopilotChat",
     dependencies = {
-      "github/copilot.lua",
+      "zbirenbaum/copilot.lua",
       "nvim-lua/plenary.nvim",
       {
         "folke/edgy.nvim",
