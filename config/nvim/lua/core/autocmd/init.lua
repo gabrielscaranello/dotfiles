@@ -1,5 +1,5 @@
+require "core.autocmd.ai"
 require "core.autocmd.docker"
-require "core.autocmd.general"
 require "core.autocmd.lazygit"
 require "core.autocmd.lsp"
 require "core.autocmd.postcss"
