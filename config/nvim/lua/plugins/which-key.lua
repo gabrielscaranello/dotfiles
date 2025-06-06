@@ -24,6 +24,9 @@ return {
     wk.setup(opts)
 
     wk.add {
+      { "g", group = "goto" },
+      { "gs", group = "+Surround" },
+      { "gx", desc = "Open file or URL under cursor" },
       { "<leader>\\", group = "+Split" },
       { "<leader>b", group = "+Buffer" },
       { "<leader>c", group = "+Codesnap / Multiple Cursors", mode = { "n", "x" } },
