@@ -44,6 +44,43 @@ function M.has_package_json_key(key)
   return M.file_exists(file) and M.has_json_key_in_file(file, key)
 end
 
+---@return boolean
+function M.is_tsjs_project() return M.files_exists("tsconfig.json", "jsconfig.json", "package.json") end
+
+---@param picker snacks.Picker
+---@param item snacks.picker.Item
+---@return string|nil
+function M.typescript_rename_file(picker, item)
+  if not item or item == "" then return end
+
+  local root = vim.fn.getcwd()
+  local from = vim.fn.fnamemodify(item.file, ":p")
+
+  if from:find(root, 1, true) ~= 1 then root = vim.fn.fnamemodify(from, ":p:h") end
+  local extra = from:sub(#root + 2)
+
+  vim.ui.input({
+    prompt = "New File Name: ",
+    default = extra,
+    completion = "file",
+  }, function(value)
+    if not value or value == "" or value == extra then return end
+    local to = svim.fs.normalize(root .. "/" .. value)
+    local ok, rename = pcall(require, "vtsls.rename")
+    if not ok then return end
+    rename(from, to, function()
+      local tree_ok, Tree = pcall(require, "snacks.explorer.tree")
+      local actions_ok, Actions = pcall(require, "snacks.explorer.actions")
+      if not tree_ok or not actions_ok then return end
+
+      Tree:refresh(vim.fs.dirname(from))
+      Tree:refresh(vim.fs.dirname(to))
+      picker.list:set_selected() -- clear selection
+      Actions.update(picker, { target = to })
+    end)
+  end)
+end
+
 M.prettier_config_files = {
   ".prettierrc",
   ".prettierrc.cjs",

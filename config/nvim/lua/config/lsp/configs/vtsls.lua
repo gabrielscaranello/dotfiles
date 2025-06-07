@@ -1,5 +1,5 @@
 local typescript = {
-  updateImportsOnFileMove = { enabled = "always" },
+  updateImportsOnFileMove = "always",
   inlayHints = {
     parameterNames = { enabled = "all" },
     parameterTypes = { enabled = true },
@@ -20,7 +20,14 @@ return {
       },
     }),
     vtsls = {
-      enableMoveToFileCodeAction = true,
+      enableMoveToFileCodeAction = false,
     },
   },
+  on_attach = function(client, bufnr)
+    local ok, vtsls = pcall(require, "vtsls")
+    if ok then
+      client.config = vim.tbl_extend("force", require("vtsls.lspconfig").default_config, client.config)
+      return vtsls._on_attach(client.id, bufnr)
+    end
+  end,
 }
