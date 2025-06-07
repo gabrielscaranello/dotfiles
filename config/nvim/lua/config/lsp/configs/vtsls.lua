@@ -1,3 +1,5 @@
+local workarrounds = require "utils.workarrounds"
+
 local typescript = {
   updateImportsOnFileMove = "always",
   inlayHints = {
@@ -12,6 +14,7 @@ local typescript = {
 
 ---@type vim.lsp.Config
 return {
+  filetypes = workarrounds.get_ft "vtsls",
   settings = {
     typescript = typescript,
     javascript = vim.tbl_deep_extend("force", typescript, {

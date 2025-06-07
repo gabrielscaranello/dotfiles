@@ -50,7 +50,7 @@ return {
       },
 
       filter = function(client)
-        local ignored_clients = { "jsonls", "tsserver", "vtsls", "volar" }
+        local ignored_clients = { "jsonls", "tsserver", "vtsls", "volar", "vue_ls" }
 
         for _, client_name in ipairs(ignored_clients) do
           if client_name == client.name then return false end

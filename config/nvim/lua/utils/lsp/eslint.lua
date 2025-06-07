@@ -3,7 +3,8 @@ local M = {}
 ---@return boolean
 function M.exists()
   local utils = require "utils.file"
-  local files = unpack(utils.eslint_config_files)
+  local project_files = require "utils.project_config"
+  local files = unpack(project_files.eslint)
   local config_exists = utils.files_exists(files)
 
   if config_exists then return true end

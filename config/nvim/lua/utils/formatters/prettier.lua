@@ -3,7 +3,8 @@ local M = {}
 ---@return boolean
 function M.exists()
   local utils = require "utils.file"
-  local files = unpack(utils.prettier_config_files)
+  local project_files = require "utils.project_config"
+  local files = unpack(project_files.prettier)
   local config_exists = utils.files_exists(files)
 
   if config_exists then return true end

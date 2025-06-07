@@ -2,7 +2,7 @@ return {
   "echasnovski/mini.icons",
   lazy = true,
   opts = function()
-    local file_utils = require "utils.file"
+    local project_config = require "utils.project_config"
     local function icon(glyph, hl) return { glyph = glyph, hl = hl } end
 
     local babel = icon("", "MiniIconsOrange")
@@ -80,7 +80,7 @@ return {
     }
 
     for item, icon_opts in pairs(bulk_files) do
-      local files = file_utils[item .. "_config_files"]
+      local files = project_config[item]
       for _, file in pairs(files) do
         opts.file[file] = icon_opts
       end

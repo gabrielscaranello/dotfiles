@@ -1,4 +1,4 @@
-local file_utils = require "utils.file"
+local workarrounds = require "utils.workarrounds"
 
 return {
   { "yioneko/nvim-vtsls", opts = {}, config = function() end },
@@ -11,21 +11,21 @@ return {
           explorer = {
             actions = {
               ["explorer_rename"] = function(picker, item, action)
-                if not file_utils.is_tsjs_project() then
+                if workarrounds.is_regular_file_rename() then
                   local Actions = require "snacks.explorer.actions"
                   return Actions.actions.explorer_rename(picker, item, action)
                 end
 
-                file_utils.typescript_rename_file(picker, item)
+                workarrounds.typescript_rename_file(picker, item)
               end,
 
               ["explorer_move"] = function(picker, item, action)
-                if not file_utils.is_tsjs_project() then
+                if workarrounds.is_regular_file_rename() then
                   local Actions = require "snacks.explorer.actions"
                   return Actions.actions.explorer_move(picker, item, action)
                 end
 
-                file_utils.typescript_rename_file(picker, item)
+                workarrounds.typescript_rename_file(picker, item)
               end,
             },
           },
