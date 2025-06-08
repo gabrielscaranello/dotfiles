@@ -229,6 +229,11 @@ return {
             ["<C-n>"] = { "history_forward", mode = { "i", "n" } },
           },
         },
+        list = {
+          keys = {
+            ["<C-y>"] = config.explorer.copy_actions,
+          },
+        },
       },
       sources = {
         git_branches = { all = true },

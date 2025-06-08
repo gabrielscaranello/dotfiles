@@ -38,4 +38,68 @@ function M.explorer.on_close()
   explorer_is_open = false
 end
 
+-- Various options to copy file name ou path to clipboard
+function M.explorer.copy_actions()
+  if not explorer_is_open then
+    return
+  end
+
+  local pickers = Snacks.picker.get()
+  if #pickers == 0 then
+    return
+  end
+
+  local current = pickers[1]:current { resolve = true }
+  if not current or not current.file then
+    vim.notify("No file or directory selected", vim.log.levels.WARN)
+    return
+  end
+
+  ---@type string absolute fs file path
+  local path = current.file
+  ---@type string file path relative to cwd
+  local rel_path = vim.fn.fnamemodify(path, ":.")
+
+  local values = {
+    ["PATH (CWD)"] = rel_path,
+    ["PATH (HOME)"] = path,
+    ["URI"] = vim.uri_from_fname(path),
+  }
+
+  if vim.fn.isdirectory(path) == 1 then
+    values["DIRECTORY"] = vim.fn.fnamemodify(rel_path, ":t")
+  else
+    values["BASENAME"] = vim.fn.fnamemodify(rel_path, ":t:r")
+    values["EXTENSION"] = vim.fn.fnamemodify(rel_path, ":e")
+    values["FILENAME"] = vim.fn.fnamemodify(rel_path, ":t")
+  end
+
+  local options = vim.tbl_filter(function(val)
+    return values[val] ~= ""
+  end, vim.tbl_keys(values))
+
+  if vim.tbl_isempty(options) then
+    vim.notify("No values to copy", vim.log.levels.WARN)
+    return
+  end
+
+  table.sort(options)
+  vim.ui.select(vim.tbl_values(options), {
+    prompt = "Choose to copy to clipboard:",
+    format_item = function(item)
+      return ("%s: %s"):format(item, values[item])
+    end,
+  }, function(choice)
+    if not choice then
+      return
+    end
+
+    local result = values[choice]
+    if result then
+      vim.fn.setreg("+", result)
+      vim.notify(("Copied: `%s`"):format(result))
+    end
+  end)
+end
+
 return M
