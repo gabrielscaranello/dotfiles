@@ -35,7 +35,10 @@ require("lazy").setup {
     { import = "plugins.lsp" },
   },
   install = {
-    colorscheme = { "catppuccin", "habamax" },
+    colorscheme = { "catppuccin", "default" },
+  },
+  ui = {
+    border = "rounded",
   },
   checker = {
     enabled = true,

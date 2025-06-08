@@ -42,4 +42,5 @@ keymap.map {
   -- package
   { "n", "<leader>pl", "<cmd>Lazy<cr>", { desc = "Lazy Plugin Manager" } },
   { "n", "<leader>ps", "<cmd>Lazy sync<cr>", { desc = "Lazy Sync" } },
+  { "n", "<leader>pm", "<cmd>Mason<cr>", { desc = "Mason" } },
 }
