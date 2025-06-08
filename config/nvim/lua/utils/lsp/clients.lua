@@ -37,16 +37,20 @@ end
 
 ---@return vim.lsp.Client[]
 function M.get_all()
-  return vim.tbl_filter(--[[@param v vim.lsp.Client]] function(v)
-    return not vim.tbl_contains(_ignoreds, v.name)
-  end, M.get_all_with_ignoreds())
+  return vim.tbl_filter(
+    ---@param v vim.lsp.Client
+    function(v)
+      return not vim.tbl_contains(_ignoreds, v.name)
+    end,
+    M.get_all_with_ignoreds()
+  )
 end
 
 function M.restart()
   local clients = M.get_all()
 
   for _, c in pairs(clients) do
-    vim.lsp.stop_client(c.id, true)
+    c:stop()
     vim.lsp.start(c.config)
   end
 
