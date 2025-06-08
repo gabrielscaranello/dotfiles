@@ -1,11 +1,28 @@
 return {
   "mistricky/codesnap.nvim",
-  cmd = { "CodeSnap", "CodeSnapSave", "CodeSnapHighlight", "CodeSnapSaveHighlight" },
+  cmd = {
+    "CodeSnap",
+    "CodeSnapSave",
+    "CodeSnapHighlight",
+    "CodeSnapSaveHighlight",
+  },
   build = "make",
 
   keys = {
-    { "<leader>cs", ":'<,'>CodeSnap<CR>", desc = "CodeSnap (clipboard)", mode = "v", silent = true },
-    { "<leader>cS", ":'<,'>CodeSnapSave<CR>", desc = "CodeSnap (save)", mode = "v", silent = true },
+    {
+      "<leader>cs",
+      ":'<,'>CodeSnap<CR>",
+      desc = "CodeSnap (clipboard)",
+      mode = "v",
+      silent = true,
+    },
+    {
+      "<leader>cS",
+      ":'<,'>CodeSnapSave<CR>",
+      desc = "CodeSnap (save)",
+      mode = "v",
+      silent = true,
+    },
     {
       "<leader>ch",
       ":'<,'>CodeSnapHighlight<CR>",

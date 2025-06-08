@@ -36,10 +36,15 @@ return {
           selection = { preselect = true, auto_insert = true },
         },
         ghost_text = { enabled = false },
-        accept = { auto_brackets = { enabled = true }, create_undo_point = true },
+        accept = {
+          auto_brackets = { enabled = true },
+          create_undo_point = true,
+        },
 
         menu = {
-          auto_show = function(ctx) return ctx.mode ~= "cmdline" end,
+          auto_show = function(ctx)
+            return ctx.mode ~= "cmdline"
+          end,
           border = "rounded",
           winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
           draw = { treesitter = { "lsp" } },
@@ -73,10 +78,9 @@ return {
         providers = {
           lsp = {
             transform_items = function(_, items)
-              return vim.tbl_filter(
-                function(item) return item.kind ~= require("blink.cmp.types").CompletionItemKind.Snippet end,
-                items
-              )
+              return vim.tbl_filter(function(item)
+                return item.kind ~= require("blink.cmp.types").CompletionItemKind.Snippet
+              end, items)
             end,
           },
           env = {
@@ -115,7 +119,9 @@ return {
           { name = source, module = "blink.compat.source" },
           opts.sources.providers[source] or {}
         )
-        if type(enabled) == "table" and not vim.tbl_contains(enabled, source) then table.insert(enabled, source) end
+        if type(enabled) == "table" and not vim.tbl_contains(enabled, source) then
+          table.insert(enabled, source)
+        end
       end
 
       -- check if need override kind icon

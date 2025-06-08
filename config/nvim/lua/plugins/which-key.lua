@@ -4,7 +4,9 @@ return {
   keys = {
     {
       "<leader>?",
-      function() require("which-key").show { global = false } end,
+      function()
+        require("which-key").show { global = false }
+      end,
       desc = "Buffer Local Keymaps (which-key)",
     },
   },
@@ -12,11 +14,15 @@ return {
   ---@type wk.Opts
   opts = {
     preset = "modern",
-    delay = function(ctx) return ctx.plugin and 0 or vim.o.timeoutlen end,
+    delay = function(ctx)
+      return ctx.plugin and 0 or vim.o.timeoutlen
+    end,
     notify = false,
     icons = { mappings = false },
     sort = { "group", "alphanum" },
-    filter = function(mapping) return mapping.desc and mapping.desc ~= "" end,
+    filter = function(mapping)
+      return mapping.desc and mapping.desc ~= ""
+    end,
   },
 
   config = function(_, opts)
@@ -29,7 +35,11 @@ return {
       { "gx", desc = "Open file or URL under cursor" },
       { "<leader>\\", group = "+Split" },
       { "<leader>b", group = "+Buffer" },
-      { "<leader>c", group = "+Codesnap / Multiple Cursors", mode = { "n", "x" } },
+      {
+        "<leader>c",
+        group = "+Codesnap / Multiple Cursors",
+        mode = { "n", "x" },
+      },
       { "<leader>e", desc = "Explorer (keep open)" },
       { "<leader>f", group = "+Find" },
       { "<leader>h", group = "+Rest" },

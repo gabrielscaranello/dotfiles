@@ -7,8 +7,10 @@ function M.exists()
   local files = unpack(project_files.prettier)
   local config_exists = utils.files_exists(files)
 
-  if config_exists then return true end
-  if utils.has_package_json_key "prettier" then return true end
+  if config_exists or utils.has_package_json_key "prettier" then
+    return true
+  end
+
   return false
 end
 
@@ -18,7 +20,9 @@ function M.conform_condition(_, ctx)
   local patterns = { "%.mdx?$", "%.ya?ml$", "%.json$" }
 
   for _, pattern in pairs(patterns) do
-    if ctx.filename:match(pattern) then return true end
+    if ctx.filename:match(pattern) then
+      return true
+    end
   end
 
   return M.exists()

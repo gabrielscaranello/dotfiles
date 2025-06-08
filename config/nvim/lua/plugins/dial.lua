@@ -4,45 +4,61 @@ return {
   keys = {
     {
       "<C-a>",
-      function() return require("dial.map").manipulate("increment", "normal") end,
+      function()
+        return require("dial.map").manipulate("increment", "normal")
+      end,
       desc = "Increment",
     },
     {
       "<C-x>",
-      function() return require("dial.map").manipulate("decrement", "normal") end,
+      function()
+        return require("dial.map").manipulate("decrement", "normal")
+      end,
       desc = "Decrement",
     },
     {
       "g<C-a>",
-      function() return require("dial.map").manipulate("increment", "gnormal") end,
+      function()
+        return require("dial.map").manipulate("increment", "gnormal")
+      end,
       desc = "Increment",
     },
     {
       "g<C-x>",
-      function() return require("dial.map").manipulate("decrement", "gnormal") end,
+      function()
+        return require("dial.map").manipulate("decrement", "gnormal")
+      end,
       desc = "Decrement",
     },
     {
       "<C-a>",
-      function() return require("dial.map").manipulate("increment", "visual") end,
+      function()
+        return require("dial.map").manipulate("increment", "visual")
+      end,
       mode = { "v" },
       desc = "Increment",
     },
     {
       "<C-x>",
-      function() return require("dial.map").manipulate("decrement", "visual") end,
+      function()
+        return require("dial.map").manipulate("decrement", "visual")
+      end,
       mode = { "v" },
       desc = "Decrement",
     },
     {
       "g<C-a>",
-      function() return require("dial.map").manipulate("increment", "gvisual") end,
+      function()
+        return require("dial.map").manipulate("increment", "gvisual")
+      end,
       mode = { "x" },
       desc = "Increment",
     },
     {
       "g<C-x>",
-      function() return require("dial.map").manipulate("decrement", "gvisual") end,
+      function()
+        return require("dial.map").manipulate("decrement", "gvisual")
+      end,
       mode = { "x" },
       desc = "Decrement",
     },
@@ -106,7 +122,12 @@ return {
           cyclic = true,
         },
         augend.case.new {
-          types = { "camelCase", "PascalCase", "snake_case", "SCREAMING_SNAKE_CASE" },
+          types = {
+            "camelCase",
+            "PascalCase",
+            "snake_case",
+            "SCREAMING_SNAKE_CASE",
+          },
         },
       },
     }

@@ -1,7 +1,9 @@
 -- Setup LSP on_attach function
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-  callback = function(...) require("config.lsp").attach_callback(...) end,
+  callback = function(...)
+    require("config.lsp").attach_callback(...)
+  end,
 })
 
 -- LSP progress on notify
@@ -13,8 +15,14 @@ vim.api.nvim_create_autocmd("LspProgress", {
   callback = function(ev)
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
     local value = ev.data.params.value --[[@as {percentage?: number, title?: string, message?: string, kind: "begin" | "report" | "end"}]]
-    if not client or type(value) ~= "table" then return end
-    if vim.tbl_contains(ignored_clients, client.name) then return end
+    if not client or type(value) ~= "table" then
+      return
+    end
+
+    if vim.tbl_contains(ignored_clients, client.name) then
+      return
+    end
+
     local p = progress[client.id]
 
     for i = 1, #p + 1 do
@@ -33,9 +41,12 @@ vim.api.nvim_create_autocmd("LspProgress", {
     end
 
     local msg = {} ---@type string[]
-    progress[client.id] = vim.tbl_filter(function(v) return table.insert(msg, v.msg) or not v.done end, p)
+    progress[client.id] = vim.tbl_filter(function(v)
+      return table.insert(msg, v.msg) or not v.done
+    end, p)
 
     local spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
+
     vim.notify(table.concat(msg, "\n"), "info", {
       id = "lsp_progress",
       title = client.name,

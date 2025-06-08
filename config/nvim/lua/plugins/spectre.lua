@@ -5,18 +5,38 @@ return {
     {
       "folke/edgy.nvim",
       opts = function(_, opts)
-        if not opts.bottom then opts.bottom = {} end
-        table.insert(opts.bottom, { ft = "spectre_panel", title = "Search/Replace", size = { height = 0.4 } })
+        if not opts.bottom then
+          opts.bottom = {}
+        end
+        table.insert(opts.bottom, {
+          ft = "spectre_panel",
+          title = "Search/Replace",
+          size = { height = 0.4 },
+        })
       end,
     },
   },
   keys = {
-    { "<leader>ss", function() require("spectre").open() end, desc = "Spectre" },
-    { "<leader>sf", function() require("spectre").open_file_search() end, desc = "Spectre (current file)" },
+    {
+      "<leader>ss",
+      function()
+        require("spectre").open()
+      end,
+      desc = "Spectre",
+    },
+    {
+      "<leader>sf",
+      function()
+        require("spectre").open_file_search()
+      end,
+      desc = "Spectre (current file)",
+    },
     {
       mode = "x",
       "<leader>ss",
-      function() require("spectre").open_visual { select_word = true } end,
+      function()
+        require("spectre").open_visual { select_word = true }
+      end,
       desc = "Spectre (visual)",
     },
   },

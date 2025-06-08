@@ -26,7 +26,9 @@ return {
         lualine_a = {
           {
             "mode",
-            fmt = function(mode) return mode:upper() end,
+            fmt = function(mode)
+              return mode:upper()
+            end,
             padding = { left = 1, right = 1 },
           },
         },

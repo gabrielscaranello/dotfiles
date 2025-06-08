@@ -21,8 +21,12 @@ return {
     return {
       highlights = catppuccin_highlights.get(),
       options = {
-        close_command = function(n) Snacks.bufdelete(n) end,
-        right_mouse_command = function(n) Snacks.bufdelete(n) end,
+        close_command = function(n)
+          Snacks.bufdelete(n)
+        end,
+        right_mouse_command = function(n)
+          Snacks.bufdelete(n)
+        end,
         diagnostics = "nvim_lsp",
         show_close_icon = false,
         always_show_bufferline = true,

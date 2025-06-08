@@ -3,14 +3,21 @@ local function ai_buffer(ai_type)
   local start_line, end_line = 1, vim.fn.line "$"
   if ai_type == "i" then
     -- Skip first and last blank lines for `i` textobject
-    local first_nonblank, last_nonblank = vim.fn.nextnonblank(start_line), vim.fn.prevnonblank(end_line)
+    local first_nonblank, last_nonblank =
+      vim.fn.nextnonblank(start_line), vim.fn.prevnonblank(end_line)
     -- Do nothing for buffer with all blanks
-    if first_nonblank == 0 or last_nonblank == 0 then return { from = { line = start_line, col = 1 } } end
+    if first_nonblank == 0 or last_nonblank == 0 then
+      return { from = { line = start_line, col = 1 } }
+    end
     start_line, end_line = first_nonblank, last_nonblank
   end
 
   local to_col = math.max(vim.fn.getline(end_line):len(), 1)
-  return { from = { line = start_line, col = 1 }, to = { line = end_line, col = to_col } }
+
+  return {
+    from = { line = start_line, col = 1 },
+    to = { line = end_line, col = to_col },
+  }
 end
 
 -- register all text objects with which-key
@@ -65,7 +72,9 @@ local function ai_whichkey(opts)
     ret[#ret + 1] = { prefix, group = name }
     for _, obj in ipairs(objects) do
       local desc = obj.desc
-      if prefix:sub(1, 1) == "i" then desc = desc:gsub(" with ws", "") end
+      if prefix:sub(1, 1) == "i" then
+        desc = desc:gsub(" with ws", "")
+      end
       ret[#ret + 1] = { prefix .. obj[1], desc = obj.desc }
     end
   end
@@ -84,12 +93,20 @@ return {
           a = { "@block.outer", "@conditional.outer", "@loop.outer" },
           i = { "@block.inner", "@conditional.inner", "@loop.inner" },
         },
-        f = ai.gen_spec.treesitter { a = "@function.outer", i = "@function.inner" }, -- function
+        f = ai.gen_spec.treesitter {
+          a = "@function.outer",
+          i = "@function.inner",
+        }, -- function
         c = ai.gen_spec.treesitter { a = "@class.outer", i = "@class.inner" }, -- class
         t = { "<([%p%w]-)%f[^<%w][^<>]->.-</%1>", "^<.->().*()</[^/]->$" }, -- tags
         d = { "%f[%d]%d+" }, -- digits
         e = { -- Word with case
-          { "%u[%l%d]+%f[^%l%d]", "%f[%S][%l%d]+%f[^%l%d]", "%f[%P][%l%d]+%f[^%l%d]", "^[%l%d]+%f[^%l%d]" },
+          {
+            "%u[%l%d]+%f[^%l%d]",
+            "%f[%S][%l%d]+%f[^%l%d]",
+            "%f[%P][%l%d]+%f[^%l%d]",
+            "^[%l%d]+%f[^%l%d]",
+          },
           "^().*()$",
         },
         g = ai_buffer, -- buffer
@@ -101,7 +118,9 @@ return {
   config = function(_, opts)
     require("mini.ai").setup(opts)
     require("utils.package").on_load("which-key.nvim", function()
-      vim.schedule(function() ai_whichkey(opts) end)
+      vim.schedule(function()
+        ai_whichkey(opts)
+      end)
     end)
   end,
 }

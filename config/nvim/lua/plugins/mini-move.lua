@@ -15,7 +15,9 @@ return {
       { opts.mappings.down, desc = "Move selection down", mode = "v" },
       { opts.mappings.up, desc = "Move selection up", mode = "v" },
     }
-    mappings = vim.tbl_filter(function(m) return m[1] and #m[1] > 0 end, mappings)
+    mappings = vim.tbl_filter(function(m)
+      return m[1] and #m[1] > 0
+    end, mappings)
     return vim.list_extend(mappings, keys)
   end,
   opts = {

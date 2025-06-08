@@ -3,7 +3,9 @@ return {
   lazy = true,
   opts = function()
     local project_config = require "utils.project_config"
-    local function icon(glyph, hl) return { glyph = glyph, hl = hl } end
+    local function icon(glyph, hl)
+      return { glyph = glyph, hl = hl }
+    end
 
     local babel = icon("", "MiniIconsOrange")
     local docker = icon("", "MiniIconsBlue")

@@ -12,55 +12,110 @@ return {
     local has_python = vim.fn.executable "python" == 1
 
     local keys = {
-      { "<C-'>", "<Cmd>ToggleTerm<CR>", desc = "Toggle Terminal", mode = { "t" } },
-      { "<C-'>", "<Esc><Cmd>ToggleTerm<CR>", desc = "Toggle Terminal", mode = { "i" } },
-      { "<C-'>", '<Cmd>execute v:count . "ToggleTerm"<CR>', desc = "Toggle Terminal" },
-      { "<F7>", "<Cmd>ToggleTerm<CR>", desc = "Toggle Terminal", mode = { "t" } },
-      { "<F7>", "<Esc><Cmd>ToggleTerm<CR>", desc = "Toggle Terminal", mode = { "i" } },
-      { "<F7>", '<Cmd>execute v:count . "ToggleTerm"<CR>', desc = "Toggle Terminal" },
-      { "<leader>tt", '<Cmd>execute v:count . "ToggleTerm"<CR>', desc = "Toggle Terminal" },
-      { "<leader>tf", "<Cmd>ToggleTerm direction=float<CR>", desc = "ToggleTerm Float" },
-      { "<leader>th", "<Cmd>ToggleTerm size=10 direction=horizontal<CR>", desc = "ToggleTerm Horizontal Split" },
-      { "<leader>tv", "<Cmd>ToggleTerm size=80 direction=vertical<CR>", desc = "ToggleTerm Vertical Split" },
+      {
+        "<C-'>",
+        "<Cmd>ToggleTerm<CR>",
+        desc = "Toggle Terminal",
+        mode = { "t" },
+      },
+      {
+        "<C-'>",
+        "<Esc><Cmd>ToggleTerm<CR>",
+        desc = "Toggle Terminal",
+        mode = { "i" },
+      },
+      {
+        "<C-'>",
+        '<Cmd>execute v:count . "ToggleTerm"<CR>',
+        desc = "Toggle Terminal",
+      },
+      {
+        "<F7>",
+        "<Cmd>ToggleTerm<CR>",
+        desc = "Toggle Terminal",
+        mode = { "t" },
+      },
+      {
+        "<F7>",
+        "<Esc><Cmd>ToggleTerm<CR>",
+        desc = "Toggle Terminal",
+        mode = { "i" },
+      },
+      {
+        "<F7>",
+        '<Cmd>execute v:count . "ToggleTerm"<CR>',
+        desc = "Toggle Terminal",
+      },
+      {
+        "<leader>tt",
+        '<Cmd>execute v:count . "ToggleTerm"<CR>',
+        desc = "Toggle Terminal",
+      },
+      {
+        "<leader>tf",
+        "<Cmd>ToggleTerm direction=float<CR>",
+        desc = "ToggleTerm Float",
+      },
+      {
+        "<leader>th",
+        "<Cmd>ToggleTerm size=10 direction=horizontal<CR>",
+        desc = "ToggleTerm Horizontal Split",
+      },
+      {
+        "<leader>tv",
+        "<Cmd>ToggleTerm size=80 direction=vertical<CR>",
+        desc = "ToggleTerm Vertical Split",
+      },
     }
 
     if has_btop then
-      keys[#keys + 1] =
-        { "<leader>tb", function() cfg.toggle_cmd { cmd = "btop", direction = "float" } end, desc = "ToggleTerm btop" }
+      keys[#keys + 1] = {
+        "<leader>tb",
+        function()
+          cfg.toggle_cmd { cmd = "btop", direction = "float" }
+        end,
+        desc = "ToggleTerm btop",
+      }
     end
 
     if has_gdu then
-      keys[#keys + 1] =
-        { "<leader>tu", function() cfg.toggle_cmd { cmd = "gdu", direction = "float" } end, desc = "ToggleTerm GDU" }
+      keys[#keys + 1] = {
+        "<leader>tu",
+        function()
+          cfg.toggle_cmd { cmd = "gdu", direction = "float" }
+        end,
+        desc = "ToggleTerm GDU",
+      }
     end
 
     if has_lazydocker then
       keys[#keys + 1] = {
         "<leader>td",
-        function() cfg.toggle_cmd { cmd = "lazydocker", direction = "float" } end,
+        function()
+          cfg.toggle_cmd { cmd = "lazydocker", direction = "float" }
+        end,
         desc = "ToggleTerm Lazydocker",
       }
     end
 
-    if has_lazygit then
-      local lazygit = {
-        callback = function()
-          local worktree = cfg.file_worktree()
-          local flags = worktree and (" --work-tree=%s --git-dir=%s"):format(worktree.toplevel, worktree.gitdir) or ""
-          cfg.toggle_cmd { cmd = "lazygit " .. flags, direction = "float" }
-        end,
-        desc = "ToggleTerm Lazygit",
-      }
-
-      keys[#keys + 1] = { "<leader>tl", lazygit.callback, desc = lazygit.desc }
-    end
-
     if has_node then
-      keys[#keys + 1] = { "<leader>tn", function() cfg.toggle_cmd { cmd = "node" } end, desc = "ToggleTerm Node" }
+      keys[#keys + 1] = {
+        "<leader>tn",
+        function()
+          cfg.toggle_cmd { cmd = "node" }
+        end,
+        desc = "ToggleTerm Node",
+      }
     end
 
     if has_python then
-      keys[#keys + 1] = { "<leader>tp", function() cfg.toggle_cmd { cmd = "python" } end, desc = "ToggleTerm Python" }
+      keys[#keys + 1] = {
+        "<leader>tp",
+        function()
+          cfg.toggle_cmd { cmd = "python" }
+        end,
+        desc = "ToggleTerm Python",
+      }
     end
 
     return keys
@@ -83,10 +138,22 @@ return {
       vim.opt_local.signcolumn = "no"
       if t.hidden then
         local keymap = require "utils.keymap"
-        local function toggle() t:toggle() end
+        local function toggle()
+          t:toggle()
+        end
         keymap.map {
-          { { "n", "t", "i" }, "<C-'>", toggle, { desc = "Toggle Terminal", buffer = t.bufnr } },
-          { { "n", "t", "i" }, "<F7>", toggle, { desc = "Toggle Terminal", buffer = t.bufnr } },
+          {
+            { "n", "t", "i" },
+            "<C-'>",
+            toggle,
+            { desc = "Toggle Terminal", buffer = t.bufnr },
+          },
+          {
+            { "n", "t", "i" },
+            "<F7>",
+            toggle,
+            { desc = "Toggle Terminal", buffer = t.bufnr },
+          },
         }
       end
     end,

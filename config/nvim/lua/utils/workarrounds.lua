@@ -11,19 +11,27 @@ local M = {
 }
 
 ---@return boolean
-function M.is_tsjs_project() return file_utils.files_exists("tsconfig.json", "jsconfig.json", "package.json") end
+function M.is_tsjs_project()
+  return file_utils.files_exists("tsconfig.json", "jsconfig.json", "package.json")
+end
 
 ---@return boolean
-function M.is_vtsls_active() return #vim.lsp.get_clients { name = "vtsls" } > 0 end
+function M.is_vtsls_active()
+  return #vim.lsp.get_clients { name = "vtsls" } > 0
+end
 
 ---@return boolean
-function M.is_regular_file_rename() return not M.is_tsjs_project() and not M.is_vtsls_active() end
+function M.is_regular_file_rename()
+  return not M.is_tsjs_project() and not M.is_vtsls_active()
+end
 
 ---@return boolean
 ---@param file string
 function M.has_vue_dependencies(file)
   local package_json = file_utils.read_json(file)
-  if package_json == nil then return false end
+  if package_json == nil then
+    return false
+  end
 
   local dependencies = package_json.dependencies or {}
   local devDependencies = package_json.devDependencies or {}
@@ -34,13 +42,19 @@ end
 ---@return table<string>
 local function get_workspaces()
   local package_json = file_utils.read_json "package.json"
-  if package_json == nil then return {} end
-  if not package_json.workspaces or type(package_json.workspaces) ~= "table" then return {} end
+  if package_json == nil then
+    return {}
+  end
+  if not package_json.workspaces or type(package_json.workspaces) ~= "table" then
+    return {}
+  end
   local workspaces = {}
 
   local function expand_workspace(pattern)
     local files = vim.fn.glob(pattern, true, true)
-    return vim.tbl_filter(function(f) return vim.fn.isdirectory(f) == 1 end, files)
+    return vim.tbl_filter(function(f)
+      return vim.fn.isdirectory(f) == 1
+    end, files)
   end
 
   for _, workspace in ipairs(package_json.workspaces) do
@@ -60,14 +74,20 @@ function M.is_vue_project()
     return value
   end
 
-  if not M.is_tsjs_project() then return result(false) end
-  if file_utils.file_exists "package.json" and M.has_vue_dependencies "package.json" then return result(true) end
+  if not M.is_tsjs_project() then
+    return result(false)
+  end
+  if file_utils.file_exists "package.json" and M.has_vue_dependencies "package.json" then
+    return result(true)
+  end
 
   --- verify if has vue in workspaces
   local workspaces = get_workspaces()
   for _, workspace in pairs(workspaces) do
     local file = workspace .. "/package.json"
-    if file_utils.file_exists(file) and M.has_vue_dependencies(file) then return result(true) end
+    if file_utils.file_exists(file) and M.has_vue_dependencies(file) then
+      return result(true)
+    end
   end
 
   return result(false)
@@ -86,11 +106,15 @@ function M.get_ft(name)
   }
 
   if name == "vtsls" then
-    if has_vue then return {} end
+    if has_vue then
+      return {}
+    end
     return tsjs_ft
   end
   if name == "vue_ls" then
-    if has_vue then return vim.tbl_extend("force", { "vue" }, tsjs_ft) end
+    if has_vue then
+      return vim.tbl_extend("force", { "vue" }, tsjs_ft)
+    end
     return { "vue" }
   end
 
@@ -101,12 +125,16 @@ end
 ---@param item snacks.picker.Item
 ---@return string|nil
 function M.typescript_rename_file(picker, item)
-  if not item or not item.file or item.file == "" then return end
+  if not item or not item.file or item.file == "" then
+    return
+  end
 
   local root = vim.fn.getcwd()
   local from = vim.fn.fnamemodify(item.file, ":p")
 
-  if from:find(root, 1, true) ~= 1 then root = vim.fn.fnamemodify(from, ":p:h") end
+  if from:find(root, 1, true) ~= 1 then
+    root = vim.fn.fnamemodify(from, ":p:h")
+  end
   local extra = from:sub(#root + 2)
 
   vim.ui.input({
@@ -114,14 +142,22 @@ function M.typescript_rename_file(picker, item)
     default = extra,
     completion = "file",
   }, function(value)
-    if not value or value == "" or value == extra then return end
+    if not value or value == "" or value == extra then
+      return
+    end
+
     local to = svim.fs.normalize(root .. "/" .. value)
     local ok, rename = pcall(require, "vtsls.rename")
-    if not ok then return end
+    if not ok then
+      return
+    end
+
     rename(from, to, function()
       local tree_ok, Tree = pcall(require, "snacks.explorer.tree")
       local actions_ok, Actions = pcall(require, "snacks.explorer.actions")
-      if not tree_ok or not actions_ok then return end
+      if not tree_ok or not actions_ok then
+        return
+      end
 
       Tree:refresh(vim.fs.dirname(from))
       Tree:refresh(vim.fs.dirname(to))

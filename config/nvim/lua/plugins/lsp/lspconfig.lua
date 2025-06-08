@@ -27,7 +27,9 @@ return {
             deprecatedSupport = true,
             commitCharactersSupport = true,
             tagSupport = { valueSet = { 1 } },
-            resolveSupport = { properties = { "documentation", "detail", "additionalTextEdits" } },
+            resolveSupport = {
+              properties = { "documentation", "detail", "additionalTextEdits" },
+            },
           },
         },
       },
@@ -48,7 +50,8 @@ return {
     )
 
     for _, server_name in ipairs(installed_servers) do
-      local config = lsp_setup.mkconfig(server_name, { capabilities = capabilities })
+      local default = { capabilities = capabilities }
+      local config = lsp_setup.mkconfig(server_name, default)
       vim.lsp.config[server_name] = config
     end
 

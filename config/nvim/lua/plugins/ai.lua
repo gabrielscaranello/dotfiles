@@ -12,7 +12,13 @@ return {
     },
 
     keys = {
-      { "<leader>ar", function() require("utils.lsp").clients.restart_copilot() end, desc = "Restart Copilot Client" },
+      {
+        "<leader>ar",
+        function()
+          require("utils.lsp").clients.restart_copilot()
+        end,
+        desc = "Restart Copilot Client",
+      },
     },
   },
 
@@ -51,17 +57,27 @@ return {
     end,
 
     keys = {
-      { "<c-s>", "<CR>", ft = "copilot-chat", desc = "Submit Prompt", remap = true },
+      {
+        "<c-s>",
+        "<CR>",
+        ft = "copilot-chat",
+        desc = "Submit Prompt",
+        remap = true,
+      },
       { "<leader>a", "", desc = "+AI", mode = { "n", "v" } },
       {
         "<leader>aa",
-        function() require("CopilotChat").toggle() end,
+        function()
+          require("CopilotChat").toggle()
+        end,
         desc = "Toggle (CopilotChat)",
         mode = { "n", "v" },
       },
       {
         "<leader>ax",
-        function() require("CopilotChat").reset() end,
+        function()
+          require("CopilotChat").reset()
+        end,
         desc = "Clear (CopilotChat)",
         mode = { "n", "v" },
       },
@@ -70,7 +86,9 @@ return {
         function()
           local opts = { prompt = "Quick Chat: " }
           local cb = function(input)
-            if input ~= "" then require("CopilotChat").ask(input) end
+            if input ~= "" then
+              require("CopilotChat").ask(input)
+            end
           end
           vim.ui.input(opts, cb)
         end,
@@ -79,7 +97,9 @@ return {
       },
       {
         "<leader>ap",
-        function() require("CopilotChat").select_prompt() end,
+        function()
+          require("CopilotChat").select_prompt()
+        end,
         desc = "Prompt Actions (CopilotChat)",
         mode = { "n", "v" },
       },
@@ -149,6 +169,8 @@ return {
       },
     },
 
-    config = function(_, opts) require("codeium").setup(opts) end,
+    config = function(_, opts)
+      require("codeium").setup(opts)
+    end,
   },
 }

@@ -7,7 +7,9 @@ return {
   keys = {
     {
       "<leader>lf",
-      function() require("conform").format() end,
+      function()
+        require("conform").format()
+      end,
       mode = { "n", "v" },
       desc = "Format File or Range (in visual mode)",
     },
@@ -53,7 +55,9 @@ return {
         local ignored_clients = { "jsonls", "tsserver", "vtsls", "volar", "vue_ls" }
 
         for _, client_name in ipairs(ignored_clients) do
-          if client_name == client.name then return false end
+          if client_name == client.name then
+            return false
+          end
         end
 
         return true

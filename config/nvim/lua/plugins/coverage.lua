@@ -27,7 +27,9 @@ return {
       "<leader>lC",
       function()
         local coverage = require "coverage"
-        if not vim.g.coverage_showing then coverage.load(false) end
+        if not vim.g.coverage_showing then
+          coverage.load(false)
+        end
         coverage.summary()
       end,
       desc = "Coverage Summary",

@@ -13,11 +13,31 @@ return {
   },
 
   keys = {
-    { "<S-Down>", "<Cmd>MultipleCursorsAddDown<CR>", desc = "Add cursor down", mode = { "n", "i" } },
-    { "<S-Up>", "<Cmd>MultipleCursorsAddUp<CR>", desc = "Add cursor up", mode = { "n", "i" } },
-    { "<C-LeftMouse>", "<Cmd>MultipleCursorsMouseAddDelete<CR>", desc = "Add cursor with mouse", mode = { "n", "i" } },
+    {
+      "<S-Down>",
+      "<Cmd>MultipleCursorsAddDown<CR>",
+      desc = "Add cursor down",
+      mode = { "n", "i" },
+    },
+    {
+      "<S-Up>",
+      "<Cmd>MultipleCursorsAddUp<CR>",
+      desc = "Add cursor up",
+      mode = { "n", "i" },
+    },
+    {
+      "<C-LeftMouse>",
+      "<Cmd>MultipleCursorsMouseAddDelete<CR>",
+      desc = "Add cursor with mouse",
+      mode = { "n", "i" },
+    },
 
-    { "<leader>ca", "<Cmd>MultipleCursorsAddMatches<CR>", desc = "Add matches", mode = { "n", "x" } },
+    {
+      "<leader>ca",
+      "<Cmd>MultipleCursorsAddMatches<CR>",
+      desc = "Add matches",
+      mode = { "n", "x" },
+    },
     {
       "<leader>cA",
       "<Cmd>MultipleCursorsAddMatchesV<CR>",
@@ -30,8 +50,18 @@ return {
       desc = "Add cursor and jump to next match",
       mode = { "n", "x" },
     },
-    { "<leader>cJ", "<Cmd>MultipleCursorsJumpNextMatch<CR>", desc = "Move cursor to next match", mode = { "n", "x" } },
-    { "<leader>cl", "<Cmd>MultipleCursorsLock<CR>", desc = "Lock virtual cursors", mode = { "n", "x" } },
+    {
+      "<leader>cJ",
+      "<Cmd>MultipleCursorsJumpNextMatch<CR>",
+      desc = "Move cursor to next match",
+      mode = { "n", "x" },
+    },
+    {
+      "<leader>cl",
+      "<Cmd>MultipleCursorsLock<CR>",
+      desc = "Lock virtual cursors",
+      mode = { "n", "x" },
+    },
   },
 
   opts = {},

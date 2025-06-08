@@ -28,10 +28,14 @@ end
 -- Callback on explorer show
 function M.explorer.on_show()
   explorer_is_open = true
-  if vim.fn.bufname() == "" then vim.api.nvim_buf_set_name(0, "File Explorer") end
+  if vim.fn.bufname() == "" then
+    vim.api.nvim_buf_set_name(0, "File Explorer")
+  end
 end
 
 -- Callback on explorer close
-function M.explorer.on_close() explorer_is_open = false end
+function M.explorer.on_close()
+  explorer_is_open = false
+end
 
 return M

@@ -3,7 +3,13 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
   keys = {
-    { "/", function() require("Comment.api").toggle.linewise.current() end, desc = "Toggle comment for current line" },
+    {
+      "/",
+      function()
+        require("Comment.api").toggle.linewise.current()
+      end,
+      desc = "Toggle comment for current line",
+    },
     {
       "/",
       function()
