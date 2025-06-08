@@ -81,6 +81,7 @@ local function ai_whichkey(opts)
   require("which-key").add(ret, { notify = false })
 end
 
+---@type LazyPluginSpec
 return {
   "echasnovski/mini.ai",
   event = "VeryLazy",

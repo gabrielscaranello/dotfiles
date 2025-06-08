@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "echasnovski/mini.surround",
   keys = function(_, keys)

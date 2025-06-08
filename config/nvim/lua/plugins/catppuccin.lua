@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "catppuccin/nvim",
   lazy = false,

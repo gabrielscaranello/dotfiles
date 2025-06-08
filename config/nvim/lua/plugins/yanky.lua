@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "gbprod/yanky.nvim",
   dependencies = { "kkharji/sqlite.lua", "folke/snacks.nvim" },

@@ -1,5 +1,6 @@
 local workarrounds = require "utils.workarrounds"
 
+---@type LazyPluginSpec[]
 return {
   { "yioneko/nvim-vtsls", opts = {}, config = function() end },
   {

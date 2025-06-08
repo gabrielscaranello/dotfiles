@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "andythigpen/nvim-coverage",
   event = { "BufReadPre", "BufNewFile" },

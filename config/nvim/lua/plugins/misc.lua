@@ -1,3 +1,4 @@
+---@type LazyPluginSpec[]
 return {
   { "b0o/SchemaStore.nvim", event = "VeryLazy" },
   { "junegunn/vim-easy-align", event = "VeryLazy" },

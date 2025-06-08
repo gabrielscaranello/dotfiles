@@ -32,6 +32,7 @@ local ensure_installed = {
   "yaml",
 }
 
+---@type LazyPluginSpec[]
 return {
   {
     "windwp/nvim-ts-autotag",

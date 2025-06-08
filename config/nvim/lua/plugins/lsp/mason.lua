@@ -53,6 +53,7 @@ local ensure_installed = {
   "yaml-language-server",
 }
 
+---@type LazyPluginSpec
 return {
   "mason-org/mason.nvim",
   cmd = { "Mason" },

@@ -1,6 +1,7 @@
 local config = require "config.snacks"
 local icons = require "utils.icons"
 
+---@type LazyPluginSpec
 return {
   "folke/snacks.nvim",
   priority = 1000,

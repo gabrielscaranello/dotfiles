@@ -1,3 +1,4 @@
+---@type LazyPluginSpec
 return {
   "brenton-leighton/multiple-cursors.nvim",
   event = { "BufReadPre", "BufNewFile" },

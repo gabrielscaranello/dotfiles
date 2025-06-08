@@ -1,8 +1,9 @@
 local lazydev_load = {
-  "catppuccin",
+  "lazy.nvim",
   "snacks.nvim",
 }
 
+---@type LazyPluginSpec[]
 return {
   {
     "folke/lazydev.nvim",

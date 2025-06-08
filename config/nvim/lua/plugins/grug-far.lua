@@ -11,6 +11,7 @@ local function grupfar(paths)
   }
 end
 
+---@type LazyPluginSpec
 return {
   "MagicDuck/grug-far.nvim",
   opts = { headerMaxWidth = 80 },
