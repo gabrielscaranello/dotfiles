@@ -72,6 +72,8 @@ vim.diagnostic.config {
 
 vim.o.timeout = true
 vim.o.timeoutlen = 400
+vim.o.sessionoptions =
+  "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 for key, value in pairs(opts) do
   vim.opt[key] = value

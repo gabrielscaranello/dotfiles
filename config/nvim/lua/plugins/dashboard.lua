@@ -50,7 +50,7 @@ return {
               icon = " ",
               key = "s",
               desc = "Restore Session",
-              section = "session",
+              action = ":SessionRestore",
             },
             {
               icon = " ",

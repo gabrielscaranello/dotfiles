@@ -47,7 +47,8 @@ return {
       { "<leader>l", group = "+LSP", mode = { "n", "v" } },
       { "<leader>o", desc = "Explorer (auto close)" },
       { "<leader>p", group = "+Package" },
-      { "<leader>s", group = "+Search / Replace", mode = { "n", "v" } },
+      { "<leader>r", group = "+Search / Replace", mode = { "n", "v" } },
+      { "<leader>s", group = "+Session" },
       { "<leader>t", group = "+Terminal" },
       { "<leader>x", group = "+Trouble" },
     }

@@ -18,14 +18,14 @@ return {
   },
   keys = {
     {
-      "<leader>ss",
+      "<leader>rs",
       function()
         require("spectre").open()
       end,
       desc = "Spectre",
     },
     {
-      "<leader>sf",
+      "<leader>rf",
       function()
         require("spectre").open_file_search()
       end,
@@ -33,7 +33,7 @@ return {
     },
     {
       mode = "x",
-      "<leader>ss",
+      "<leader>rs",
       function()
         require("spectre").open_visual { select_word = true }
       end,
