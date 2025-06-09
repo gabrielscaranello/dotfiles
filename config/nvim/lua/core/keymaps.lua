@@ -7,7 +7,8 @@ keymap.map {
   { "n", "<leader>bC", "<cmd>bdelete<cr>", { desc = "Close Current Cuffer" } },
 
   -- misc
-  { "n", "<leader><space>", "<cmd>nohlsearch<cr>", { desc = "No Highlight" } },
+  { "n", "<leader>n", "<cmd>nohlsearch<cr>", { desc = "No Highlight" } },
+  { "n", "<leader><space>", "<leader>ff", { remap = true, desc = "Find Files" } },
   { "n", "<leader>r", "<cmd>e!<cr>", { desc = "Reload File" } },
   { "n", "<C-s>", "<cmd>w<cr>", { desc = "Save File" } },
   { { "v", "n" }, ";", ":", { desc = "Enter Command Mode", silent = false } },
