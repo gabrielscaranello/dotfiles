@@ -33,7 +33,7 @@ local git = {
   modified = " ",
   removed = " ",
   renamed = "󰁕",
-  staged = "✓",
+  staged = "󰡖 ",
   unstaged = "󰄱 ",
   untracked = "󰚌 ",
 }
