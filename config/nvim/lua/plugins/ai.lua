@@ -27,7 +27,7 @@ return {
     "CopilotC-Nvim/CopilotChat.nvim",
     branch = "main",
     event = "VeryLazy",
-    cond = vim.g.ai.provider == "copilot" or vim.g.ai.use_copilot_chat,
+    cond = vim.g.ai.provider == "copilot",
     cmd = "CopilotChat",
     dependencies = {
       "zbirenbaum/copilot.lua",
