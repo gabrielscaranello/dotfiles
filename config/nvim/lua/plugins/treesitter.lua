@@ -1,7 +1,13 @@
 local ensure_installed = {
   "bash",
   "css",
+  "diff",
   "dockerfile",
+  "git_config",
+  "git_rebase",
+  "gitattributes",
+  "gitcommit",
+  "gitignore",
   "go",
   "gomod",
   "gosum",
@@ -42,8 +48,9 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    branch = "master",
     version = false,
-    lazy = vim.fn.argc(-1) == 0,
+    lazy = false,
     event = { "BufReadPre", "BufNewFile" },
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
     dependencies = {

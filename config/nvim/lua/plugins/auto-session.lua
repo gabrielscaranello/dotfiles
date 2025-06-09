@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "rmagatti/auto-session",
-  event = "VeryLazy",
+  lazy = false,
 
   ---enables autocomplete for opts
   ---@module "auto-session"
@@ -9,7 +9,7 @@ return {
   opts = {
     auto_save = true,
     enabled = true,
-    lazy_support = false,
+    lazy_support = true,
     auto_restore = false,
     auto_restore_last_session = false,
     git_use_branch_name = true,

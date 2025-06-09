@@ -9,7 +9,7 @@ keymap.map {
   -- misc
   { "n", "<leader>n", "<cmd>nohlsearch<cr>", { desc = "No Highlight" } },
   { "n", "<leader><space>", "<leader>ff", { remap = true, desc = "Find Files" } },
-  { "n", "<leader>r", "<cmd>e!<cr>", { desc = "Reload File" } },
+  { "n", "<leader>bR", "<cmd>e!<cr>", { desc = "Reload File" } },
   { "n", "<C-s>", "<cmd>w<cr>", { desc = "Save File" } },
   { { "v", "n" }, ";", ":", { desc = "Enter Command Mode", silent = false } },
   { "i", "<C-s>", "<Esc><cmd>w<cr>", { desc = "Save File" } },
