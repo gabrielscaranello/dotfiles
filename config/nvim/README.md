@@ -1,5 +1,9 @@
 # Neovim
 
+> [!WARNING]
+> This documentation is out of date!  
+> I will rewrite this documentation soon.
+
 ## About
 
 After months of using the AstroNvim distro, I decided to create my own configuration based on the knowledge I acquired and the AstroNvim and LazyVim configurations.
