@@ -126,6 +126,23 @@ local function keys()
       desc = "Git Branches",
     },
     {
+      "<leader>go",
+      function()
+        ---@diagnostic disable-next-line: missing-fields
+        Snacks.gitbrowse.open { what = "repo" }
+      end,
+      desc = "Open remote repository",
+    },
+    {
+      "<leader>gO",
+      function()
+        ---@diagnostic disable-next-line: missing-fields
+        Snacks.gitbrowse.open { what = "file" }
+      end,
+      desc = "Open file on remote repository",
+      mode = { "n", "v" },
+    },
+    {
       "<leader>gl",
       function()
         Snacks.picker.git_log()
