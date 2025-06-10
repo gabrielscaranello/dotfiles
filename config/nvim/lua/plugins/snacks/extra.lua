@@ -4,14 +4,18 @@ local function extra()
 
   ---@type snacks.Config
   return {
+    styles = {
+      lazygit = { relative = "editor", border = "rounded" },
+    },
     bigfile = { enabled = true },
     explorer = { replace_netrw = true },
     indent = {
+      scope = { only_current = true },
       enabled = true,
       animate = {
         style = "out",
         easing = "linear",
-        duration = { step = 30, total = 400 },
+        duration = { step = 35, total = 500 },
       },
     },
     input = {
