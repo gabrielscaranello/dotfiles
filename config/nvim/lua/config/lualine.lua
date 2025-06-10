@@ -5,6 +5,9 @@ return {
   ai = function(colors)
     local provider = vim.g.ai.provider
     local function ai_status()
+      if provider == nil then
+        return nil
+      end
       return icons.kinds[provider:sub(1, 1):upper() .. provider:sub(2)]
     end
 
