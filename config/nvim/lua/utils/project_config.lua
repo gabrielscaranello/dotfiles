@@ -85,4 +85,13 @@ return {
     "Dockerfile.dev",
     "Dockerfile.prod",
   },
+
+  dotenv = {
+    ".env.example",
+    ".env.local",
+    ".env.production",
+    ".env.prod",
+    ".env.staging",
+    ".env.test",
+  },
 }

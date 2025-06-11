@@ -1,6 +1,5 @@
 ---@type table<string,vim.lsp.Config>
 return {
-  bashls = require "config.lsp.configs.bashls",
   buf_ls = require "config.lsp.configs.buf_ls",
   clangd = require "config.lsp.configs.clangd",
   cssls = require "config.lsp.configs.cssls",

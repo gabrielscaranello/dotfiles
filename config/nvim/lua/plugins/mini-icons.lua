@@ -10,6 +10,8 @@ return {
 
     local babel = icon("", "MiniIconsOrange")
     local docker = icon("", "MiniIconsBlue")
+    local dotenv = icon("", "MiniIconsYellow")
+    local dotenv_alt = icon("", "MiniIconsGrey")
     local eslint = icon("󰱺", "MiniIconsYellow")
     local go = icon("", "MiniIconsCyan")
     local jest = icon("", "MiniIconsRed")
@@ -47,9 +49,10 @@ return {
         ["webpack.config.js"] = icon("", "MiniIconsCyan"),
         ["webpack.config.ts"] = icon("", "MiniIconsCyan"),
         ["yarn.lock"] = yarn,
+        [".env"] = dotenv,
       },
       filetype = {
-        dotenv = icon("", "MiniIconsYellow"),
+        dotenv = dotenv,
         go = go,
         goaccess = icon("󰫴", "MiniIconsPurple"),
         godoc = icon("", "MiniIconsOrange"),
@@ -59,7 +62,7 @@ return {
         javascriptreact = icon("", "MiniIconsYellow"),
       },
       extension = {
-        [".env"] = icon("", "MiniIconsYellow"),
+        [".env"] = dotenv,
         ["spec.js"] = spec_js,
         ["spec.jsx"] = spec_js,
         ["spec.ts"] = spec_ts,
@@ -73,6 +76,7 @@ return {
 
     --- configure icons with multiple config files
     local bulk_files = {
+      dotenv = dotenv_alt,
       babel = babel,
       docker = docker,
       eslint = eslint,

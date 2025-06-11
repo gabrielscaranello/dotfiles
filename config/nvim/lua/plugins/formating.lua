@@ -3,7 +3,6 @@ return {
   "stevearc/conform.nvim",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = { "mason.nvim" },
-  lazy = true,
   cmd = "ConformInfo",
   keys = {
     {
@@ -35,7 +34,7 @@ return {
         postcss = { "prettierd" },
         proto = { "buf" },
         scss = { "prettierd" },
-        sh = { "shfmt" },
+        sh = { "shellcheck" },
         typescript = { "prettierd", lsp_format = "last" },
         typescriptreact = { "prettierd", lsp_format = "last" },
         vue = { "prettierd", lsp_format = "first" },
