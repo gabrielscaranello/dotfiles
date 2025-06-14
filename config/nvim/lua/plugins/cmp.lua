@@ -33,11 +33,11 @@ return {
     completion = {
       list = {
         max_items = 50,
-        selection = { preselect = true, auto_insert = true },
+        selection = { preselect = false, auto_insert = true },
       },
       ghost_text = { enabled = false },
       accept = {
-        auto_brackets = { enabled = true },
+        auto_brackets = { enabled = false },
         create_undo_point = true,
       },
 
@@ -79,6 +79,9 @@ return {
         lsp = {
           transform_items = function(_, items)
             return vim.tbl_filter(function(item)
+              if item.client_name == "emmet_ls" then
+                return true
+              end
               return item.kind ~= require("blink.cmp.types").CompletionItemKind.Snippet
             end, items)
           end,
