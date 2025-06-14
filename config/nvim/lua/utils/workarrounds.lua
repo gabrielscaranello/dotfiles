@@ -22,7 +22,7 @@ end
 
 ---@return boolean
 function M.is_regular_file_rename()
-  return not M.is_tsjs_project() and not M.is_vtsls_active()
+  return not M.is_tsjs_project() or not M.is_vtsls_active()
 end
 
 ---@return boolean
