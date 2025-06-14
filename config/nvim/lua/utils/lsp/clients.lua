@@ -47,16 +47,9 @@ function M.get_all()
 end
 
 function M.restart()
-  ---@type table<string>
-  local clients = vim.tbl_map(
-    ---@param client vim.lsp.Client
-    function(client)
-      return client.name
-    end,
-    M.get_all()
-  )
-
-  vim.cmd(":LspRestart " .. table.concat(clients, " "))
+  for _, client in pairs(M.get_all()) do
+    vim.cmd(":LspRestart " .. client.name)
+  end
 
   M.restart_copilot()
 end
