@@ -18,6 +18,7 @@ return {
     lsp_stop_on_restore = true,
     suppressed_dirs = { "~/Code" },
     close_unsupported_windows = true,
+    post_restore_cmds = { "silent !kill -s SIGWINCH $PPID" },
   },
 
   keys = {
