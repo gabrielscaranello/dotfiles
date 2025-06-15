@@ -68,6 +68,7 @@ return {
           { "filetype", icon_only = true },
           components.ai(colors),
           components.lsp(colors),
+          components.spell(colors),
         },
         lualine_y = {
           { "progress" },

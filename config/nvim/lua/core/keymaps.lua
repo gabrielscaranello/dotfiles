@@ -1,4 +1,5 @@
 local keymap = require "utils.keymap"
+local spell_utils = require "utils.spell"
 
 keymap.map {
   -- exit
@@ -38,6 +39,33 @@ keymap.map {
     "<C-Right>",
     "<cmd>vertical resize +2<cr>",
     { desc = "Resize split right" },
+  },
+
+  -- spell
+  { "n", "<leader>dt", spell_utils.toggle_spell, { desc = "Toggle Spellcheck" } },
+  {
+    "n",
+    "<leader>dp",
+    function()
+      spell_utils.set_spelllang "pt_br"
+    end,
+    { desc = "Set Spellcheck to Portuguese" },
+  },
+  {
+    "n",
+    "<leader>de",
+    function()
+      spell_utils.set_spelllang "en"
+    end,
+    { desc = "Set Spellcheck to English" },
+  },
+  {
+    "n",
+    "<leader>db",
+    function()
+      spell_utils.set_spelllang "pt_br,en"
+    end,
+    { desc = "Set Spellcheck to Portuguese and English" },
   },
 
   -- package

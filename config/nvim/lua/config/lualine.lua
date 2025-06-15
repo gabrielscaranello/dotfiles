@@ -1,5 +1,6 @@
 local icons = require "utils.icons"
 local lsp_utils = require "utils.lsp"
+local spell_utils = require "utils.spell"
 
 return {
   ai = function(colors)
@@ -57,6 +58,27 @@ return {
       separator = { left = "" },
       cond = function()
         return #lsp_utils.clients.get_all() > 0
+      end,
+    }
+  end,
+  ---@param colors CtpColors<string>
+  spell = function(colors)
+    local spelllangs = function()
+      local langs = vim.o.spelllang:lower():gsub("pt_br", "br")
+      local langs_tbl = vim.split(langs, ",")
+
+      table.sort(langs_tbl)
+      langs = table.concat(langs_tbl, "|")
+
+      return "󰓆 [" .. langs .. "]"
+    end
+
+    return {
+      spelllangs,
+      color = { bg = colors.surface2, fg = colors.text },
+      separator = { left = "" },
+      cond = function()
+        return spell_utils.is_spell_enabled()
       end,
     }
   end,

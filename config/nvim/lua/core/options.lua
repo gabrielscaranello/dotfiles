@@ -17,6 +17,8 @@ local opts = {
   scrolloff = 8,
   mouse = "a",
   undofile = true,
+  spelllang = { "en" },
+  spell = false,
 
   -- appearance
   termguicolors = true,
