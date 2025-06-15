@@ -9,6 +9,7 @@ local function extra()
     },
     bigfile = { enabled = true },
     explorer = { replace_netrw = true },
+    image = { enabled = true },
     indent = {
       scope = { only_current = true },
       enabled = true,
