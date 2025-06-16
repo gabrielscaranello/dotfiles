@@ -49,6 +49,13 @@ local function keys()
       end,
       desc = "Notifications",
     },
+    {
+      "<C-i>",
+      function()
+        Snacks.image.hover()
+      end,
+      desc = "Image Hover",
+    },
 
     -- Diagnostics and LSP
     {
