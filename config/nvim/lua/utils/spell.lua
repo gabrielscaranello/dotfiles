@@ -29,7 +29,7 @@ function M.set_spelllang(lang)
   end
 
   local langs = vim.split(lang, ",")
-  vim.o.spelllang = langs
+  vim.opt.spelllang = langs
   vim.notify(("Spellcheck language set to %s"):format(lang))
 end
 
