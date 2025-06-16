@@ -12,6 +12,36 @@ local typescript = {
   },
 }
 
+local function get_styled_plugin()
+  local npm_root_dir = vim.fn.trim(vim.fn.system "npm root -g")
+  if not npm_root_dir or npm_root_dir == "" then
+    return
+  end
+
+  local location = vim.fn.expand(npm_root_dir .. "/@styled/typescript-styled-plugin")
+  if vim.fn.isdirectory(location) == 0 then
+    return
+  end
+
+  return {
+    name = "@styled/typescript-styled-plugin",
+    location = location,
+    configNamespace = "typescript",
+    enableForWorkspaceTypeScriptVersions = true,
+  }
+end
+
+local function get_global_plugins()
+  local plugins = {}
+
+  local styled_plugin = get_styled_plugin()
+  if styled_plugin then
+    table.insert(plugins, styled_plugin)
+  end
+
+  return plugins
+end
+
 ---@type vim.lsp.Config
 return {
   filetypes = workarrounds.get_ft "vtsls",
@@ -24,6 +54,7 @@ return {
     }),
     vtsls = {
       enableMoveToFileCodeAction = false,
+      tsserver = { globalPlugins = get_global_plugins() },
     },
   },
   on_attach = function(client, bufnr)
