@@ -33,11 +33,11 @@ return {
     completion = {
       list = {
         max_items = 50,
-        selection = { preselect = false, auto_insert = true },
+        selection = { preselect = true, auto_insert = true },
       },
       ghost_text = { enabled = false },
       accept = {
-        auto_brackets = { enabled = false },
+        auto_brackets = { enabled = true },
         create_undo_point = true,
       },
 
