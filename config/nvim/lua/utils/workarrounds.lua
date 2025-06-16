@@ -113,7 +113,7 @@ function M.get_ft(name)
   end
   if name == "vue_ls" then
     if has_vue then
-      return vim.tbl_extend("force", { "vue" }, tsjs_ft)
+      return vim.tbl_extend("force", tsjs_ft, { "vue" })
     end
     return { "vue" }
   end
