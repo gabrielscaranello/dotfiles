@@ -15,13 +15,16 @@ return {
     local eslint = icon("󰱺", "MiniIconsYellow")
     local go = icon("", "MiniIconsCyan")
     local jest = icon("", "MiniIconsRed")
+    local kitty = icon("󱁻", "MiniIconsYellow")
     local prettier = icon("", "MiniIconsPurple")
     local spec_js = icon("󰙨", "MiniIconsYellow")
     local spec_ts = icon("󰙨", "MiniIconsBlue")
     local test_js = icon("󰂖", "MiniIconsOrange")
     local test_ts = icon("󰂖", "MiniIconsAzure")
+    local tsconfig = icon("", "MiniIconsAzure")
     local vite = icon("", "MiniIconsGreen")
     local vitest = icon("", "MiniIconsGreen")
+    local webpack = icon("", "MiniIconsCyan")
     local yarn = icon("", "MiniIconsBlue")
 
     local opts = {
@@ -36,20 +39,17 @@ return {
         utils = icon("󱧼", "MiniIconsAzure"),
       },
       file = {
+        [".env"] = dotenv,
         [".go-version"] = icon("", "MiniIconsBlue"),
         [".keep"] = icon("󰊢", "MiniIconsGrey"),
         [".node-version"] = icon("", "MiniIconsGreen"),
         [".yarnrc.yml"] = yarn,
-        ["devcontainer.json"] = icon("", "MiniIconsAzure"),
         ["catalog-info.yaml"] = icon("󱉟", "MiniIconsBlue"),
+        ["devcontainer.json"] = icon("", "MiniIconsAzure"),
         ["go.mod"] = go,
+        ["kitty.conf"] = kitty,
         ["package.json"] = icon("", "MiniIconsGreen"),
-        ["tsconfig.build.json"] = icon("", "MiniIconsAzure"),
-        ["tsconfig.json"] = icon("", "MiniIconsAzure"),
-        ["webpack.config.js"] = icon("", "MiniIconsCyan"),
-        ["webpack.config.ts"] = icon("", "MiniIconsCyan"),
         ["yarn.lock"] = yarn,
-        [".env"] = dotenv,
       },
       filetype = {
         dotenv = dotenv,
@@ -76,14 +76,16 @@ return {
 
     --- configure icons with multiple config files
     local bulk_files = {
-      dotenv = dotenv_alt,
       babel = babel,
       docker = docker,
+      dotenv = dotenv_alt,
       eslint = eslint,
       jest = jest,
       prettier = prettier,
+      tsconfig = tsconfig,
       vite = vite,
       vitest = vitest,
+      webpack = webpack,
     }
 
     for item, icon_opts in pairs(bulk_files) do

@@ -43,6 +43,7 @@ return {
     "babel.config.mts",
     "babel.config.ts",
   },
+
   vite = {
     "vite.config.cjs",
     "vite.config.cts",
@@ -93,5 +94,22 @@ return {
     ".env.prod",
     ".env.staging",
     ".env.test",
+  },
+
+  webpack = {
+    "webpack.config.cjs",
+    "webpack.config.cts",
+    "webpack.config.js",
+    "webpack.config.mjs",
+    "webpack.config.mts",
+    "webpack.config.ts",
+  },
+
+  tsconfig = {
+    "tsconfig.json",
+    "tsconfig.app.json",
+    "tsconfig.base.json",
+    "tsconfig.build.json",
+    "tsconfig.node.json",
   },
 }

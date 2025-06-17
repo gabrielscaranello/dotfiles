@@ -81,6 +81,7 @@ return {
 
       vim.treesitter.language.register("scss", "less")
       vim.treesitter.language.register("scss", "postcss")
+      vim.treesitter.language.register("bash", "kitty")
     end,
   },
 }

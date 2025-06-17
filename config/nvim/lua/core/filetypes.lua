@@ -3,6 +3,7 @@ vim.filetype.add {
     graphqls = "graphql",
   },
   pattern = {
+    [".*/kitty/.+%.conf"] = "kitty",
     ["%.env%.[%w_.-]+"] = "sh",
   },
 }
