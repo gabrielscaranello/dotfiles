@@ -53,45 +53,49 @@ local ensure_installed = {
   "yaml-language-server",
 }
 
----@type LazyPluginSpec
+---@type LazyPluginSpec[]
 return {
-  "mason-org/mason.nvim",
-  cmd = { "Mason" },
-  build = ":MasonUpdate",
-  opts_extend = { "ensure_installed" },
-  opts = {
-    ensure_installed = ensure_installed,
-    ui = {
-      border = "rounded",
-      icons = {
-        package_installed = "✓",
-        package_pending = "󰑓",
-        package_uninstalled = "✗",
+  {
+    "mason-org/mason.nvim",
+    version = "^v2.0.0",
+    cmd = { "Mason" },
+    build = ":MasonUpdate",
+    opts_extend = { "ensure_installed" },
+    opts = {
+      ensure_installed = ensure_installed,
+      ui = {
+        border = "rounded",
+        icons = {
+          package_installed = "✓",
+          package_pending = "󰑓",
+          package_uninstalled = "✗",
+        },
       },
     },
-  },
 
-  ---@param opts MasonSettings | {ensure_installed: string[]}
-  config = function(_, opts)
-    require("mason").setup(opts)
-    local mason_registry = require "mason-registry"
+    ---@param opts MasonSettings | {ensure_installed: string[]}
+    config = function(_, opts)
+      require("mason").setup(opts)
+      local mason_registry = require "mason-registry"
 
-    mason_registry:on("package:install:success", function()
-      vim.defer_fn(function()
-        require("lazy.core.handler.event").trigger {
-          event = "FileType",
-          buf = vim.api.nvim_get_current_buf(),
-        }
-      end, 100)
-    end)
+      mason_registry:on("package:install:success", function()
+        vim.defer_fn(function()
+          require("lazy.core.handler.event").trigger {
+            event = "FileType",
+            buf = vim.api.nvim_get_current_buf(),
+          }
+        end, 100)
+      end)
 
-    mason_registry.refresh(function()
-      for _, tool in ipairs(opts.ensure_installed) do
-        local p = mason_registry.get_package(tool)
-        if not p:is_installed() then
-          p:install()
+      mason_registry.refresh(function()
+        for _, tool in ipairs(opts.ensure_installed) do
+          local p = mason_registry.get_package(tool)
+          if not p:is_installed() then
+            p:install()
+          end
         end
-      end
-    end)
-  end,
+      end)
+    end,
+  },
+  { "mason-org/mason-lspconfig.nvim", version = "^v2.0.0" },
 }

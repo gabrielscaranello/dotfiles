@@ -3,6 +3,7 @@ local lsp_setup = require "config.lsp"
 ---@type LazyPluginSpec
 return {
   "neovim/nvim-lspconfig",
+  version = "^v2.3.0",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "mason-org/mason-lspconfig.nvim",
