@@ -2,23 +2,11 @@
 return {
   settings = {
     gopls = {
-      analyses = {
-        ST1003 = true,
-        fieldalignment = false,
-        fillreturns = true,
-        nilness = true,
-        nonewvars = true,
-        shadow = true,
-        undeclaredname = true,
-        unreachable = true,
-        unusedparams = true,
-        unusedwrite = true,
-        useany = true,
-      },
       codelenses = {
-        gc_details = true,
+        gc_details = false,
         generate = true,
         regenerate_cgo = true,
+        run_govulncheck = true,
         test = true,
         tidy = true,
         upgrade_dependency = true,
@@ -33,15 +21,33 @@ return {
         parameterNames = true,
         rangeVariableTypes = true,
       },
-      buildFlags = { "-tags", "integration" },
+      analyses = {
+        nilness = true,
+        unusedparams = true,
+        unusedwrite = true,
+        useany = true,
+      },
       completeUnimported = true,
-      diagnosticsDelay = "500ms",
+      directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
       gofumpt = true,
-      matcher = "Fuzzy",
       semanticTokens = true,
       staticcheck = true,
-      symbolMatcher = "fuzzy",
       usePlaceholders = true,
     },
   },
+  on_attach = function(client)
+    if not client.server_capabilities.semanticTokensProvider then
+      local semantic = client.config.capabilities.textDocument.semanticTokens
+      if semantic ~= nil then
+        client.server_capabilities.semanticTokensProvider = {
+          full = true,
+          legend = {
+            tokenTypes = semantic.tokenTypes,
+            tokenModifiers = semantic.tokenModifiers,
+          },
+          range = true,
+        }
+      end
+    end
+  end,
 }
