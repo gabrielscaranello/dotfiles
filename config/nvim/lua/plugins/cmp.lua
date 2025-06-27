@@ -37,7 +37,7 @@ return {
       },
       ghost_text = { enabled = false },
       accept = {
-        auto_brackets = { enabled = true },
+        auto_brackets = { enabled = false },
         create_undo_point = true,
       },
 
