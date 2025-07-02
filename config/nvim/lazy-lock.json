@@ -51,6 +51,7 @@
   "toggleterm.nvim": { "branch": "main", "commit": "9a88eae817ef395952e08650b3283726786fb5fb" },
   "treesj": { "branch": "main", "commit": "3b4a2bc42738a63de17e7485d4cc5e49970ddbcc" },
   "trouble.nvim": { "branch": "main", "commit": "85bedb7eb7fa331a2ccbecb9202d8abba64d37b3" },
+  "tsc.nvim": { "branch": "main", "commit": "8c1b4ec6a48d038a79ced8674cb15e7db6dd8ef0" },
   "vim-easy-align": { "branch": "master", "commit": "9815a55dbcd817784458df7a18acacc6f82b1241" },
   "vim-wakatime": { "branch": "master", "commit": "f39c4a201ae350aaba713b59d4a4fdd88e0811aa" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" },

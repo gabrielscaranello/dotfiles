@@ -60,8 +60,18 @@ return {
   on_attach = function(client, bufnr)
     local ok, vtsls = pcall(require, "vtsls")
     if ok then
+      local keymap = require "utils.keymap"
       local vtsls_config = require("vtsls.lspconfig").default_config
       client.config = vim.tbl_extend("force", vtsls_config, client.config)
+
+      keymap.map {
+        {
+          "n",
+          "gs",
+          vtsls.commands.goto_source_definition,
+          { desc = "Goto Source Definition (vtsls)" },
+        },
+      }
 
       return vtsls._on_attach(client.id, bufnr)
     end
