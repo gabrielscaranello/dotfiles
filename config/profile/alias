@@ -5,5 +5,11 @@ alias vsc="code ."
 alias vim="nvim"
 alias v="nvim"
 alias c="nvim ."
-alias ls="exa --icons"
-alias bat="batcat"
+
+if which exa > /dev/null; then
+  alias ls="exa --icons --group-directories-first"
+elif which eza > /dev/null; then
+  alias ls="eza --icons --group-directories-first"
+fi
+
+which batcat >/dev/null && alias bat="batcat"
