@@ -1,6 +1,4 @@
-local workarrounds = require "utils.workarrounds"
-
-local typescript = {
+local typescript_cfg = {
   updateImportsOnFileMove = "always",
   inlayHints = {
     parameterNames = { enabled = "all" },
@@ -31,6 +29,25 @@ local function get_styled_plugin()
   }
 end
 
+local get_vue_plugin = function()
+  local registry_ok, registry = pcall(require, "mason-registry")
+  if not registry_ok then
+    return
+  end
+
+  if not registry.is_installed "vue-language-server" then
+    return
+  end
+
+  return {
+    name = "@vue/typescript-plugin",
+    location = vim.fn.expand "$MASON/packages/vue-language-server/node_modules/@vue/language-server",
+    languages = { "vue" },
+    configNamespace = "typescript",
+    enableForWorkspaceTypeScriptVersions = true,
+  }
+end
+
 local function get_global_plugins()
   local plugins = {}
 
@@ -39,24 +56,41 @@ local function get_global_plugins()
     table.insert(plugins, styled_plugin)
   end
 
+  local vue_plugin = get_vue_plugin()
+  if vue_plugin then
+    table.insert(plugins, vue_plugin)
+  end
+
   return plugins
 end
 
 ---@type vim.lsp.Config
 return {
-  filetypes = workarrounds.get_ft "vtsls",
+  filetypes = {
+    "javascript",
+    "javascript.jsx",
+    "javascriptreact",
+    "typescript",
+    "typescript.tsx",
+    "typescriptreact",
+    "vue",
+  },
   settings = {
-    typescript = typescript,
-    javascript = vim.tbl_deep_extend("force", typescript, {
+    typescript = typescript_cfg,
+    javascript = vim.tbl_deep_extend("force", typescript_cfg, {
       inlayHints = {
         parameterNames = { enabled = "literals" },
       },
     }),
     vtsls = {
       enableMoveToFileCodeAction = false,
-      tsserver = { globalPlugins = get_global_plugins() },
+      tsserver = { globalPlugins = {} },
     },
   },
+  before_init = function(_, config)
+    ---@diagnostic disable-next-line: undefined-field
+    config.settings.vtsls.tsserver.globalPlugins = get_global_plugins()
+  end,
   on_attach = function(client, bufnr)
     local ok, vtsls = pcall(require, "vtsls")
     if ok then
