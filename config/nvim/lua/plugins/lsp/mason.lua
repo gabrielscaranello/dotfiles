@@ -28,6 +28,9 @@ local ensure_installed = {
   -- Markdown
   "marksman",
 
+  -- Makefile
+  "checkmake",
+
   -- HTML/JSX/TSX/TS/JS
   "css-lsp",
   "emmet-ls",
