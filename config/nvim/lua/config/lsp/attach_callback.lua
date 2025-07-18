@@ -1,10 +1,13 @@
 local keymap = require "utils.keymap"
 local lsp_utils = require "utils.lsp"
 
+---@param client vim.lsp.Client
+---@param capability string
 local function has_capability(client, capability)
   return client.server_capabilities[capability] == true
 end
 
+---@type table<string, {mode: string|string[], key: string, desc: string, action: function|string, opts?: vim.keymap.set.Opts}>
 local capabilities_actions_map = {
   definitionProvider = {
     mode = "n",
@@ -53,6 +56,12 @@ local capabilities_actions_map = {
 
 return function(event)
   local client = vim.lsp.get_client_by_id(event.data.client_id)
+  if not client then
+    return
+  end
+
+  ---@param opts vim.keymap.set.Opts
+  ---@return vim.keymap.set.Opts
   local function with_opts(opts)
     opts.buffer = event.buf
     opts.silent = opts.silent or true

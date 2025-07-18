@@ -3,6 +3,7 @@ local lsp_utils = require "utils.lsp"
 local spell_utils = require "utils.spell"
 
 return {
+  ---@param colors CtpColors<string>
   ai = function(colors)
     local provider = vim.g.ai.provider
     local function ai_status()
@@ -31,6 +32,7 @@ return {
       end,
     }
   end,
+  ---@param colors CtpColors<string>
   lsp = function(colors)
     local function lsp_status()
       local clients = lsp_utils.clients.get_all()
