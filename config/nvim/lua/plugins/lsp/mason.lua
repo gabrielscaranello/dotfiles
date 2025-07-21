@@ -12,6 +12,7 @@ local ensure_installed = {
 
   -- Go
   "delve",
+  "gofumpt",
   "goimports",
   "gomodifytags",
   "gopls",
