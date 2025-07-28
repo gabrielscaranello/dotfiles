@@ -49,6 +49,7 @@ return {
       local user = vim.env.USER or "User"
       return {
         auto_insert_mode = true,
+        resource_processing = true,
         question_header = " " .. user .. " ",
         answer_header = "  Copilot ",
         window = {
