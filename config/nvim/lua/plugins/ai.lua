@@ -47,11 +47,15 @@ return {
     },
     opts = function()
       local user = vim.env.USER or "User"
+
+      ---@type CopilotChat.config.Config
       return {
         auto_insert_mode = true,
         resource_processing = true,
-        question_header = " " .. user .. " ",
-        answer_header = "  Copilot ",
+        headers = {
+          user = " " .. user .. " ",
+          assistant = "  Copilot ",
+        },
         window = {
           width = 0.4,
         },
