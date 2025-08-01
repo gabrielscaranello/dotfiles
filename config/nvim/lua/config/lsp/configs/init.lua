@@ -10,6 +10,5 @@ return {
   lua_ls = require "config.lsp.configs.lua_ls",
   pbls = require "config.lsp.configs.pbls",
   vtsls = require "config.lsp.configs.vtsls",
-  vue_ls = require "config.lsp.configs.vue_ls",
   yamlls = require "config.lsp.configs.yamlls",
 }
