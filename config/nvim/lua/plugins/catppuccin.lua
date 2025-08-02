@@ -11,6 +11,10 @@ return {
     kitty = true,
     show_end_of_buffer = false,
     flavour = "mocha",
+    float = {
+      transparent = true,
+      solid = false,
+    },
     integrations = {
       blink_cmp = { style = "bordered" },
       flash = true,
