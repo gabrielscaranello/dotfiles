@@ -3,6 +3,7 @@ return {
   "catppuccin/nvim",
   lazy = false,
   priority = 1000,
+  version = "v1.11",
   name = "catppuccin",
 
   ---@type CatppuccinOptions
@@ -11,10 +12,6 @@ return {
     kitty = true,
     show_end_of_buffer = false,
     flavour = "mocha",
-    float = {
-      transparent = true,
-      solid = false,
-    },
     integrations = {
       blink_cmp = { style = "bordered" },
       flash = true,
