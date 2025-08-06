@@ -15,7 +15,7 @@ return {
     git_use_branch_name = true,
     git_auto_restore_on_branch_change = true,
     show_auto_restore_notif = false,
-    lsp_stop_on_restore = true,
+    lsp_stop_on_restore = false,
     suppressed_dirs = { "~/Code" },
     close_unsupported_windows = true,
     post_restore_cmds = { "silent !kill -s SIGWINCH $PPID" },
