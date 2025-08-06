@@ -7,7 +7,7 @@ return {
   opts = {
     cache = true,
     lualine_bold = true,
-    style = "night",
+    style = "moon",
     terminal_colors = true,
     transparent = true,
     plugins = { auto = true },
