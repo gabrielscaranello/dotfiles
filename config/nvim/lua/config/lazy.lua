@@ -35,7 +35,7 @@ require("lazy").setup {
     { import = "plugins.lsp" },
   },
   install = {
-    colorscheme = { "catppuccin", "default" },
+    colorscheme = { "tokyonight", "default" },
   },
   ui = {
     border = "rounded",

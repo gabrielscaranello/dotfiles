@@ -3,7 +3,7 @@ local lsp_utils = require "utils.lsp"
 local spell_utils = require "utils.spell"
 
 return {
-  ---@param colors CtpColors<string>
+  ---@param colors ColorScheme
   ai = function(colors)
     local provider = vim.g.ai.provider
     local function ai_status()
@@ -15,11 +15,11 @@ return {
 
     local get_color = function()
       if vim.fn.exists ":Codeium" > 0 then
-        return { fg = colors.teal }
+        return { fg = colors.green1 }
       elseif lsp_utils.clients.copilot_lsp_active() then
-        return { fg = colors.sapphire }
+        return { fg = colors.blue2 }
       else
-        return { fg = colors.text }
+        return { fg = colors.fg }
       end
     end
 
@@ -32,7 +32,7 @@ return {
       end,
     }
   end,
-  ---@param colors CtpColors<string>
+  ---@param colors ColorScheme
   lsp = function(colors)
     local function lsp_status()
       local clients = lsp_utils.clients.get_all()
@@ -56,14 +56,14 @@ return {
 
     return {
       lsp_status,
-      color = { bg = colors.surface1, fg = colors.text },
+      color = { bg = colors.dark3, fg = colors.fg },
       separator = { left = "" },
       cond = function()
         return #lsp_utils.clients.get_all() > 0
       end,
     }
   end,
-  ---@param colors CtpColors<string>
+  ---@param colors ColorScheme
   spell = function(colors)
     local spelllangs = function()
       local langs = vim.o.spelllang:lower():gsub("pt_br", "br")
@@ -77,7 +77,7 @@ return {
 
     return {
       spelllangs,
-      color = { bg = colors.surface2, fg = colors.text },
+      color = { bg = colors.dark3, fg = colors.fg },
       separator = { left = "" },
       cond = function()
         return spell_utils.is_spell_enabled()
