@@ -4,7 +4,6 @@ return {
   dependencies = { "echasnovski/mini.icons" },
   version = "*",
   lazy = false,
-  after = "catppuccin",
   keys = {
     { "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
     { "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Previous Buffer" },
@@ -12,13 +11,15 @@ return {
     { "<leader>bl", "<cmd>BufferLineCloseLeft<cr>", desc = "Close Left Buffers" },
     { "<leader>br", "<cmd>BufferLineCloseRight<cr>", desc = "Close Right Buffers" },
     { "<leader>bc", "<cmd>BufferLineCloseOthers<cr>", desc = "Close Other Buffers" },
+    { "<leader>bf", "<cmd>BufferLinePick<cr>", desc = "Pick Buffer" },
     { "<leader>bp", "<cmd>BufferLineTogglePin<cr>", desc = "Toggle Pin Buffer" },
-    { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete Non-Pinned Buffers" },
+    { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<cr>", desc = "Delete Non-Pinned Buffers" },
   },
   opts = function()
     local Snacks = require "snacks"
     local catppuccin_highlights = require "catppuccin.groups.integrations.bufferline"
 
+    ---@type bufferline.UserConfig
     return {
       highlights = catppuccin_highlights.get(),
       options = {
@@ -31,8 +32,9 @@ return {
         diagnostics = "nvim_lsp",
         show_close_icon = false,
         always_show_bufferline = true,
-        enforce_regular_tabs = true,
-        offsets = {},
+        offsets = {
+          { filetype = "snacks_layout_box" },
+        },
         groups = {
           items = {
             require("bufferline.groups").builtin.pinned:with { icon = "" },
@@ -40,5 +42,17 @@ return {
         },
       },
     }
+  end,
+
+  config = function(_, opts)
+    require("bufferline").setup(opts)
+    -- Fix bufferline when restoring a session
+    vim.api.nvim_create_autocmd({ "BufAdd", "BufDelete" }, {
+      callback = function()
+        vim.schedule(function()
+          pcall(nvim_bufferline)
+        end)
+      end,
+    })
   end,
 }
