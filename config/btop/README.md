@@ -2,7 +2,7 @@
 
 ## About
 
-This is a config of [Btop](https://github.com/aristocratos/btop) using [Catppuccin theme](https://github.com/catppuccin/btop).
+This is a config of [Btop](https://github.com/aristocratos/btop) using [Tokyo Night theme](https://github.com/aristocratos/btop/blob/main/themes/tokyo-night.theme).
 
 ## Installing
 
