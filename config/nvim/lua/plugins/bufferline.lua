@@ -30,6 +30,7 @@ return {
         diagnostics = "nvim_lsp",
         show_close_icon = false,
         always_show_bufferline = true,
+        separator_style = { "", "" },
         offsets = {
           { filetype = "snacks_layout_box" },
         },
