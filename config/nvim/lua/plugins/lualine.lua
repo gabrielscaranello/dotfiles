@@ -1,19 +1,17 @@
 ---@type LazyPluginSpec
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "echasnovski/mini.icons" },
+  dependencies = { "echasnovski/mini.icons", "folke/tokyonight.nvim" },
   lazy = false,
-  after = "catppuccin",
   opts = function()
     local lazy_status = require "lazy.status"
-    local current_catpuccin_flavor = require("catppuccin").flavour
-    local colors = require("catppuccin.palettes").get_palette(current_catpuccin_flavor)
+    local colors = require("tokyonight.colors").setup()
     local components = require "config.lualine"
     local icons = require "utils.icons"
 
     return {
       options = {
-        theme = "catppuccin",
+        theme = "tokyonight",
         icons_enabled = true,
         globalstatus = true,
         component_separators = { left = "", right = "" },
@@ -63,7 +61,7 @@ return {
           {
             lazy_status.updates,
             cond = lazy_status.has_updates,
-            color = { fg = colors.peach },
+            color = { fg = colors.orange },
           },
           { "filetype", icon_only = true },
           components.ai(colors),

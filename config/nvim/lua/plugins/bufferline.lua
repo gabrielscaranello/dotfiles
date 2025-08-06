@@ -17,11 +17,9 @@ return {
   },
   opts = function()
     local Snacks = require "snacks"
-    local catppuccin_highlights = require "catppuccin.groups.integrations.bufferline"
 
     ---@type bufferline.UserConfig
     return {
-      highlights = catppuccin_highlights.get(),
       options = {
         close_command = function(n)
           Snacks.bufdelete(n)
