@@ -29,6 +29,7 @@ return {
     event = "VeryLazy",
     cond = vim.g.ai.provider == "copilot",
     cmd = "CopilotChat",
+    version = "v4",
     dependencies = {
       "zbirenbaum/copilot.lua",
       "nvim-lua/plenary.nvim",
