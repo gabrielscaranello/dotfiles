@@ -2,7 +2,7 @@
 
 ## About
 
-This is a config of [Kitty](https://sw.kovidgoyal.net/kitty) using [Catppuccin theme](https://github.com/catppuccin/kitty).
+This is a config of [Kitty](https://sw.kovidgoyal.net/kitty) using [Tokyonight Night](https://github.com/folke/tokyonight.nvim/tree/main/extras/kitty).
 
 ## Requirements
 

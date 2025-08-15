@@ -75,7 +75,7 @@ local function dashboard()
         { section = "header", padding = { 5, 0 } },
         { section = "keys", gap = 1, padding = 1 },
         {
-          text = { { footer_text(), hl = "Comment" } },
+          text = { { footer_text(), hl = "Conceal" } },
           align = "center",
           padding = { 0, 3 },
         },

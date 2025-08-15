@@ -87,15 +87,15 @@ To disable the feature comment out or remove this line in the
 ### Background Transparence
 
 By default, all NeoVim windows have a transparent background.  
-You can disable this feature editing the `lua/plugins/catppuccin.lua` file.
+You can disable this feature editing the `lua/plugins/tokyonight.lua` file.
 
 ```lua
 return {
-    -- Other props...
-    opts = {
-        transparent_background = false,
-        -- Other opts...
-    }
+  -- Other props...
+  opts = {
+    transparent = true,
+    -- Other opts...
+  }
 }
 ```
 
@@ -143,7 +143,6 @@ nvim
 - blink-emoji.nvim
 - blink.cmp
 - bufferline.nvim
-- catppuccin
 - codesnap.nvim
 - Comment.nvim
 - conform.nvim
@@ -172,6 +171,7 @@ nvim
 - snacks.nvim
 - todo-comments.nvim
 - toggleterm.nvim
+- tokyonight.nvim
 - treesj
 - trouble.nvim
 - tsc.nvim

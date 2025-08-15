@@ -17,11 +17,9 @@ return {
   },
   opts = function()
     local Snacks = require "snacks"
-    local catppuccin_highlights = require "catppuccin.groups.integrations.bufferline"
 
     ---@type bufferline.UserConfig
     return {
-      highlights = catppuccin_highlights.get(),
       options = {
         close_command = function(n)
           Snacks.bufdelete(n)
@@ -32,6 +30,7 @@ return {
         diagnostics = "nvim_lsp",
         show_close_icon = false,
         always_show_bufferline = true,
+        separator_style = { "", "" },
         offsets = {
           { filetype = "snacks_layout_box" },
         },
