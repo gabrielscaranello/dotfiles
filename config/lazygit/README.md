@@ -2,7 +2,7 @@
 
 ## About
 
-This is a config of [Lazygit](https://github.com/jesseduffield/lazygit) using [Catppuccin theme](https://github.com/catppuccin/lazygit).
+This is a config of [Lazygit](https://github.com/jesseduffield/lazygit) using [Tokyonight Night theme](https://github.com/folke/tokyonight.nvim/tree/main/extras/lazygit).
 
 ## Installing
 

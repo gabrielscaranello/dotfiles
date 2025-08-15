@@ -2,7 +2,7 @@
 
 ## About
 
-This is a config of [Bat](https://github.com/sharkdp/bat) using [Catppuccin theme](https://github.com/catppuccin/bat).
+This is a config of [Bat](https://github.com/sharkdp/bat) using [Tokyonight Night theme for sublime](https://github.com/folke/tokyonight.nvim/tree/main/extras/sublime).
 
 ## Installing
 

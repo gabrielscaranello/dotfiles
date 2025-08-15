@@ -2,7 +2,7 @@
 
 ## About
 
-This is a config of [Lazydocker](https://github.com/jesseduffield/lazydocker) based on [Lazygit Catppuccin theme](https://github.com/catppuccin/lazygit).
+This is a config of [Lazydocker](https://github.com/jesseduffield/lazydocker) based on [Lazygit Tokyonight Night theme](https://github.com/folke/tokyonight.nvim/tree/main/extras/lazygit).
 
 ## Installing
 
