@@ -21,10 +21,7 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-if [ -d "/usr/local/go" ]; then
-    export PATH=$PATH:/usr/local/go/bin
-fi
+[ -f /usr/share/nvm/init-nvm.sh ] && \. /usr/share/nvm/init-nvm.sh
 # End NVM include
 # -----------------------------
 
@@ -35,6 +32,10 @@ if [ -d "$HOME/go" ]; then
 	export GOPATH=$HOME/go
 	export GOBIN=$GOPATH/bin
 	export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+fi
+
+if [ -d "/usr/local/go" ]; then
+    export PATH=$PATH:/usr/local/go/bin
 fi
 # End Golang
 # -----------------------------
