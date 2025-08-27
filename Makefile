@@ -10,6 +10,9 @@ btop:
 flameshot:
 	@bash ./actions/flameshot.sh
 
+ghostwriter:
+	@bash ./actions/ghostwritter.sh
+
 kitty:
 	@bash ./actions/kitty.sh
 
