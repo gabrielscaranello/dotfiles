@@ -11,7 +11,7 @@ flameshot:
 	@bash ./actions/flameshot.sh
 
 ghostwriter:
-	@bash ./actions/ghostwritter.sh
+	@bash ./actions/ghostwriter.sh
 
 kitty:
 	@bash ./actions/kitty.sh

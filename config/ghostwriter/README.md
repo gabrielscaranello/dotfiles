@@ -15,5 +15,5 @@ git clone --depth 1 https://github.com/gabrielscaranello/dotfiles /tmp/dotfiles
 Use action script to copy config
 
 ```bash
-/tmp/dotfiles/actions/ghostwritter.sh
+/tmp/dotfiles/actions/ghostwriter.sh
 ```
