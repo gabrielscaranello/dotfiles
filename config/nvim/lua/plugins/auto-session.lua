@@ -22,10 +22,10 @@ return {
   },
 
   keys = {
-    { "<leader>sr", "<cmd>SessionRestore<cr>", desc = "Restore last session" },
-    { "<leader>ss", "<cmd>SessionSave<cr>", desc = "Save current session" },
-    { "<leader>sd", "<cmd>SessionDelete<cr>", desc = "Delete Current Session" },
-    { "<leader>st", "<cmd>SessionToggleAutoSave<cr>", desc = "Toggle Auto Save" },
-    { "<leader>sl", "<cmd>SessionSearch<cr>", desc = "List Sessions" },
+    { "<leader>sr", "<cmd>AutoSession restore<cr>", desc = "Restore last session" },
+    { "<leader>ss", "<cmd>AutoSession save<cr>", desc = "Save current session" },
+    { "<leader>sd", "<cmd>AutoSession delete<cr>", desc = "Delete Current Session" },
+    { "<leader>st", "<cmd>AutoSession toggle<cr>", desc = "Toggle Auto Save" },
+    { "<leader>sl", "<cmd>AutoSession search<cr>", desc = "List Sessions" },
   },
 }
