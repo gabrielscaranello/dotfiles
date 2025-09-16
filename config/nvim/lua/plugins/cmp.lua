@@ -60,8 +60,8 @@ return {
     },
 
     fuzzy = {
+      frecency = { enabled = false },
       implementation = "prefer_rust_with_warning",
-      use_frecency = false,
       use_proximity = false,
       sorts = { "exact", cmp_config.underscore_last, "score" },
     },
