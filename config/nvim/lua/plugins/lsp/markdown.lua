@@ -8,7 +8,7 @@ return {
   },
   opts = {
     file_types = { "markdown", "copilot-chat" },
-    initial_state = true,
+    initial_state = nil,
     heading = {
       position = "inline",
       width = "block",
