@@ -18,7 +18,7 @@ local ensure_installed = {
   "javascript",
   "jsdoc",
   "json",
-  "jsonc",
+  -- "jsonc",
   "latex",
   "lua",
   "luap",
