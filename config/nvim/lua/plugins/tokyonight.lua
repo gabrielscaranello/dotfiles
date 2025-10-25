@@ -2,7 +2,7 @@ return {
   "folke/tokyonight.nvim",
   lazy = false,
   priority = 1000,
-  version = "v4.13",
+  version = "^v4.13",
   ---@type tokyonight.Config
   ---@diagnostic disable-next-line: missing-fields
   opts = {

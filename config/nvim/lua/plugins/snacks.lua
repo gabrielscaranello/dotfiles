@@ -3,7 +3,7 @@ return {
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
-  version = "v2.23",
+  version = "^v2.23",
   keys = require "plugins.snacks.keymaps",
 
   ---@return snacks.Config

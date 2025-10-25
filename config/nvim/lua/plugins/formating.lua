@@ -4,7 +4,7 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = { "mason.nvim" },
   cmd = "ConformInfo",
-  version = "v9.1",
+  version = "^v9.1",
   keys = {
     {
       "<leader>lf",

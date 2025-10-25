@@ -7,7 +7,7 @@ local lazydev_load = {
 return {
   {
     "folke/lazydev.nvim",
-    version = "v1.10",
+    version = "^v1.10",
     ft = "lua",
     opts = {
       library = (function()
