@@ -1,44 +1,36 @@
-# Theme: tokyo-night
-# By: Pascal Jaeger
+# Theme: tokyonight_night
+# By: Folke Lemaitre
 
-# Main bg
 theme[main_bg]="#1a1b26"
-
-# Main text color
-theme[main_fg]="#cfc9c2"
+theme[main_fg]="#c0caf5"
 
 # Title color for boxes
-theme[title]="#cfc9c2"
+theme[title]="#c0caf5"
 
 # Highlight color for keyboard shortcuts
-theme[hi_fg]="#7dcfff"
+theme[hi_fg]="#ff9e64"
 
-# Background color of selected item in processes box
-theme[selected_bg]="#414868"
-
-# Foreground color of selected item in processes box
-theme[selected_fg]="#cfc9c2"
-
-# Color of inactive/disabled text
-theme[inactive_fg]="#565f89"
+# Selected item in processes box
+theme[selected_bg]="#292e42"
+theme[selected_fg]="#7dcfff"
 
 # Misc colors for processes box including mini cpu graphs, details memory graph and details status text
 theme[proc_misc]="#7dcfff"
 
 # Cpu box outline color
-theme[cpu_box]="#565f89"
+theme[cpu_box]="#27a1b9"
 
 # Memory/disks box outline color
-theme[mem_box]="#565f89"
+theme[mem_box]="#27a1b9"
 
 # Net up/down box outline color
-theme[net_box]="#565f89"
+theme[net_box]="#27a1b9"
 
 # Processes box outline color
-theme[proc_box]="#565f89"
+theme[proc_box]="#27a1b9"
 
 # Box divider line and small boxes line color
-theme[div_line]="#565f89"
+theme[div_line]="#27a1b9"
 
 # Temperature graph colors
 theme[temp_start]="#9ece6a"
