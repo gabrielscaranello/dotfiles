@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "folke/flash.nvim",
+  version = "^v2",
   event = "VeryLazy",
   keys = {
     {
