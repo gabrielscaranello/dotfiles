@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "folke/which-key.nvim",
+  version = "^v3",
   event = "VeryLazy",
   keys = {
     {
