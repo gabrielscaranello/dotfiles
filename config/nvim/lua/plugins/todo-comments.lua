@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "folke/todo-comments.nvim",
+  version = "^v1",
   dependencies = { "nvim-lua/plenary.nvim", "folke/snacks.nvim" },
   keys = {
     {
