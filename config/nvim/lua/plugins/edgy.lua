@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "folke/edgy.nvim",
+  version = "^v1",
   opts = {
     keys = {
       -- increase width
