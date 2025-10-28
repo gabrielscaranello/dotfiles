@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "MeanderingProgrammer/render-markdown.nvim",
+  version = "^v8",
   ft = { "markdown", "copilot-chat" },
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
