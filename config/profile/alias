@@ -6,10 +6,6 @@ alias vim="nvim"
 alias v="nvim"
 alias c="nvim ."
 
-if which exa > /dev/null; then
-  alias ls="exa --icons --group-directories-first"
-elif which eza > /dev/null; then
-  alias ls="eza --icons --group-directories-first"
-fi
-
-which batcat >/dev/null && alias bat="batcat"
+command -v exa >/dev/null && alias ls="exa --icons --group-directories-first"
+command -v eza >/dev/null && alias ls="eza --icons --group-directories-first"
+command -v batcat >/dev/null && alias bat="batcat"
