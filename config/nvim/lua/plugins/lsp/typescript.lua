@@ -4,6 +4,7 @@ local workarrounds = require "utils.workarrounds"
 return {
   {
     "dmmulroy/tsc.nvim",
+    version = "v2",
     cmd = "TSC",
     dependencies = { "folke/trouble.nvim" },
     keys = {
