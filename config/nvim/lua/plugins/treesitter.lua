@@ -18,7 +18,7 @@ local ensure_installed = {
   "javascript",
   "jsdoc",
   "json",
-  -- "jsonc",
+  "jsonc",
   "latex",
   "lua",
   "luap",
@@ -51,20 +51,49 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    branch = "master",
+    branch = "main",
     version = false,
     lazy = false,
     event = { "BufReadPre", "BufNewFile" },
-    cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
-    dependencies = {
-      "windwp/nvim-ts-autotag",
-    },
+    cmd = { "TSUpdate", "TSInstall", "TSLog", "TSUninstall" },
+    dependencies = { "windwp/nvim-ts-autotag" },
     opts_extend = { "ensure_installed" },
     opts = {
       ensure_installed = ensure_installed,
       highlight = { enable = true },
       indent = { enable = true },
+      folds = { enable = true },
+    },
+
+    build = function()
+      local TS = require "nvim-treesitter"
+      if not TS.get_installed then
+        vim.notify(
+          "Please restart Neovim and run `:TSUpdate` to use the `nvim-treesitter` **main** branch.",
+          vim.log.levels.ERROR
+        )
+        return
+      end
+
+      TS.update(nil, { summary = true })
+    end,
+
+    config = function(_, opts)
+      local TS = require "nvim-treesitter"
+      TS.setup(opts)
+      TS.install(opts.ensure_installed):wait()
+
+      vim.treesitter.language.register("scss", "less")
+      vim.treesitter.language.register("scss", "postcss")
+      vim.treesitter.language.register("bash", "kitty")
+    end,
+  },
+
+  {
+    "MeanderingProgrammer/treesitter-modules.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    lazy = false,
+    opts = {
       incremental_selection = {
         enable = true,
         keymaps = {
@@ -75,13 +104,5 @@ return {
         },
       },
     },
-
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-
-      vim.treesitter.language.register("scss", "less")
-      vim.treesitter.language.register("scss", "postcss")
-      vim.treesitter.language.register("bash", "kitty")
-    end,
   },
 }
