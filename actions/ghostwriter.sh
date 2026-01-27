@@ -28,6 +28,6 @@ mkdir -p "$THEME_TARGET_DIR"
 mkdir -p "$CONFIG_TARGET_DIR"
 
 cp "$THEME_FILE_SOURCE" "$THEME_TARGET_FILE"
-sed "s,:home:,$HOME,g" "$CONFIG_FILE_SOURCE" > "$CONFIG_TARGET_FILE"
+sed "s,:home:,$HOME,g" "$CONFIG_FILE_SOURCE" >"$CONFIG_TARGET_FILE"
 
 echo "Ghostwriter setup complete!"

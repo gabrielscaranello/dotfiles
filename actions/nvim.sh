@@ -7,18 +7,18 @@ PWD=$(pwd)
 echo "Setting up nvim..."
 
 if [ -d "$NVIM_CONFIG_DIR" ] && [ ! -L "$NVIM_CONFIG_DIR" ]; then
-	echo "Found ~/.config/nvim directory."
-	echo "Moving $NVIM_CONFIG_DIR to $NVIM_OLD_CONFIG_DIR."
+  echo "Found ~/.config/nvim directory."
+  echo "Moving $NVIM_CONFIG_DIR to $NVIM_OLD_CONFIG_DIR."
 
-	mv "$NVIM_CONFIG_DIR" "$NVIM_OLD_CONFIG_DIR"
+  mv "$NVIM_CONFIG_DIR" "$NVIM_OLD_CONFIG_DIR"
 
-	echo "Directory moved successfully!"
+  echo "Directory moved successfully!"
 fi
 
 if [ -L "$NVIM_CONFIG_DIR" ]; then
-	echo "Found symbolic link ~/.config/nvim."
-	unlink "$NVIM_CONFIG_DIR"
-	echo "Old symbolic link removed successfully!"
+  echo "Found symbolic link ~/.config/nvim."
+  unlink "$NVIM_CONFIG_DIR"
+  echo "Old symbolic link removed successfully!"
 fi
 
 echo "Removing old nvim packages and cache..."
