@@ -35,7 +35,7 @@ return {
         postcss = { "prettierd" },
         proto = { "buf" },
         scss = { "prettierd" },
-        sh = { "shellcheck" },
+        sh = { "shellcheck", "shfmt" },
         typescript = { "prettierd", lsp_format = "first" },
         typescriptreact = { "prettierd", lsp_format = "first" },
         vue = { "prettierd", lsp_format = "first" },
