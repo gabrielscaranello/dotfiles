@@ -18,8 +18,10 @@ local ensure_installed = {
   "javascript",
   "jsdoc",
   "json",
+  "jsx",
   "latex",
   "lua",
+  "luadoc",
   "luap",
   "make",
   "markdown",
@@ -73,13 +75,13 @@ return {
         return
       end
 
-      TS.update(nil, { summary = true })
+      TS.update(nil, { summary = false })
     end,
 
     config = function(_, opts)
       local TS = require "nvim-treesitter"
       TS.setup(opts)
-      TS.install(opts.ensure_installed):wait()
+      TS.install(opts.ensure_installed, { summary = false, max_jobs = 4 })
 
       vim.treesitter.language.register("scss", "less")
       vim.treesitter.language.register("scss", "postcss")
