@@ -42,6 +42,49 @@ local ensure_installed = {
   "yaml",
 }
 
+local ft = {
+  "bash",
+  "css",
+  "diff",
+  "dockerfile",
+  "gitattributes",
+  "gitcommit",
+  "gitconfig",
+  "gitignore",
+  "gitrebase",
+  "go",
+  "gomod",
+  "gosum",
+  "gowork",
+  "graphql",
+  "help",
+  "html",
+  "http",
+  "javascript",
+  "javascriptreact",
+  "json",
+  "jsonc",
+  "latex",
+  "lua",
+  "make",
+  "markdown",
+  "plaintex",
+  "prisma",
+  "proto",
+  "query",
+  "scss",
+  "sh",
+  "svelte",
+  "tex",
+  "typescript",
+  "typescriptreact",
+  "typst",
+  "vim",
+  "vue",
+  "yaml",
+  "zsh",
+}
+
 ---@type LazyPluginSpec[]
 return {
   {
@@ -64,6 +107,15 @@ return {
       indent = { enable = true },
       folds = { enable = true },
     },
+
+    init = function()
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = table.concat(ft, ","),
+        callback = function()
+          vim.treesitter.start()
+        end,
+      })
+    end,
 
     build = function()
       local TS = require "nvim-treesitter"
