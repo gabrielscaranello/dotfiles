@@ -1,6 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "mistricky/codesnap.nvim",
+  tag = "v1.6.3",
   cmd = {
     "CodeSnap",
     "CodeSnapSave",
