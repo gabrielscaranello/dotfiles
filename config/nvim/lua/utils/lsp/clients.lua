@@ -10,11 +10,6 @@ function M.copilot_lsp_active()
   return #(vim.lsp.get_clients { name = "copilot" }) > 0
 end
 
----@return table<string>
-M.get_ignoreds = function()
-  return _ignoreds
-end
-
 function M.restart_copilot()
   local copilot_ok, copilot = pcall(require, "copilot")
   if not copilot_ok or not copilot.setup_done then
