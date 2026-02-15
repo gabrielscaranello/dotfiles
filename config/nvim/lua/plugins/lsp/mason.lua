@@ -25,6 +25,7 @@ local ensure_installed = {
 
   -- Json
   "json-lsp",
+  "fixjson",
 
   -- Markdown
   "marksman",

@@ -30,7 +30,7 @@ return {
         http = { "kulala-fmt" },
         javascript = { "prettierd", lsp_format = "first" },
         javascriptreact = { "prettierd", lsp_format = "first" },
-        json = { "prettierd" },
+        json = { "fixjson", "prettierd", lsp_format = "fallback" },
         less = { "prettierd" },
         lua = { "stylua" },
         make = { "bake" },
