@@ -16,6 +16,9 @@ ghostwriter:
 install-golang:
 	@bash ./actions/install-golang.sh
 
+install-nodejs:
+	@bash ./actions/install-nodejs.sh
+
 kitty:
 	@bash ./actions/kitty.sh
 

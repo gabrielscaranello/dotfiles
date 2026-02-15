@@ -31,6 +31,7 @@
 | `make flameshot`      | Link flameshot config to `~/.config/flameshot`   |
 | `make ghostwriter`    | Setup Ghostwriter theme and config               |
 | `make install-golang` | Install Golang and needed packages               |
+| `make install-nodejs` | Install Node.js with NVM and needed packages     |
 | `make kitty`          | Link kitty config to `~/.config/kitty`           |
 | `make lazydocker`     | Link lazydocker config to `~/.config/lazydocker` |
 | `make lazygit`        | Link lazygit config to `~/.config/lazygit`       |
