@@ -13,6 +13,9 @@ flameshot:
 ghostwriter:
 	@bash ./actions/ghostwriter.sh
 
+install-golang:
+	@bash ./actions/install-golang.sh
+
 kitty:
 	@bash ./actions/kitty.sh
 
