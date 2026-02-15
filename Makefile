@@ -39,4 +39,3 @@ oh-my-zsh:
 
 profile:
 	@bash ./actions/profile.sh
-

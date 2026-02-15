@@ -31,6 +31,7 @@ local ensure_installed = {
 
   -- Makefile
   "checkmake",
+  "mbake",
 
   -- HTML/JSX/TSX/TS/JS
   "css-lsp",

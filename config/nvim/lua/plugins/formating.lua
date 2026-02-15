@@ -32,6 +32,7 @@ return {
         json = { "prettierd" },
         less = { "prettierd" },
         lua = { "stylua" },
+        make = { "bake" },
         markdown = { "prettierd" },
         postcss = { "prettierd" },
         proto = { "buf" },
@@ -49,6 +50,7 @@ return {
       },
 
       formatters = {
+        bake = { command = "mbake" },
         prettierd = { condition = utils.prettier.conform_condition },
         prettier = { condition = utils.prettier.conform_condition },
       },
