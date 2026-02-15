@@ -19,6 +19,9 @@ install-golang:
 install-nodejs:
 	@bash ./actions/install-nodejs.sh
 
+install-rustup:
+	@bash ./actions/install-rustup.sh
+
 kitty:
 	@bash ./actions/kitty.sh
 
