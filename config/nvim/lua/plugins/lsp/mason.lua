@@ -42,6 +42,9 @@ local ensure_installed = {
   "vue-language-server",
   "vtsls",
 
+  -- HTTP
+  "kulala-fmt",
+
   -- Lua
   "lua-language-server",
   "luacheck",

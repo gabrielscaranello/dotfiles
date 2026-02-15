@@ -27,6 +27,7 @@ return {
         dockerfile = { "dockerfmt" },
         go = { "goimports", "gofumpt" },
         html = { "prettierd" },
+        http = { "kulala-fmt" },
         javascript = { "prettierd", lsp_format = "first" },
         javascriptreact = { "prettierd", lsp_format = "first" },
         json = { "prettierd" },
