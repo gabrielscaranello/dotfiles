@@ -24,6 +24,7 @@ return {
       formatters_by_ft = {
         ["yaml.docker-compose"] = { "prettierd" },
         css = { "prettierd" },
+        dockerfile = { "dockerfmt" },
         go = { "goimports", "gofumpt" },
         html = { "prettierd" },
         javascript = { "prettierd", lsp_format = "first" },
