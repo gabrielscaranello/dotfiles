@@ -1,11 +1,12 @@
 local icons = require "utils.icons"
 local lsp_utils = require "utils.lsp"
 local spell_utils = require "utils.spell"
+local ai = require "utils.ai"
 
 return {
   ---@param colors ColorScheme
   ai = function(colors)
-    local provider = vim.g.ai.provider
+    local provider = ai.get_provider()
     local function ai_status()
       if provider == nil then
         return nil
@@ -16,7 +17,7 @@ return {
     local get_color = function()
       if vim.fn.exists ":Codeium" > 0 then
         return { fg = colors.green1 }
-      elseif lsp_utils.clients.copilot_lsp_active() then
+      elseif ai.copilot_lsp_is_active() then
         return { fg = colors.blue2 }
       else
         return { fg = colors.fg }

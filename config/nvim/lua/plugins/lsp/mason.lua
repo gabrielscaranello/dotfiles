@@ -1,4 +1,7 @@
 local ensure_installed = {
+  -- AI
+  "copilot-language-server",
+
   -- bash
   "bash-debug-adapter",
   "bash-language-server",

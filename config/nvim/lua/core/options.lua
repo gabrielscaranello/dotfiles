@@ -42,7 +42,6 @@ local opts = {
   splitright = true,
 }
 
----@class vim.var_accessor
 local global_vars = {
   editorconfig = true,
   netrw_liststyle = 3,
@@ -52,12 +51,6 @@ local global_vars = {
   loaded_python3_provider = 0,
   loaded_ruby_provider = 0,
   loaded_node_provider = 0,
-
-  ---@class vim.var_accessor.ai
-  ai = {
-    ---@type 'copilot' | 'codeium' | nil
-    provider = vim.env.AI_PROVIDER or nil,
-  },
 }
 
 vim.diagnostic.config {

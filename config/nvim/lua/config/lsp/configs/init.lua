@@ -2,6 +2,7 @@
 return {
   buf_ls = require "config.lsp.configs.buf_ls",
   clangd = require "config.lsp.configs.clangd",
+  copilot = require "config.lsp.configs.copilot",
   cssls = require "config.lsp.configs.cssls",
   eslint = require "config.lsp.configs.eslint",
   graphql = require "config.lsp.configs.graphqlls",
