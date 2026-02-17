@@ -35,6 +35,7 @@ return {
       { "g", group = "Goto" },
       { "gx", desc = "Open file or URL under cursor" },
       { "<leader>\\", group = "+Split" },
+      { "<leader>a", group = "+AI" },
       { "<leader>b", group = "+Buffer" },
       {
         "<leader>c",

@@ -29,7 +29,7 @@ return {
               kind = "Copilot",
               score_offset = 100,
               async = true,
-              opts = { max_completions = 3, debounce = 200, kind_hl = "BlinkCmpGhostText" },
+              opts = { max_completions = 3, debounce = 250, kind_hl = "BlinkCmpGhostText" },
             },
           },
         },

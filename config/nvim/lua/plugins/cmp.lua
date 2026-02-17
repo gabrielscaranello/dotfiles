@@ -93,7 +93,7 @@ return {
           max_items = 5,
           opts = { show_braces = false, show_documentation_window = true },
         },
-        path = { score_offset = -1 },
+        path = { score_offset = -3 },
         emoji = { name = "emoji", score_offset = -1, module = "blink-emoji" },
       },
     },
