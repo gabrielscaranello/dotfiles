@@ -28,6 +28,7 @@ return {
   },
 
   config = function(_, opts)
+    local ai = require "utils.ai"
     local wk = require "which-key"
     wk.setup(opts)
 
@@ -35,7 +36,6 @@ return {
       { "g", group = "Goto" },
       { "gx", desc = "Open file or URL under cursor" },
       { "<leader>\\", group = "+Split" },
-      { "<leader>a", group = "+AI" },
       { "<leader>b", group = "+Buffer" },
       {
         "<leader>c",
@@ -55,5 +55,9 @@ return {
       { "<leader>t", group = "+Terminal" },
       { "<leader>x", group = "+Trouble" },
     }
+
+    if ai.is_copilot_provider() then
+      wk.add { { "<leader>a", group = "+AI" } }
+    end
   end,
 }
