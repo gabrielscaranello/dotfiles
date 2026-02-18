@@ -4,6 +4,11 @@ local spell_utils = require "utils.spell"
 local ai = require "utils.ai"
 ColorScheme = require "tokyonight.colors"
 
+local LSP_NAMES_OVERRIDES = {
+  docker_compose_language_service = "docker_compose_ls",
+  emmet_ls = "emmet",
+}
+
 return {
   ---@param colors ColorScheme
   ai = function(colors)
@@ -42,10 +47,16 @@ return {
         return nil
       end
 
+      local bufnr = vim.api.nvim_get_current_buf()
+
       local lsp_names = {}
       for _, client in ipairs(clients) do
         if not vim.tbl_contains(lsp_names, client.name) then
-          table.insert(lsp_names, client.name)
+          local buf_is_attached = vim.lsp.buf_is_attached(bufnr, client.id)
+          if buf_is_attached then
+            local name = LSP_NAMES_OVERRIDES[client.name] or client.name
+            table.insert(lsp_names, name)
+          end
         end
       end
 
@@ -53,7 +64,7 @@ return {
         return a < b
       end)
 
-      return table.concat(lsp_names, " | ")
+      return table.concat(lsp_names, ", ")
     end
 
     return {
