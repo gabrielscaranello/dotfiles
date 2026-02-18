@@ -86,6 +86,7 @@ local ft = {
   "vim",
   "vue",
   "yaml",
+  "yaml.docker-compose",
   "zsh",
 }
 
@@ -143,6 +144,7 @@ return {
       vim.treesitter.language.register("scss", "postcss")
       vim.treesitter.language.register("bash", "kitty")
       vim.treesitter.language.register("bash", "dotenv")
+      vim.treesitter.language.register("yaml", "yaml.docker-compose")
     end,
   },
 

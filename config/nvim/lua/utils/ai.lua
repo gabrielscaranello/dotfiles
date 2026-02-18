@@ -99,6 +99,7 @@ function M.get_supported_filetypes()
     "vim",
     "vue",
     "yaml",
+    "yaml.docker-compose",
     "zsh",
   }
 end
