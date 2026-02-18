@@ -3,6 +3,7 @@ return {
   "Exafunction/windsurf.nvim",
   event = { "BufReadPre", "BufNewFile" },
   cond = require("utils.ai").is_windsurf_provider(),
+  ft = require("utils.ai").get_supported_filetypes,
   dependencies = { "nvim-lua/plenary.nvim" },
 
   opts = {

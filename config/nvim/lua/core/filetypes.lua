@@ -4,6 +4,7 @@ vim.filetype.add {
   },
   pattern = {
     [".*/kitty/.+%.conf"] = "kitty",
-    ["%.env%.[%w_.-]+"] = "sh",
+    ["%.env%.[%w_.-]+"] = "dotenv",
+    [".env"] = "dotenv",
   },
 }

@@ -57,7 +57,7 @@ return {
     }
 
     if ai.is_copilot_provider() then
-      wk.add { { "<leader>a", group = "+AI" } }
+      wk.add { "<leader>a", group = "+AI", mode = { "n", "v" } }
     end
   end,
 }

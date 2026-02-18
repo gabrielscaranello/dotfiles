@@ -17,7 +17,7 @@ return {
     local get_color = function()
       if vim.fn.exists ":Codeium" > 0 then
         return { fg = colors.green1 }
-      elseif ai.copilot_lsp_is_active() then
+      elseif ai.copilot_is_attached() then
         return { fg = colors.blue2 }
       else
         return { fg = colors.fg }

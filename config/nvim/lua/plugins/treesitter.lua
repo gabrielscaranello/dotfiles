@@ -47,6 +47,7 @@ local ft = {
   "css",
   "diff",
   "dockerfile",
+  "dotenv",
   "gitattributes",
   "gitcommit",
   "gitconfig",
@@ -64,11 +65,14 @@ local ft = {
   "javascriptreact",
   "json",
   "jsonc",
+  "kitty",
   "latex",
+  "less",
   "lua",
   "make",
   "markdown",
   "plaintex",
+  "postcss",
   "prisma",
   "proto",
   "query",
@@ -138,6 +142,7 @@ return {
       vim.treesitter.language.register("scss", "less")
       vim.treesitter.language.register("scss", "postcss")
       vim.treesitter.language.register("bash", "kitty")
+      vim.treesitter.language.register("bash", "dotenv")
     end,
   },
 
