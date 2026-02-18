@@ -2,6 +2,7 @@ local icons = require "utils.icons"
 local lsp_utils = require "utils.lsp"
 local spell_utils = require "utils.spell"
 local ai = require "utils.ai"
+ColorScheme = require "tokyonight.colors"
 
 return {
   ---@param colors ColorScheme
