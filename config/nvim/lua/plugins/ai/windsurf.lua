@@ -1,5 +1,3 @@
-local ai = require "utils.ai"
-
 ---@type LazyPluginSpec
 return {
   "Exafunction/windsurf.nvim",
