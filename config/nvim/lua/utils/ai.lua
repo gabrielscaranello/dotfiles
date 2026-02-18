@@ -15,6 +15,12 @@ function M.is_windsurf_provider()
   return M.get_provider() == "codeium"
 end
 
+---@return string
+function M.get_copilot_model()
+  local default_model = "gpt-4.1"
+  return vim.env.AI_COPILOT_MODEL or default_model
+end
+
 ---@return vim.lsp.Client | nil
 function M.get_copilot_client()
   if not M.is_copilot_provider() then
