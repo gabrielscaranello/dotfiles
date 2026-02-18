@@ -30,6 +30,21 @@ function M.copilot_lsp_is_active()
 end
 
 ---@return boolean
+function M.codeium_is_attached()
+  if vim.fn.exists ":Codeium" == 0 then
+    return false
+  end
+
+  local ok, sources = pcall(require, "blink.cmp.sources.lib")
+  if not ok then
+    return false
+  end
+
+  local provider = sources.get_provider_by_id "codeium"
+  return provider ~= nil and provider:enabled()
+end
+
+---@return boolean
 function M.copilot_is_attached()
   local client = M.get_copilot_client()
   if client == nil then

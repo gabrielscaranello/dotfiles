@@ -3,7 +3,6 @@ return {
   "Exafunction/windsurf.nvim",
   event = { "BufReadPre", "BufNewFile" },
   cond = require("utils.ai").is_windsurf_provider(),
-  ft = require("utils.ai").get_supported_filetypes,
   dependencies = { "nvim-lua/plenary.nvim" },
 
   opts = {
@@ -30,6 +29,12 @@ return {
             score_offset = 100,
             max_items = 3,
             async = true,
+            enabled = function()
+              local ai = require "utils.ai"
+              local filetypes = ai.get_supported_filetypes()
+              local filetype = vim.bo.filetype
+              return vim.tbl_contains(filetypes, filetype)
+            end,
           },
         },
       },

@@ -15,7 +15,7 @@ return {
     end
 
     local get_color = function()
-      if vim.fn.exists ":Codeium" > 0 then
+      if ai.codeium_is_attached() then
         return { fg = colors.green1 }
       elseif ai.copilot_is_attached() then
         return { fg = colors.blue2 }
