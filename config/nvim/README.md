@@ -189,7 +189,7 @@ nvim
 
 ## Preview
 
-![Preview](/assets/nvim-preview.webp)
+![Preview](/assets/nvim-preview.png)
 
 > Using [kitty terminal](https://sw.kovidgoyal.net/kitty/) and [JetBrains Mono NF](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/JetBrainsMono/Ligatures).
 
