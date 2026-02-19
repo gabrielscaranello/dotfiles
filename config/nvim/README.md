@@ -51,23 +51,34 @@ export AI_PROVIDER=codeium
 To use it, you must add the API key with `:Codeium Auth` (open any file for the plugin to load).
 
 > See [Exafunction/windsurf.nvim](https://github.com/Exafunction/windsurf.nvim) for more information.
+> See configuration in `lua/plugins/ai/windsurf.lua` for all windsufr definitions.
 
 #### Copilot
 
-This configuration provides autocomplete with Copilot and also integration with Copillot chat.  
-Use `:Copilot auth` to authenticate client.
+This configuration provides autocomplete with Copilot and also integration with Copilot chat.  
+Use `:LspCopilotSignIn` to authenticate client.  
+The autocomplete works with `copilot-language-server` and the chat with `copilot-cli`.
 
-##### Copilot shortcuts
+##### Sidekick shortcuts
 
-| Shortcut     | Descrioption              |
-| ------------ | ------------------------- |
-| `<leader>aa` | Toggle Copilot Chat       |
-| `<leader>ax` | Clear Copilot Chat        |
-| `<leader>aq` | Open Copilot Chat (Quick) |
-| `<leader>ap` | Open Prompt Chat Options  |
+Powered by [sidekick.nvim](https://github.com/folke/sidekick.nvim) and [copilot-cli](https://github.com/github/copilot-cli).
 
-> For more information, see [zbirenbaum/copilot.lua](https://github.com/zbirenbaum/copilot.lua)
-> and [CopilotC-Nvim/CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim).
+> [!INFO]
+> All commands uses copilot as default
+
+> [!NOTE]
+> You need to have `copilot-cli` installed and `npm install -g @github/copilot` to use these shortcuts.
+
+| Shortcut     | Description                                                                              |
+| ------------ | ---------------------------------------------------------------------------------------- |
+| `<leader>aa` | Toggle CLI                                                                               |
+| `<leader>as` | Select CLI ([supported CLIs](https://github.com/folke/sidekick.nvim/#default-cli-tools)) |
+| `<leader>ac` | Detach a CLI Session                                                                     |
+| `<leader>af` | Send file to CLI                                                                         |
+| `<leader>ap` | Sidekick Select Prompt                                                                   |
+
+> See configuration in `lua/plugins/ai/sidekick.lua` for all sidekick definitions.  
+> See configuration in `lua/plugins/ai/copilot.lua` for all copilot definitions.
 
 ### Wakatime
 
@@ -146,8 +157,7 @@ nvim
 - codesnap.nvim
 - Comment.nvim
 - conform.nvim
-- copilot.lua (when configured)
-- CopilotChat.nvim (when configured)
+- kickside.nvim (when configured)
 - dial.nvim
 - flash.nvim
 - gitsigns.nvim
