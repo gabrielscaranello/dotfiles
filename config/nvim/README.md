@@ -59,14 +59,12 @@ This configuration provides autocomplete with Copilot and also integration with 
 Use `:LspCopilotSignIn` to authenticate client.  
 The autocomplete works with `copilot-language-server` and the chat with `copilot-cli`.
 
-##### Sidekick shortcuts
+#### Sidekick
 
 Powered by [sidekick.nvim](https://github.com/folke/sidekick.nvim) and [copilot-cli](https://github.com/github/copilot-cli).
 
-> [!INFO]
-> All commands uses copilot as default
-
 > [!NOTE]
+> All commands uses copilot as default.  
 > You need to have `copilot-cli` installed and `npm install -g @github/copilot` to use these shortcuts.
 
 | Shortcut     | Description                                                                              |
@@ -148,6 +146,8 @@ nvim
 
 > These are some of the main plugins configured.
 
+- Comment.nvim
+- SchemaStore.nvim
 - auto-session
 - better-escape.nvim
 - blink-copilot (when configured)
@@ -155,16 +155,14 @@ nvim
 - blink.cmp
 - bufferline.nvim
 - codesnap.nvim
-- Comment.nvim
 - conform.nvim
-- kickside.nvim (when configured)
 - dial.nvim
 - flash.nvim
 - gitsigns.nvim
 - grug-far.nvim
+- kickside.nvim (when configured)
 - lualine.nvim
 - mason.nvim
-- mini.ai
 - mini.move
 - mini.pairs
 - multiple-cursors.nvim
@@ -177,7 +175,6 @@ nvim
 - nvim-vtsls
 - render-markdown.nvim
 - rest.nvim
-- SchemaStore.nvim
 - snacks.nvim
 - todo-comments.nvim
 - toggleterm.nvim
