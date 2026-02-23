@@ -27,7 +27,7 @@ echo "Go installation done"
 echo "Installing packages..."
 for package in "${PACKAGES[@]}"; do
   echo "Installing ${package}..."
-  sudo $INSTALL_DIR/bin/go install "${package}"
+  $INSTALL_DIR/bin/go install "${package}"
 done
 
 echo "Golang packages installation done"
