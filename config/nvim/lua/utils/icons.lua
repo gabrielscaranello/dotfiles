@@ -8,6 +8,9 @@ local misc = {
   unnamed = "[No Name]",
   debug = " ",
   trace = " ",
+  loading = "󱦟",
+  done = " ",
+  error = " ",
 }
 
 local dap = {
@@ -19,7 +22,7 @@ local dap = {
 }
 
 local diagnostics = {
-  Error = " ",
+  Error = misc.error,
   Warn = " ",
   Hint = " ",
   Info = " ",
