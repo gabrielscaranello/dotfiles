@@ -61,4 +61,12 @@ return {
       map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
     end,
   },
+
+  keys = {
+    {
+      "<leader>ug",
+      function() end,
+      desc = "Refresh GitSigns",
+    },
+  },
 }

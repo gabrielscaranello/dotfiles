@@ -16,6 +16,16 @@ return {
     },
   },
 
+  keys = {
+    {
+      "<leader>uw",
+      function()
+        require("utils.refresh").restart_windsurf()
+      end,
+      desc = "Restart windsurf",
+    },
+  },
+
   specs = {
     "saghen/blink.cmp",
     opts = {

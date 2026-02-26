@@ -1,5 +1,5 @@
 local keymap = require "utils.keymap"
-local lsp_utils = require "utils.lsp"
+local refresh = require "utils.refresh"
 
 ---@param client vim.lsp.Client
 ---@param capability string
@@ -99,12 +99,8 @@ return function(event)
       end,
       with_opts { desc = "Diagnostics" },
     },
-    {
-      "n",
-      "<leader>lk",
-      lsp_utils.clients.restart,
-      with_opts { desc = "Restart LSP" },
-    },
+    { "n", "<leader>ul", refresh.restart_lsp, with_opts { desc = "Restart LSP" } },
+    { "n", "<leader>lu", refresh.restart_lsp, with_opts { desc = "Restart LSP" } },
     { "n", "<leader>li", "<cmd>LspInfo<cr>", with_opts { desc = "LSP Info" } },
   }
 

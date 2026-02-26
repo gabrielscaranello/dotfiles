@@ -7,9 +7,9 @@ return {
     ft = require("utils.ai").get_supported_filetypes,
     keys = {
       {
-        "<leader>ar",
+        "<leader>uc",
         function()
-          require("utils.lsp").clients.restart_copilot()
+          require("utils.refresh").restart_copilot()
         end,
         desc = "Restart Copilot Client",
       },

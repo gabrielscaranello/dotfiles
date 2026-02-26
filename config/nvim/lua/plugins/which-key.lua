@@ -53,6 +53,7 @@ return {
       { "<leader>r", group = "+Search / Replace", mode = { "n", "v" } },
       { "<leader>s", group = "+Session" },
       { "<leader>t", group = "+Terminal" },
+      { "<leader>u", group = "+Update" },
       { "<leader>x", group = "+Trouble" },
     }
 
