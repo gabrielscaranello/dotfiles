@@ -4,15 +4,12 @@ local M = {
   explorer = {},
 }
 
--- Define a more specific type for the options
----@class ExplorerToggleOpts
----@field auto_close? boolean
-
 -- Toggle the explorer
----@param opts? ExplorerToggleOpts
+---@param opts? snacks.picker.explorer.Config
 function M.explorer.toggle(opts)
-  local default_opts = { auto_close = false }
-  local full_opts = opts and vim.tbl_deep_extend("force", default_opts, opts) or default_opts
+  ---@type snacks.picker.explorer.Config
+  local default_opts = { auto_close = false, git_status_open = true, git_untracked = true }
+  local full_opts = opts and vim.tbl_deep_extend("force", {}, default_opts, opts) or default_opts
   require("snacks").explorer(full_opts)
 end
 
