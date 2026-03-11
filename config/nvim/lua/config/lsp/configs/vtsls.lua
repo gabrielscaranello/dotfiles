@@ -29,6 +29,26 @@ local function get_styled_plugin()
   }
 end
 
+local function get_css_module_plugin()
+  local npm_root_dir = vim.fn.trim(vim.fn.system "npm root -g")
+  if not npm_root_dir or npm_root_dir == "" then
+    return
+  end
+
+  local location = vim.fn.expand(npm_root_dir .. "/typescript-plugin-css-modules")
+  if vim.fn.isdirectory(location) == 0 then
+    return
+  end
+
+  return {
+    name = "typescript-plugin-css-modules",
+    location = location,
+    configNamespace = "typescript",
+    enableForWorkspaceTypeScriptVersions = true,
+    languages = { "css", "scss", "sass", "less", "styl" },
+  }
+end
+
 local get_vue_plugin = function()
   local registry_ok, registry = pcall(require, "mason-registry")
   if not registry_ok then
@@ -54,6 +74,11 @@ local function get_global_plugins()
   local styled_plugin = get_styled_plugin()
   if styled_plugin then
     table.insert(plugins, styled_plugin)
+  end
+
+  local css_module_plugin = get_css_module_plugin()
+  if css_module_plugin then
+    table.insert(plugins, css_module_plugin)
   end
 
   local vue_plugin = get_vue_plugin()

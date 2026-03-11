@@ -3,6 +3,7 @@ NVM_VERSION=0.40.3
 
 NPM_PACKAGES=(
   @styled/typescript-styled-plugin
+  typescript-plugin-css-modules
   yarn
 )
 
