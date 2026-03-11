@@ -10,46 +10,55 @@ local typescript_cfg = {
   },
 }
 
-local function get_styled_plugin()
+---@return boolean
+local function is_vue_project()
+  local file_utils = require "utils.file"
+  return file_utils.has_package_json_key "dependencies.vue"
+end
+
+---@param name string
+---@return string | nil
+local function load_npm_plugin(name)
   local npm_root_dir = vim.fn.trim(vim.fn.system "npm root -g")
   if not npm_root_dir or npm_root_dir == "" then
     return
   end
 
-  local location = vim.fn.expand(npm_root_dir .. "/@styled/typescript-styled-plugin")
+  local location = vim.fn.expand(npm_root_dir .. "/" .. name)
   if vim.fn.isdirectory(location) == 0 then
     return
   end
 
-  return {
-    name = "@styled/typescript-styled-plugin",
-    location = location,
-    configNamespace = "typescript",
-    enableForWorkspaceTypeScriptVersions = true,
-  }
+  return location
 end
 
-local function get_css_module_plugin()
-  local npm_root_dir = vim.fn.trim(vim.fn.system "npm root -g")
-  if not npm_root_dir or npm_root_dir == "" then
-    return
+local function load_styled_plugin()
+  local name = "@styled/typescript-styled-plugin"
+  local location = load_npm_plugin(name)
+  if location then
+    return {
+      name = name,
+      location = location,
+      configNamespace = "typescript",
+      enableForWorkspaceTypeScriptVersions = true,
+    }
   end
-
-  local location = vim.fn.expand(npm_root_dir .. "/typescript-plugin-css-modules")
-  if vim.fn.isdirectory(location) == 0 then
-    return
-  end
-
-  return {
-    name = "typescript-plugin-css-modules",
-    location = location,
-    configNamespace = "typescript",
-    enableForWorkspaceTypeScriptVersions = true,
-    languages = { "css", "scss", "sass", "less", "styl" },
-  }
 end
 
-local get_vue_plugin = function()
+local function load_css_module_plugin()
+  local name = "typescript-plugin-css-modules"
+  local location = load_npm_plugin(name)
+  if location then
+    return {
+      name = name,
+      location = location,
+      languages = { "css", "scss", "sass", "less", "styl" },
+      enabled = false,
+    }
+  end
+end
+
+local load_vue_plugin = function()
   local registry_ok, registry = pcall(require, "mason-registry")
   if not registry_ok then
     return
@@ -68,22 +77,22 @@ local get_vue_plugin = function()
   }
 end
 
-local function get_global_plugins()
+local function load_global_plugins()
   local plugins = {}
+  local load_plugin_handlers = {}
 
-  local styled_plugin = get_styled_plugin()
-  if styled_plugin then
-    table.insert(plugins, styled_plugin)
+  if is_vue_project() then
+    table.insert(load_plugin_handlers, load_vue_plugin)
+  else
+    table.insert(load_plugin_handlers, load_styled_plugin)
+    table.insert(load_plugin_handlers, load_css_module_plugin)
   end
 
-  local css_module_plugin = get_css_module_plugin()
-  if css_module_plugin then
-    table.insert(plugins, css_module_plugin)
-  end
-
-  local vue_plugin = get_vue_plugin()
-  if vue_plugin then
-    table.insert(plugins, vue_plugin)
+  for _, load_plugin in ipairs(load_plugin_handlers) do
+    local plugin = load_plugin()
+    if plugin then
+      table.insert(plugins, plugin)
+    end
   end
 
   return plugins
@@ -114,7 +123,7 @@ return {
   },
   before_init = function(_, config)
     ---@diagnostic disable-next-line: undefined-field
-    config.settings.vtsls.tsserver.globalPlugins = get_global_plugins()
+    config.settings.vtsls.tsserver.globalPlugins = load_global_plugins()
   end,
   on_attach = function(client, bufnr)
     local ok, vtsls = pcall(require, "vtsls")
