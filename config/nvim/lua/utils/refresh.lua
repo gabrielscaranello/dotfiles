@@ -15,7 +15,9 @@ function M.refresh_buffer()
 end
 
 function M.refresh_all_buffers()
+  local current_buf = vim.api.nvim_get_current_buf()
   vim.cmd "bufdo e!"
+  vim.api.nvim_set_current_buf(current_buf)
 end
 
 function M.restart_lsp()
