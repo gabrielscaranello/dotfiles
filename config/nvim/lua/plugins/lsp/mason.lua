@@ -9,7 +9,6 @@ local ensure_installed = {
   "shfmt",
 
   -- Docker
-  "docker-compose-language-service",
   "dockerfile-language-server",
   "hadolint",
 

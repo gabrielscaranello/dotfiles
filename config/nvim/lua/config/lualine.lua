@@ -5,7 +5,6 @@ local ai = require "utils.ai"
 ColorScheme = require "tokyonight.colors"
 
 local LSP_NAMES_OVERRIDES = {
-  docker_compose_language_service = "docker_compose_ls",
   emmet_ls = "emmet",
 }
 
