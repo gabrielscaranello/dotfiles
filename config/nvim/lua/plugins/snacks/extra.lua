@@ -25,7 +25,6 @@ local function extra()
         "mp4",
         "pdf",
         "png",
-        "svg",
         "tiff",
         "webm",
         "webp",
