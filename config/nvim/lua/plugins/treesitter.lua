@@ -42,54 +42,6 @@ local ensure_installed = {
   "yaml",
 }
 
-local ft = {
-  "bash",
-  "css",
-  "diff",
-  "dockerfile",
-  "dotenv",
-  "gitattributes",
-  "gitcommit",
-  "gitconfig",
-  "gitignore",
-  "gitrebase",
-  "go",
-  "gomod",
-  "gosum",
-  "gowork",
-  "graphql",
-  "help",
-  "html",
-  "http",
-  "javascript",
-  "javascriptreact",
-  "json",
-  "jsonc",
-  "kitty",
-  "latex",
-  "less",
-  "lua",
-  "make",
-  "markdown",
-  "plaintex",
-  "postcss",
-  "prisma",
-  "proto",
-  "query",
-  "scss",
-  "sh",
-  "svelte",
-  "tex",
-  "typescript",
-  "typescriptreact",
-  "typst",
-  "vim",
-  "vue",
-  "yaml",
-  "yaml.docker-compose",
-  "zsh",
-}
-
 ---@type LazyPluginSpec[]
 return {
   {
@@ -100,8 +52,8 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     branch = "main",
-    version = false,
     lazy = false,
+    commit = "7caec274fd19c12b55902a5b795100d21531391f",
     event = { "BufReadPre", "BufNewFile" },
     cmd = { "TSUpdate", "TSInstall", "TSLog", "TSUninstall" },
     dependencies = { "windwp/nvim-ts-autotag" },
@@ -112,15 +64,6 @@ return {
       indent = { enable = true },
       folds = { enable = true },
     },
-
-    init = function()
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = table.concat(ft, ","),
-        callback = function()
-          vim.treesitter.start()
-        end,
-      })
-    end,
 
     build = function()
       local TS = require "nvim-treesitter"
@@ -139,6 +82,22 @@ return {
       local TS = require "nvim-treesitter"
       TS.setup(opts)
       TS.install(opts.ensure_installed, { summary = false, max_jobs = 4 })
+
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("treesitter.setup", {}),
+        callback = function(args)
+          local buf = args.buf
+          local filetype = args.match
+
+          local language = vim.treesitter.language.get_lang(filetype) or filetype
+          if not vim.treesitter.language.add(language) then
+            return
+          end
+
+          vim.treesitter.start(buf, language)
+          vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
+      })
 
       vim.treesitter.language.register("scss", "less")
       vim.treesitter.language.register("scss", "postcss")
