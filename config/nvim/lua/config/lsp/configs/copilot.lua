@@ -16,8 +16,8 @@ return {
     end
 
     local file_utils = require "utils.file"
-    local lazy_intall_dir = vim.fn.stdpath "data" .. "/lazy"
-    local copilot_config_path = lazy_intall_dir .. "/nvim-lspconfig/lsp/copilot.lua"
+    local lazy_install_dir = vim.fn.stdpath "data" .. "/lazy"
+    local copilot_config_path = lazy_install_dir .. "/nvim-lspconfig/lsp/copilot.lua"
 
     if not file_utils.file_exists(copilot_config_path) then
       return
