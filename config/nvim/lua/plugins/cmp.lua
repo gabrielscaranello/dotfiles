@@ -4,7 +4,7 @@ local cmp_config = require "config.cmp"
 ---@type LazyPluginSpec
 return {
   "saghen/blink.cmp",
-  version = "v1.8.0",
+  version = "^v1.10.0",
   event = "InsertEnter",
   dependencies = {
     "bydlw98/blink-cmp-env",

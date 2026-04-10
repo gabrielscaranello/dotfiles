@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "folke/sidekick.nvim",
-  version = "v2.1",
+  version = "^v2.3.0",
   cond = require("utils.ai").is_copilot_provider(),
 
   opts = function()
