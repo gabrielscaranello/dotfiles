@@ -1,5 +1,3 @@
-local lsp_setup = require "config.lsp"
-
 ---@type LazyPluginSpec
 return {
   "neovim/nvim-lspconfig",
@@ -39,6 +37,7 @@ return {
   },
 
   config = function(_, opts)
+    local lsp_setup = require "config.lsp"
     local cmp_nvim_lsp = require "blink-cmp"
     local mason_lspconfig = require "mason-lspconfig"
 
