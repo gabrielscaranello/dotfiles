@@ -44,6 +44,15 @@ To use both, you need to add the environment variable `AI_PROVIDER`.
 export AI_PROVIDER=codeium
 ```
 
+### CLI Provider (sidekick)
+
+This configuration also provides integration with CLI tools like `copilot-cli` or `antigravity` using `sidekick.nvim`.
+
+```bash
+# 'copilot' for copilot-cli or 'antigravity' for antigravity
+export CLI_PROVIDER=copilot
+```
+
 > If you don't want to use AI autocomplete, just don't define the variable.
 
 #### Windsurf (Codeium)

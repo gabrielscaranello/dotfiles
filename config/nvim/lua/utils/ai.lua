@@ -5,6 +5,11 @@ function M.get_provider()
   return vim.env.AI_PROVIDER or nil
 end
 
+---@return 'copilot' | 'antigravity' | nil
+function M.get_cli_provider()
+  return vim.env.AI_CLI_PROVIDER or nil
+end
+
 ---@return boolean
 function M.is_copilot_provider()
   return M.get_provider() == "copilot"

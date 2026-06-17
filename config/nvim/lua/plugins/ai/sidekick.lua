@@ -2,7 +2,7 @@
 return {
   "folke/sidekick.nvim",
   version = "^v2.3.0",
-  cond = require("utils.ai").is_copilot_provider(),
+  cond = require("utils.ai").get_cli_provider() ~= nil,
 
   opts = function()
     local ai = require "utils.ai"
@@ -28,12 +28,13 @@ return {
         },
         tools = {
           copilot = { cmd = get_copilot_cmd() },
+          antigravity = { cmd = { "agy" } },
         },
       },
     }
   end,
   keys = function()
-    local provider = require("utils.ai").get_provider()
+    local provider = require("utils.ai").get_cli_provider()
 
     return {
       {
