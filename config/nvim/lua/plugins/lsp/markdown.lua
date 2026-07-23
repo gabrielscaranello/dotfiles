@@ -1,25 +1,36 @@
----@type LazyPluginSpec
+---@type LazyPluginSpec[]
 return {
-  "MeanderingProgrammer/render-markdown.nvim",
-  version = "^v8",
-  ft = { "markdown", "copilot-chat" },
-  dependencies = {
-    "nvim-treesitter/nvim-treesitter",
-    "echasnovski/mini.icons",
-  },
-  opts = {
-    file_types = { "markdown" },
-    initial_state = nil,
-    heading = {
-      position = "inline",
-      width = "block",
-      icons = { "󰲡 ", "󰲣 ", "󰲥 ", "󰲧 ", "󰲩 ", "󰲫 " },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    version = "^v8",
+    ft = { "markdown", "copilot-chat" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "echasnovski/mini.icons",
     },
-    code = {
-      width = "block",
+    opts = {
+      file_types = { "markdown" },
+      initial_state = nil,
+      heading = {
+        position = "inline",
+        width = "block",
+        icons = { "󰲡 ", "󰲣 ", "󰲥 ", "󰲧 ", "󰲩 ", "󰲫 " },
+      },
+      code = {
+        width = "block",
+      },
+      sign = {
+        enabled = false,
+      },
     },
-    sign = {
-      enabled = false,
+    {
+      "yousefhadder/markdown-plus.nvim",
+      ft = "markdown",
+      opts = {
+        keymaps = {
+          enabled = false,
+        },
+      },
     },
   },
 }

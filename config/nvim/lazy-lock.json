@@ -58,3 +58,4 @@
   "windsurf.nvim": { "branch": "main", "commit": "821b570b526dbb05b57aa4ded578b709a704a38a" },
   "yanky.nvim": { "branch": "main", "commit": "020c22d0cfa60358569e49d1d7b91630f175aef0" }
 }
+  "markdown-plus.nvim": { "branch": "main", "commit": "1f8659bac2e615d7e8d3bee6ad42fef888b4c170" },
