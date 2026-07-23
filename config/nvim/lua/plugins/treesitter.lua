@@ -65,6 +65,25 @@ return {
       folds = { enable = true },
     },
 
+    keys = {
+      {
+        "<C-space>",
+        function()
+          vim.treesitter.select "parent"
+        end,
+        desc = "Increment selection",
+        mode = { "n", "v" },
+      },
+      {
+        "<bs>",
+        function()
+          vim.treesitter.select "child"
+        end,
+        desc = "Decrement selection",
+        mode = { "n", "v" },
+      },
+    },
+
     build = function()
       local TS = require "nvim-treesitter"
       if not TS.get_installed then
@@ -105,22 +124,5 @@ return {
       vim.treesitter.language.register("bash", "dotenv")
       vim.treesitter.language.register("yaml", "yaml.docker-compose")
     end,
-  },
-
-  {
-    "MeanderingProgrammer/treesitter-modules.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    lazy = false,
-    opts = {
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "<C-space>",
-          node_incremental = "<C-space>",
-          scope_incremental = false,
-          node_decremental = "<bs>",
-        },
-      },
-    },
   },
 }
