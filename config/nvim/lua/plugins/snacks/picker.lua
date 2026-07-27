@@ -35,7 +35,7 @@ local function picker()
           layout = {
             preview = "main",
             hidden = { "preview" },
-            layout = { position = "right", resize = true, width = 50 },
+            layout = { position = "left", resize = true, width = 50 },
           },
         },
       },
