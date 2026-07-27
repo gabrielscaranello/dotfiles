@@ -8,6 +8,7 @@ return {
     virtual_symbol = "󱓻",
     exclude_filetypes = {
       "lazy",
+      "markdown",
     },
   },
 }
