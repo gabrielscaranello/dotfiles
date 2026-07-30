@@ -23,6 +23,11 @@ return {
     return {
       formatters_by_ft = {
         ["yaml.docker-compose"] = { "prettierd" },
+        ["yaml.snyk"] = {
+          filter = function()
+            return false
+          end,
+        },
         css = { "prettierd" },
         dockerfile = { "dockerfmt" },
         go = { "goimports", "gofumpt" },

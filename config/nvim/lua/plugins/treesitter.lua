@@ -123,6 +123,7 @@ return {
       vim.treesitter.language.register("bash", "kitty")
       vim.treesitter.language.register("bash", "dotenv")
       vim.treesitter.language.register("yaml", "yaml.docker-compose")
+      vim.treesitter.language.register("yaml", "yaml.snyk")
     end,
   },
 }

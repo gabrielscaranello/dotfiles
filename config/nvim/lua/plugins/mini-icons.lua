@@ -43,6 +43,7 @@ return {
         [".go-version"] = icon("", "MiniIconsBlue"),
         [".keep"] = icon("󰊢", "MiniIconsGrey"),
         [".node-version"] = icon("", "MiniIconsGreen"),
+        [".snyk"] = icon("󰒃", "MiniIconsPurple"),
         [".yarnrc.yml"] = yarn,
         ["catalog-info.yaml"] = icon("󱉟", "MiniIconsBlue"),
         ["devcontainer.json"] = icon("", "MiniIconsAzure"),

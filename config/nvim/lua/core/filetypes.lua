@@ -8,6 +8,7 @@ vim.filetype.add {
     ["docker-compose.yaml"] = "yaml.docker-compose",
     ["docker-compose.yml"] = "yaml.docker-compose",
     [".env"] = "dotenv",
+    [".snyk"] = "yaml.snyk",
   },
   pattern = {
     [".*/kitty/.+%.conf"] = "kitty",
