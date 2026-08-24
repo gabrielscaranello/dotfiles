@@ -23,18 +23,5 @@ return {
         enabled = false,
       },
     },
-    {
-      "yousefhadder/markdown-plus.nvim",
-      ft = "markdown",
-      opts = {
-        enabled = true,
-
-        table = {
-          keymaps = {
-            enabled = false,
-          },
-        },
-      },
-    },
   },
 }
