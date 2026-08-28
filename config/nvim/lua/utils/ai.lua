@@ -5,7 +5,7 @@ function M.get_provider()
   return vim.env.AI_PROVIDER or nil
 end
 
----@return 'copilot' | 'antigravity' | nil
+---@return 'copilot' | 'antigravity' | 'claude' | nil
 function M.get_cli_provider()
   return vim.env.AI_CLI_PROVIDER or nil
 end
@@ -22,8 +22,8 @@ end
 
 ---@return string
 function M.get_copilot_model()
-  local default_model = "gpt-4.1"
-  return vim.env.AI_COPILOT_MODEL or default_model
+  local default_model = "auto"
+  return vim.env.AI_CLI_COPILOT_MODEL or default_model
 end
 
 ---@return vim.lsp.Client | nil
