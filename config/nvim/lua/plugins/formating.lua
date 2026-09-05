@@ -19,6 +19,13 @@ return {
   opts = function()
     local utils = require "utils.formatters"
 
+    local function sh_formatters()
+      if utils.prettier.exists() then
+        return { "prettierd", lsp_format = "fallback" }
+      end
+      return { "shellcheck", "shfmt" }
+    end
+
     ---@type conform.setupOpts
     return {
       formatters_by_ft = {
@@ -43,7 +50,7 @@ return {
         postcss = { "prettierd" },
         proto = { "buf" },
         scss = { "prettierd" },
-        sh = { "shellcheck", "shfmt" },
+        sh = sh_formatters,
         typescript = { "prettierd", lsp_format = "first" },
         typescriptreact = { "prettierd", lsp_format = "first" },
         vue = { "prettierd", lsp_format = "first" },
@@ -62,7 +69,7 @@ return {
       },
 
       filter = function(client)
-        local ignored_clients = { "jsonls", "tsserver", "vtsls", "volar", "vue_ls" }
+        local ignored_clients = { "jsonls", "tsserver", "vtsls", "volar", "vue_ls", "bashls" }
 
         for _, client_name in ipairs(ignored_clients) do
           if client_name == client.name then

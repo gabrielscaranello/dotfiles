@@ -12,6 +12,12 @@ return {
     ".prettierrc.ts",
     ".prettierrc.yaml",
     ".prettierrc.yml",
+    "prettier.config.cjs",
+    "prettier.config.cts",
+    "prettier.config.js",
+    "prettier.config.mjs",
+    "prettier.config.mts",
+    "prettier.config.ts",
   },
 
   eslint = {
