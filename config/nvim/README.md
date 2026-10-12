@@ -206,4 +206,3 @@ nvim
 
 - [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 - [LazyVim](https://github.com/LazyVim/LazyVim)
-- [My Old AstroNvim Config](/config/nvim-astronvim)
