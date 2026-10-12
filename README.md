@@ -17,25 +17,28 @@
 | [Kitty](./config/kitty)                        | Kitty config                     |
 | [Lazydocker](./config/lazydocker)              | Lazydocker config                |
 | [Lazygit](./config/lazygit)                    | Lazygit config                   |
-| [Neovim](./config/nvim) (current)              | Neovim config                    |
-| [Neovim](./config/nvim-astronvim) (deprecated) | Neovim config based on AstroNvim |
+| [Neovim](./config/nvim)                        | Neovim config                    |
 | [Profile](./config/profile)                    | Profile config                   |
 
 ## Commands
 
 | Command               | Description                                      |
 | :-------------------- | :----------------------------------------------- |
-| `make all`            | Setup all configs and installs                   |
+| `make all`            | Setup all configs                                |
+| `make help`           | Display all available Makefile commands          |
+| `make lint-sh`        | Validate shell script syntax (safe on host)      |
 | `make bat`            | Link bat config to `~/.config/bat`               |
 | `make btop`           | Link btop config to `~/.config/btop`             |
 | `make flameshot`      | Link flameshot config to `~/.config/flameshot`   |
 | `make ghostwriter`    | Setup Ghostwriter theme and config               |
-| `make install-golang` | Install Golang and needed packages               |
-| `make install-nodejs` | Install Node.js with NVM and needed packages     |
-| `make install-rustup` | Install Rust with rustup and needed packages     |
 | `make kitty`          | Link kitty config to `~/.config/kitty`           |
 | `make lazydocker`     | Link lazydocker config to `~/.config/lazydocker` |
 | `make lazygit`        | Link lazygit config to `~/.config/lazygit`       |
 | `make nvim`           | Link neovim config to `~/.config/nvim`           |
 | `make oh-my-zsh`      | Install Oh My ZSH and plugins                    |
 | `make profile`        | Link profile config                              |
+
+## AI Agents
+
+- 🤖 **[AGENTS.md](AGENTS.md)**: Guidelines, operational rules, safety contracts, and architecture for AI assistants (Antigravity CLI, Claude Code, Gemini, Copilot).
+
