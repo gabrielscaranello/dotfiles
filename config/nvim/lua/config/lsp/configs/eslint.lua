@@ -10,9 +10,10 @@ return {
     "vue",
   },
 
-  on_attach = function()
+  on_attach = function(client)
     local util = require "utils.lsp"
     if not util.eslint.exists() then
+      client.stop()
       return
     end
   end,

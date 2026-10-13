@@ -8,7 +8,6 @@ return {
     local has_btop = vim.fn.executable "btop" == 1
     local has_gdu = vim.fn.executable "gdu" == 1
     local has_lazydocker = vim.fn.executable "docker" == 1 and vim.fn.executable "lazydocker" == 1
-    local has_lazygit = vim.fn.executable "git" == 1 and vim.fn.executable "lazygit" == 1
     local has_node = vim.fn.executable "node" == 1
     local has_python = vim.fn.executable "python" == 1
 
