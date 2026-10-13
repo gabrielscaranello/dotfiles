@@ -10,6 +10,8 @@ echo "Setting up bat..."
 
 clean_config_dir "$CONFIG_DIR"
 ln -sf "$PWD/config/bat" "$CONFIG_DIR"
-$BAT_EXECUTABLE cache --build
+if [ -n "$BAT_EXECUTABLE" ]; then
+  $BAT_EXECUTABLE cache --build
+fi
 
 echo "Bat setup complete!"

@@ -11,7 +11,7 @@ THEME_TARGET_DIR="$HOME/.local/share/ghostwriter/themes/"
 echo "Setting up ghostwriter..."
 
 # Verify if ghostwriter is installed
-if flatpak list | grep -q ghostwriter; then
+if command -v flatpak >/dev/null 2>&1 && flatpak list | grep -q ghostwriter; then
   THEME_TARGET_DIR="$HOME/.var/app/io.github.wereturtle.ghostwriter/data/ghostwriter/themes/"
   CONFIG_TARGET_DIR="$HOME/.var/app/io.github.wereturtle.ghostwriter/data/kde.org/"
 elif ! command -v ghostwriter >/dev/null 2>&1; then
