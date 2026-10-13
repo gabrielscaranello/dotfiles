@@ -5,6 +5,7 @@ return {
   copilot = require "config.lsp.configs.copilot",
   cssls = require "config.lsp.configs.cssls",
   eslint = require "config.lsp.configs.eslint",
+  gopls = require "config.lsp.configs.gopls",
   graphql = require "config.lsp.configs.graphqlls",
   html = require "config.lsp.configs.htmlls",
   jsonls = require "config.lsp.configs.jsonls",
