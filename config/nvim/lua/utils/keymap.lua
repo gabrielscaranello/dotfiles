@@ -20,6 +20,10 @@ end
 ---@return nil
 M.map = function(mappings)
   if type(mappings) ~= "table" then
+    return
+  end
+
+  if type(mappings[2]) == "string" then
     map(mappings[1], mappings[2], mappings[3], mappings[4])
     return
   end

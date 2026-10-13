@@ -1,6 +1,6 @@
 ---@type LazyPluginSpec
 return {
-  "nvim-mini/mini.move",
+  "echasnovski/mini.move",
   version = "*",
   keys = function(_, keys)
     local plugin = require("lazy.core.config").spec.plugins["mini.move"]

@@ -22,6 +22,7 @@ end
 function M.set_spelllang(lang)
   if not lang or lang == "" then
     vim.notify("No spellcheck language specified", vim.log.levels.ERROR)
+    return
   end
 
   if not M.is_spell_enabled() then
