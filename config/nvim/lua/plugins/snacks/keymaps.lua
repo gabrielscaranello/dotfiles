@@ -3,8 +3,8 @@ local function keys()
 
   return {
     -- Explorer
-    { "<leader>e", config.explorer.toggle, { desc = "Explorer (keep open)" } },
-    { "<leader>o", config.explorer.focus, { desc = "Explorer (auto close)" } },
+    { "<leader>e", config.explorer.toggle, desc = "Explorer (keep open)" },
+    { "<leader>o", config.explorer.focus, desc = "Explorer (auto close)" },
 
     -- Buffers and helps
     {

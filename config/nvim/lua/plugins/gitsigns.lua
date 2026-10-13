@@ -65,7 +65,9 @@ return {
   keys = {
     {
       "<leader>ug",
-      function() end,
+      function()
+        require("utils.refresh").refresh_gitsign()
+      end,
       desc = "Refresh GitSigns",
     },
   },

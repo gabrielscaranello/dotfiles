@@ -22,7 +22,7 @@ local function picker()
         },
         list = {
           keys = {
-            ["copy_options"] = { "<C-y>", config.explorer.copy_actions, desc = "copy_options" },
+            ["<C-y>"] = { config.explorer.copy_actions, desc = "Copy file options" },
           },
         },
       },

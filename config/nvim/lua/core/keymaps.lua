@@ -6,7 +6,7 @@ keymap.map {
   -- exit
   { "n", "<leader>q", "<cmd>qa<cr>", { desc = "Quit All" } },
   { "n", "<leader>Q", "<cmd>qa!<cr>", { desc = "Force Quit All" } },
-  { "n", "<leader>bC", "<cmd>bdelete<cr>", { desc = "Close Current Cuffer" } },
+  { "n", "<leader>bC", "<cmd>bdelete<cr>", { desc = "Close Current Buffer" } },
 
   -- misc
   { "n", "<leader>n", "<cmd>nohlsearch<cr>", { desc = "No Highlight" } },

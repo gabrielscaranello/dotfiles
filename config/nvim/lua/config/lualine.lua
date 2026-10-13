@@ -2,7 +2,7 @@ local icons = require "utils.icons"
 local lsp_utils = require "utils.lsp"
 local spell_utils = require "utils.spell"
 local ai = require "utils.ai"
-ColorScheme = require "tokyonight.colors"
+local ColorScheme = require "tokyonight.colors"
 
 local LSP_NAMES_OVERRIDES = {
   emmet_ls = "emmet",
@@ -62,6 +62,10 @@ return {
       table.sort(lsp_names, function(a, b)
         return a < b
       end)
+
+      if #lsp_names == 0 then
+        return nil
+      end
 
       return table.concat(lsp_names, ", ")
     end
