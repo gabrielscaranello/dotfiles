@@ -9,7 +9,7 @@ return {
       "echasnovski/mini.icons",
     },
     opts = {
-      file_types = { "markdown" },
+      file_types = { "markdown", "copilot-chat" },
       initial_state = nil,
       heading = {
         position = "inline",

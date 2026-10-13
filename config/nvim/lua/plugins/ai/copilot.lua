@@ -4,7 +4,7 @@ return {
     "fang2hou/blink-copilot",
     cond = require("utils.ai").is_copilot_provider(),
     opts = { max_completions = 3, max_attempts = 2 },
-    ft = require("utils.ai").get_supported_filetypes,
+    ft = require("utils.ai").get_supported_filetypes(),
     keys = {
       {
         "<leader>uc",

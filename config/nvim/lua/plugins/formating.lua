@@ -68,17 +68,19 @@ return {
         prettier = { condition = utils.prettier.conform_condition },
       },
 
-      filter = function(client)
-        local ignored_clients = { "jsonls", "tsserver", "vtsls", "volar", "vue_ls", "bashls" }
+      default_format_opts = {
+        filter = function(client)
+          local ignored_clients = { "jsonls", "tsserver", "vtsls", "volar", "vue_ls", "bashls" }
 
-        for _, client_name in ipairs(ignored_clients) do
-          if client_name == client.name then
-            return false
+          for _, client_name in ipairs(ignored_clients) do
+            if client_name == client.name then
+              return false
+            end
           end
-        end
 
-        return true
-      end,
+          return true
+        end,
+      },
     }
   end,
 }
