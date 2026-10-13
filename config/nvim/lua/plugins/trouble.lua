@@ -2,7 +2,7 @@
 return {
   "folke/trouble.nvim",
   version = "^v3",
-  cmd = { "Trouble", "TroubleClose", "TroubleToggle", "TroubleRefresh" },
+  cmd = { "Trouble" },
   dependencies = { "echasnovski/mini.icons", "folke/todo-comments.nvim" },
   event = { "BufReadPre", "BufNewFile" },
   keys = {

@@ -1,6 +1,6 @@
 ---@type LazyPluginSpec
 return {
-  "nvim-mini/mini.icons",
+  "echasnovski/mini.icons",
   lazy = true,
   opts = function()
     local project_config = require "utils.project_config"

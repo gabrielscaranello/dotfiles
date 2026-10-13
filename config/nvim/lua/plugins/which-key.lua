@@ -42,7 +42,7 @@ return {
         group = "+Codesnap / Multiple Cursors",
         mode = { "n", "x" },
       },
-      { "<leader>d", desc = "+Spellcheck" },
+      { "<leader>d", group = "+Spellcheck" },
       { "<leader>e", desc = "Explorer (keep open)" },
       { "<leader>f", group = "+Find" },
       { "<leader>h", group = "+Rest" },
