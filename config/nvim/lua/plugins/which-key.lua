@@ -57,7 +57,7 @@ return {
       { "<leader>x", group = "+Trouble" },
     }
 
-    if ai.is_copilot_provider() then
+    if ai.get_cli_provider() ~= nil or ai.is_copilot_provider() then
       wk.add { "<leader>a", group = "+AI", mode = { "n", "v" } }
     end
   end,
