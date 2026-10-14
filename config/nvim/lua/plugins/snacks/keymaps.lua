@@ -82,6 +82,13 @@ local function keys()
 
     -- Files
     {
+      "/",
+      function()
+        Snacks.picker.lines { layout = { preview = nil } }
+      end,
+      desc = "Grep (Current Buffer)",
+    },
+    {
       "<leader>f/",
       function()
         Snacks.picker.lines { layout = { preview = nil } }

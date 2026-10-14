@@ -63,7 +63,6 @@ return {
         javascriptreact = icon("", "MiniIconsYellow"),
       },
       extension = {
-        [".env"] = dotenv,
         ["spec.js"] = spec_js,
         ["spec.jsx"] = spec_js,
         ["spec.ts"] = spec_ts,

@@ -16,7 +16,6 @@ return {
     local pairs = require "mini.pairs"
     pairs.setup(opts)
     local open = pairs.open
-    vim.diagnostic.config()
 
     ---@diagnostic disable-next-line: duplicate-set-field
     pairs.open = function(pair, neigh_pattern)
