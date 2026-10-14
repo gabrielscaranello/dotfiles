@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "echasnovski/mini.icons", "folke/tokyonight.nvim" },
+  dependencies = { "nvim-mini/mini.icons", "folke/tokyonight.nvim" },
   lazy = false,
   opts = function()
     local lazy_status = require "lazy.status"

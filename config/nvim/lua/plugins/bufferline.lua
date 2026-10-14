@@ -1,7 +1,7 @@
 ---@type LazyPluginSpec
 return {
   "akinsho/bufferline.nvim",
-  dependencies = { "echasnovski/mini.icons" },
+  dependencies = { "nvim-mini/mini.icons" },
   version = "*",
   lazy = false,
   keys = {
