@@ -137,7 +137,7 @@ return {
           "n",
           "gs",
           vtsls.commands.goto_source_definition,
-          { desc = "Goto Source Definition (vtsls)" },
+          { buffer = bufnr, desc = "Goto Source Definition (vtsls)" },
         },
       }
 
