@@ -38,7 +38,7 @@ return {
 
   config = function(_, opts)
     local lsp_setup = require "config.lsp"
-    local cmp_nvim_lsp = require "blink-cmp"
+    local cmp_nvim_lsp = require "blink.cmp"
     local mason_lspconfig = require "mason-lspconfig"
 
     local installed_servers = mason_lspconfig.get_installed_servers()
