@@ -1,11 +1,14 @@
 ---@type vim.lsp.Config
 return {
   filetypes = require("utils.ai").get_supported_filetypes(),
-  on_init = function()
+  on_init = function(client)
     local ai = require "utils.ai"
 
     if not ai.is_copilot_provider() then
-      return
+      if client and client.stop then
+        client.stop()
+      end
+      return false
     end
   end,
   on_attach = function(client, bufnr)
@@ -15,16 +18,13 @@ return {
       return
     end
 
-    local file_utils = require "utils.file"
-    local lazy_install_dir = vim.fn.stdpath "data" .. "/lazy"
-    local copilot_config_path = lazy_install_dir .. "/nvim-lspconfig/lsp/copilot.lua"
-
-    if not file_utils.file_exists(copilot_config_path) then
+    local copilot_config_path = vim.api.nvim_get_runtime_file("lsp/copilot.lua", false)[1]
+    if not copilot_config_path then
       return
     end
 
     local copilot_ok, copilot = pcall(dofile, copilot_config_path)
-    if not copilot_ok then
+    if not copilot_ok or not copilot or not copilot.on_attach then
       return
     end
 
