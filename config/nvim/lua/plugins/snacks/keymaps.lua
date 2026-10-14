@@ -50,7 +50,7 @@ local function keys()
       desc = "Notifications",
     },
     {
-      "<C-i>",
+      "<leader>i",
       function()
         Snacks.image.hover()
       end,
