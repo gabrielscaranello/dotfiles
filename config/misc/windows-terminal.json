@@ -1,0 +1,77 @@
+{
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "copyOnSelect": false,
+  "alwaysShowTabs": false,
+  "showTabsInTitlebar": true,
+  "theme": "Tokyo Night",
+  "profiles": {
+    "defaults": {
+      "colorScheme": "Tokyo Night",
+      "font": {
+        "face": "JetBrainsMono Nerd Font",
+        "size": 14.0
+      },
+      "opacity": 97,
+      "cursorShape": "bar",
+      "bellStyle": "none"
+    },
+    "list": []
+  },
+  "schemes": [
+    {
+      "name": "Tokyo Night",
+      "background": "#1a1b26",
+      "foreground": "#c0caf5",
+      "cursorColor": "#c0caf5",
+      "selectionBackground": "#283457",
+      "black": "#15161e",
+      "red": "#f7768e",
+      "green": "#9ece6a",
+      "yellow": "#e0af68",
+      "blue": "#7aa2f7",
+      "purple": "#bb9af7",
+      "cyan": "#7dcfff",
+      "white": "#a9b1d6",
+      "brightBlack": "#414868",
+      "brightRed": "#ff899d",
+      "brightGreen": "#9fe044",
+      "brightYellow": "#faba4a",
+      "brightBlue": "#8db0ff",
+      "brightPurple": "#c7a9ff",
+      "brightCyan": "#a4daff",
+      "brightWhite": "#c0caf5"
+    }
+  ],
+  "themes": [
+    {
+      "name": "Tokyo Night",
+      "tab": {
+        "background": "#7aa2f7",
+        "unfocusedBackground": "#292e42",
+        "showCloseButton": "always"
+      },
+      "tabRow": {
+        "background": "#15161e",
+        "unfocusedBackground": "#15161e"
+      },
+      "window": {
+        "applicationTheme": "dark"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "command": "duplicateTab",
+      "keys": "ctrl+shift+t"
+    },
+    {
+      "command": "nextTab",
+      "keys": "ctrl+period"
+    },
+    {
+      "command": "prevTab",
+      "keys": "ctrl+comma"
+    }
+  ]
+}
