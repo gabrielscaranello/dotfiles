@@ -14,3 +14,8 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [[ ! -f ~/.profile ]] || source ~/.profile
 
+# Report cwd to Windows Terminal so duplicated tabs open in the same directory
+if [[ -n "$WT_SESSION" ]] && (( $+commands[wslpath] )); then
+    keep_current_path() { printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")" }
+    precmd_functions+=(keep_current_path)
+fi

@@ -52,6 +52,8 @@ O arquivo de configuração padrão do Windows Terminal fica em:
   cp config/misc/windows-terminal.json "$WT_SETTINGS"
   ```
 
+> **Diretório atual no WSL:** para que `Terminal.DuplicateTab` abra a nova aba no mesmo diretório, o shell precisa informar o caminho ao Windows Terminal (sequência `OSC 9;9`). O [`zshrc`](../profile/zshrc) já faz isso automaticamente quando detecta o Windows Terminal (`$WT_SESSION`).
+
 ### 4. Atalhos Configurados (Herdados do Kitty)
 
 | Atalho             | Ação no Windows Terminal | Equivalente no Kitty | Descrição                                                                   |
