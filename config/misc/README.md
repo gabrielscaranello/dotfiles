@@ -59,3 +59,4 @@ O arquivo de configuração padrão do Windows Terminal fica em:
 | `Ctrl + Shift + T` | `Terminal.DuplicateTab`  | `new_tab_with_cwd`   | Abre uma nova aba mantendo o diretório atual                                |
 | `Ctrl + .`         | `Terminal.NextTab`       | `next_tab`           | Avança para a próxima aba                                                   |
 | `Ctrl + ,`         | `Terminal.PrevTab`       | `previous_tab`       | Volta para a aba anterior _(para abrir as Settings use `Ctrl + Shift + ,`)_ |
+| `Shift + Enter`    | `User.SendShiftEnter`    | —                    | Envia `ESC + Enter` (`\u001b\r`), usado como quebra de linha no Claude Code |
