@@ -1,77 +1,107 @@
 {
   "$help": "https://aka.ms/terminal-documentation",
   "$schema": "https://aka.ms/terminal-profiles-schema",
-  "copyOnSelect": false,
+  "actions": [],
   "alwaysShowTabs": false,
-  "showTabsInTitlebar": true,
-  "theme": "Tokyo Night",
+  "copyOnSelect": false,
+  "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+  "keybindings": [
+    {
+      "id": "Terminal.DuplicateTab",
+      "keys": "ctrl+shift+t"
+    },
+    {
+      "id": "Terminal.NextTab",
+      "keys": "ctrl+period"
+    },
+    {
+      "id": "Terminal.PrevTab",
+      "keys": "ctrl+comma"
+    }
+  ],
+  "newTabMenu": [
+    {
+      "type": "remainingProfiles"
+    }
+  ],
   "profiles": {
     "defaults": {
+      "bellStyle": "none",
       "colorScheme": "Tokyo Night",
+      "cursorShape": "bar",
       "font": {
         "face": "JetBrainsMono Nerd Font",
-        "size": 14.0
+        "size": 14
       },
-      "opacity": 97,
-      "cursorShape": "bar",
-      "bellStyle": "none"
+      "opacity": 97
     },
-    "list": []
+    "list": [
+      {
+        "commandline": "wsl.exe -d Debian",
+        "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+        "icon": "\ud83c\udf00",
+        "name": "Debian",
+        "startingDirectory": "~"
+      },
+      {
+        "commandline": "powershell.exe",
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "name": "PowerShell"
+      },
+      {
+        "commandline": "cmd.exe",
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "name": "Prompt de Comando"
+      }
+    ]
   },
   "schemes": [
     {
-      "name": "Tokyo Night",
-      "background": "#1a1b26",
-      "foreground": "#c0caf5",
-      "cursorColor": "#c0caf5",
-      "selectionBackground": "#283457",
-      "black": "#15161e",
-      "red": "#f7768e",
-      "green": "#9ece6a",
-      "yellow": "#e0af68",
-      "blue": "#7aa2f7",
-      "purple": "#bb9af7",
-      "cyan": "#7dcfff",
-      "white": "#a9b1d6",
+      "background": "#1A1B26",
+      "black": "#15161E",
+      "blue": "#7AA2F7",
       "brightBlack": "#414868",
-      "brightRed": "#ff899d",
-      "brightGreen": "#9fe044",
-      "brightYellow": "#faba4a",
-      "brightBlue": "#8db0ff",
-      "brightPurple": "#c7a9ff",
-      "brightCyan": "#a4daff",
-      "brightWhite": "#c0caf5"
+      "brightBlue": "#8DB0FF",
+      "brightCyan": "#A4DAFF",
+      "brightGreen": "#9FE044",
+      "brightPurple": "#C7A9FF",
+      "brightRed": "#FF899D",
+      "brightWhite": "#C0CAF5",
+      "brightYellow": "#FABA4A",
+      "cursorColor": "#C0CAF5",
+      "cyan": "#7DCFFF",
+      "foreground": "#C0CAF5",
+      "green": "#9ECE6A",
+      "name": "Tokyo Night",
+      "purple": "#BB9AF7",
+      "red": "#F7768E",
+      "selectionBackground": "#283457",
+      "white": "#A9B1D6",
+      "yellow": "#E0AF68"
     }
   ],
+  "showTabsInTitlebar": true,
+  "theme": "Tokyo Night",
   "themes": [
     {
       "name": "Tokyo Night",
       "tab": {
-        "background": "#7aa2f7",
-        "unfocusedBackground": "#292e42",
-        "showCloseButton": "always"
+        "background": "#7AA2F7FF",
+        "iconStyle": "default",
+        "showCloseButton": "always",
+        "unfocusedBackground": "#292E42FF"
       },
       "tabRow": {
-        "background": "#15161e",
-        "unfocusedBackground": "#15161e"
+        "background": "#15161EFF",
+        "unfocusedBackground": "#15161EFF"
       },
       "window": {
-        "applicationTheme": "dark"
+        "applicationTheme": "dark",
+        "experimental.rainbowFrame": false,
+        "frame": null,
+        "unfocusedFrame": null,
+        "useMica": false
       }
-    }
-  ],
-  "actions": [
-    {
-      "command": "duplicateTab",
-      "keys": "ctrl+shift+t"
-    },
-    {
-      "command": "nextTab",
-      "keys": "ctrl+period"
-    },
-    {
-      "command": "prevTab",
-      "keys": "ctrl+comma"
     }
   ]
 }

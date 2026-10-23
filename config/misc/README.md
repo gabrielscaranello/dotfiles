@@ -26,8 +26,8 @@ winget install -e --id DEVCOM.JetBrainsMonoNerdFont
 
 1. Abra o **Windows Terminal**.
 2. Pressione `Ctrl + Shift + ,` (ou clique na seta `⌄` na barra de abas → **Configurações** → **Abrir arquivo JSON** no canto inferior esquerdo).
-3. Mescle ou substitua as seções globais (`copyOnSelect`, `alwaysShowTabs`, `showTabsInTitlebar`, `theme`), `profiles.defaults`, `schemes`, `themes` e `actions` com o conteúdo de [`windows-terminal.json`](./windows-terminal.json).
-   > **Nota:** Mantenha a lista `"list": [...]` dentro de `"profiles"` do seu `settings.json` original para preservar os perfis das suas distribuições WSL/PowerShell já registrados pelo Windows Terminal.
+3. Mescle ou substitua as seções globais (`copyOnSelect`, `alwaysShowTabs`, `showTabsInTitlebar`, `theme`, `defaultProfile`, `newTabMenu`), `profiles`, `schemes`, `themes`, `actions` e `keybindings` com o conteúdo de [`windows-terminal.json`](./windows-terminal.json).
+   > **Nota:** O arquivo já inclui os perfis `Debian` (WSL, padrão), `PowerShell` e `Prompt de Comando`. Se quiser manter os perfis já registrados no seu `settings.json`, preserve a sua `"list": [...]` dentro de `"profiles"` e o seu `defaultProfile`.
 
 ### 3. Como aplicar via Linha de Comando (WSL / PowerShell)
 
@@ -42,7 +42,7 @@ O arquivo de configuração padrão do Windows Terminal fica em:
   ```bash
   WT_SETTINGS="$(wslpath "$(cmd.exe /c 'echo %LOCALAPPDATA%' 2>/dev/null | tr -d '\r')")/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
   cp "$WT_SETTINGS" "${WT_SETTINGS}.bak"
-  jq -s '.[0] * .[1] * {profiles: {list: .[0].profiles.list}}' "$WT_SETTINGS" config/misc/windows-terminal.json > "${WT_SETTINGS}.tmp" && mv "${WT_SETTINGS}.tmp" "$WT_SETTINGS"
+  jq -s '.[0] * .[1] * {profiles: {list: .[0].profiles.list}, defaultProfile: .[0].defaultProfile}' "$WT_SETTINGS" config/misc/windows-terminal.json > "${WT_SETTINGS}.tmp" && mv "${WT_SETTINGS}.tmp" "$WT_SETTINGS"
   ```
 
 - **Via WSL** (cópia direta sobrescrevendo o `settings.json`):
@@ -56,6 +56,6 @@ O arquivo de configuração padrão do Windows Terminal fica em:
 
 | Atalho             | Ação no Windows Terminal | Equivalente no Kitty | Descrição                                                                   |
 | :----------------- | :----------------------- | :------------------- | :-------------------------------------------------------------------------- |
-| `Ctrl + Shift + T` | `duplicateTab`           | `new_tab_with_cwd`   | Abre uma nova aba mantendo o diretório atual                                |
-| `Ctrl + .`         | `nextTab`                | `next_tab`           | Avança para a próxima aba                                                   |
-| `Ctrl + ,`         | `prevTab`                | `previous_tab`       | Volta para a aba anterior _(para abrir as Settings use `Ctrl + Shift + ,`)_ |
+| `Ctrl + Shift + T` | `Terminal.DuplicateTab`  | `new_tab_with_cwd`   | Abre uma nova aba mantendo o diretório atual                                |
+| `Ctrl + .`         | `Terminal.NextTab`       | `next_tab`           | Avança para a próxima aba                                                   |
+| `Ctrl + ,`         | `Terminal.PrevTab`       | `previous_tab`       | Volta para a aba anterior _(para abrir as Settings use `Ctrl + Shift + ,`)_ |
