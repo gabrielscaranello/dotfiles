@@ -82,7 +82,14 @@ local function keys()
 
     -- Files
     {
-      "/",
+      "<C-/>",
+      function()
+        Snacks.picker.lines { layout = { preview = nil } }
+      end,
+      desc = "Grep (Current Buffer)",
+    },
+    {
+      "<C-_>",
       function()
         Snacks.picker.lines { layout = { preview = nil } }
       end,

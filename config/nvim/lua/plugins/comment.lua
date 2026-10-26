@@ -5,27 +5,14 @@ return {
   dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
   keys = {
     {
-      "<C-/>",
+      "/",
       function()
         require("Comment.api").toggle.linewise.current()
       end,
       desc = "Toggle comment for current line",
     },
     {
-      "<C-/>",
-      ":<C-u>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
-      desc = "Toggle comment for selection",
-      mode = "v",
-    },
-    {
-      "<C-_>",
-      function()
-        require("Comment.api").toggle.linewise.current()
-      end,
-      desc = "Toggle comment for current line",
-    },
-    {
-      "<C-_>",
+      "/",
       ":<C-u>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
       desc = "Toggle comment for selection",
       mode = "v",
